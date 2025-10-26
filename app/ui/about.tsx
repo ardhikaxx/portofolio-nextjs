@@ -60,11 +60,10 @@ export default function About() {
                     >
                         <div className="flex flex-row justify-between items-center gap-2 sm:gap-0 text-xs">
                             <div className="text-gray-500 text-center sm:text-left cursor-target">
-                                <p>Status: <span className="text-green-400 font-semibold">Available</span></p>
+                                <p>Status: <span className="text-white font-semibold">Developer Mumet.in</span></p>
                             </div>
                             <div className="text-gray-500 flex items-center gap-1 cursor-target">
-                                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                                <span>Online</span>
+                                <p>Role: <span className="text-white font-semibold">Web & Mobile Developer</span></p>
                             </div>
                         </div>
                         <p className="text-center text-gray-600 text-[10px] sm:text-xs mt-2 tracking-wider">

@@ -23,7 +23,7 @@ export default function Hero() {
     };
 
     const handleDownloadCV = () => {
-        toast.info('CV masih dalam tahap update! 🚀', {
+        toast.warning('CV masih dalam tahap update! 🚀', {
             position: "top-center",
             autoClose: 3000,
             hideProgressBar: false,
