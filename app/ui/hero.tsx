@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import Dither from '../components/Dither';
 import SplitText from '../components/SplitText';
 import NavBottom from '../components/NavBottom';
@@ -7,22 +8,41 @@ import StickerPeel from '../components/StickerPeel';
 import Sticker from '../../public/img/sticker.png';
 
 export default function Hero() {
+    const [stickerSize, setStickerSize] = useState(150);
+    const [stickerPosition, setStickerPosition] = useState({ x: 40, y: -140 });
+
     const handleAnimationComplete = () => {
         console.log('All letters have animated!');
     };
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= 768) {
+                setStickerSize(240);
+                setStickerPosition({ x: 40, y: -190 });
+            } else {
+                setStickerSize(150);
+                setStickerPosition({ x: 20, y: -140 });
+            }
+        };
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     return (
         <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
             <StickerPeel
                 imageSrc={Sticker.src}
-                width={160}
+                width={stickerSize}
                 rotate={0}
                 peelBackHoverPct={10}
                 peelBackActivePct={20}
                 shadowIntensity={0.3}
                 lightingIntensity={0.1}
-                initialPosition={{ x: 40, y: -140 }}
-                className='z-50'
+                initialPosition={stickerPosition}
+                className='z-50 cursor-target'
             />
             <div className="absolute inset-0 z-0">
                 <Dither
@@ -38,7 +58,7 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-black/30 backdrop-blur-[1px] z-10"></div>
             </div>
             <div className="relative z-40 flex flex-col items-center justify-center gap-3 text-center px-4 sm:px-6 lg:px-8">
-                <div className="max-w-9xl">
+                <div className="max-w-9xl cursor-target">
                     <SplitText
                         text="</Hello, I'm Yanuar Ardhika>"
                         className="text-3xl md:text-6xl font-extrabold text-white font-nokia"
@@ -55,7 +75,7 @@ export default function Hero() {
                         onLetterAnimationComplete={handleAnimationComplete}
                     />
                 </div>
-                <div className="bg-white/10 backdrop-blur-lg rounded-2xl px-4 py-2 shadow-2xl border border-gray-100">
+                <div className="bg-white/10 backdrop-blur-lg rounded-2xl px-4 py-2 shadow-2xl border border-gray-100 cursor-target">
                     <p className="max-w-md text-xs md:text-lg text-shadow-white font-semibold font-nokia">
                         I am a Junior Web & Mobile Developer
                     </p>

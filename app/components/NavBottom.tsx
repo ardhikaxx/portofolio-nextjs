@@ -53,7 +53,7 @@ const NavBottom = () => {
                                     onMouseEnter={() => setHoveredItem(item.name)}
                                     onMouseLeave={() => setHoveredItem(null)}
                                     className={`
-                    flex items-center justify-center gap-2 px-4 py-3 rounded-full transition-all duration-300
+                    flex items-center justify-center gap-2 px-4 py-3 rounded-full transition-all duration-300 cursor-target
                     ${active
                                             ? 'bg-white/20 text-white'
                                             : 'text-white/70 hover:text-white hover:bg-white/10'
@@ -62,7 +62,6 @@ const NavBottom = () => {
                                 >
                                     <Icon className={`w-5 h-5 ${active ? 'scale-110' : ''} transition-transform duration-300 me-1`} />
 
-                                    {/* Label untuk desktop */}
                                     <span className="hidden md:inline-block text-sm font-medium whitespace-nowrap font-nokia">
                                         {item.name}
                                     </span>
