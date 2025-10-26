@@ -6,6 +6,13 @@ import SplitText from '../components/SplitText';
 import NavBottom from '../components/NavBottom';
 import StickerPeel from '../components/StickerPeel';
 import Sticker from '../../public/img/sticker.png';
+import Link from 'next/link';
+import {
+    HiDocument,
+    HiUser
+} from 'react-icons/hi2';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Hero() {
     const [stickerSize, setStickerSize] = useState(150);
@@ -15,14 +22,27 @@ export default function Hero() {
         console.log('All letters have animated!');
     };
 
+    const handleDownloadCV = () => {
+        toast.info('CV masih dalam tahap update! 🚀', {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+        });
+    };
+
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth >= 768) {
                 setStickerSize(240);
-                setStickerPosition({ x: 40, y: -190 });
+                setStickerPosition({ x: 20, y: -200 });
             } else {
                 setStickerSize(150);
-                setStickerPosition({ x: 20, y: -140 });
+                setStickerPosition({ x: 10, y: -200 });
             }
         };
 
@@ -33,6 +53,7 @@ export default function Hero() {
 
     return (
         <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
+            <ToastContainer/>
             <StickerPeel
                 imageSrc={Sticker.src}
                 width={stickerSize}
@@ -57,7 +78,7 @@ export default function Hero() {
                 />
                 <div className="absolute inset-0 bg-black/30 backdrop-blur-[1px] z-10"></div>
             </div>
-            <div className="relative z-40 flex flex-col items-center justify-center gap-3 text-center px-4 sm:px-6 lg:px-8">
+            <div className="relative z-40 flex flex-col items-center justify-center gap-2 text-center px-4 sm:px-6 lg:px-8">
                 <div className="max-w-9xl cursor-target">
                     <SplitText
                         text="</Hello, I'm Yanuar Ardhika>"
@@ -75,10 +96,30 @@ export default function Hero() {
                         onLetterAnimationComplete={handleAnimationComplete}
                     />
                 </div>
-                <div className="bg-white/10 backdrop-blur-lg rounded-2xl px-4 py-2 shadow-2xl border border-gray-100 cursor-target">
-                    <p className="max-w-md text-xs md:text-lg text-shadow-white font-semibold font-nokia">
-                        I am a Junior Web & Mobile Developer
+                <div className="cursor-target mb-2">
+                    <p className="max-w-md text-lg md:text-2xl text-shadow-white font-bold">
+                        A Junior Web & Mobile Developer
                     </p>
+                </div>
+                <div className="flex flex-col lg:flex-row gap-3">
+                    <Link 
+                        href={'/about'} 
+                        className="group bg-white px-6 py-3 text-black rounded-full font-bold cursor-target text-center hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300 ease-in-out font-nokia flex items-center justify-center hover:shadow-lg hover:shadow-white/20 hover:-translate-y-1 relative overflow-hidden"
+                    >
+                        <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/20 to-transparent" />
+                        
+                        <HiUser className='me-3 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12 relative z-10' size={24} />
+                        <span className="relative z-10">About Me</span>
+                    </Link>
+                    <button 
+                        onClick={handleDownloadCV} 
+                        className="group bg-white/10 backdrop-blur-lg text-white px-6 py-3 border-2 border-white rounded-full font-bold cursor-target text-center hover:bg-white hover:text-black transition-all duration-300 ease-in-out font-nokia flex items-center justify-center hover:shadow-lg hover:shadow-white/20 hover:-translate-y-1 relative overflow-hidden"
+                    >
+                        <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/20 to-transparent" />
+                        
+                        <HiDocument className='me-3 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12 relative z-10' size={24} />
+                        <span className="relative z-10">Download CV</span>
+                    </button>
                 </div>
             </div>
             <NavBottom />

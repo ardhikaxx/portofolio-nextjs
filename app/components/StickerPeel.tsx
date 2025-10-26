@@ -301,7 +301,7 @@ const StickerPeel: React.FC<StickerPeelProps> = ({
                         <feSpecularLighting
                             result="spec"
                             in="blur"
-                            specularExponent="100"
+                            specularExponent="10"
                             specularConstant={lightingIntensity * 7}
                             lightingColor="white"
                         >
