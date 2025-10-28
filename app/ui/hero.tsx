@@ -42,7 +42,7 @@ export default function Hero() {
                 setStickerPosition({ x: 20, y: -225 });
             } else {
                 setStickerSize(150);
-                setStickerPosition({ x: 10, y: -200 });
+                setStickerPosition({ x: 10, y: -230 });
             }
         };
 
