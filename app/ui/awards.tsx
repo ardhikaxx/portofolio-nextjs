@@ -94,61 +94,43 @@ function AwardCard({ award, index }: AwardCardProps) {
     };
 
     return (
-        <div className={`
-      group cursor-pointer bg-black border ${getTierColor(index)} 
-      hover:border-white hover:transform hover:-translate-y-2 
-      transition-all duration-500 p-6 relative overflow-hidden
-    `}>
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-5">
-                <div className="absolute top-4 right-4 w-20 h-20 border border-white transform rotate-45"></div>
-                <div className="absolute bottom-4 left-4 w-12 h-12 border border-white transform rotate-12"></div>
-            </div>
-
-            {/* Corner Accents */}
+        <div className={`group cursor-pointer bg-white/10 backdrop-blur-lg p-6 relative overflow-hidden`}>
             <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-white opacity-50"></div>
             <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-white opacity-50"></div>
             <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-white opacity-50"></div>
             <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-white opacity-50"></div>
 
-            {/* Content */}
             <div className="relative z-10">
-                {/* Award Index */}
                 <div className="text-xs text-gray-400 mb-4 font-mono tracking-wider">
                     AWARD #{String(index + 1).padStart(2, '0')}
                 </div>
 
-                {/* Award Title */}
-                <h3 className="text-lg font-bold mb-4 leading-tight group-hover:text-gray-300 transition-colors duration-300">
+                <h3 className="text-lg font-bold mb-4 leading-tight text-white">
                     {award.namaPenghargaan}
                 </h3>
 
-                {/* Organizer */}
-                <p className="text-sm text-gray-400 mb-6 leading-relaxed">
+                <p className="text-sm text-gray-300 mb-6 leading-relaxed">
                     {award.penyelenggara}
                 </p>
-
-                {/* Footer */}
-                <div className="flex items-center justify-between pt-4 border-t border-gray-800 group-hover:border-gray-600 transition-colors duration-300">
+                <div className="flex items-center justify-between pt-4 border-t border-gray-300 transition-colors duration-300">
                     <div className="flex items-center space-x-2">
                         <div className="flex space-x-1">
                             {[...Array(3)].map((_, i) => (
                                 <div
                                     key={i}
                                     className={`w-1.5 h-1.5 border ${i < getAchievementLevel(index)
-                                            ? 'bg-white border-white'
-                                            : 'border-gray-600'
-                                        } group-hover:border-gray-400 transition-all duration-300`}
+                                        ? 'bg-white border-white'
+                                        : 'border-white'
+                                        } group-hover:border-white transition-all duration-300`}
                                 ></div>
                             ))}
                         </div>
-                        <span className="text-xs text-gray-500 font-mono">
+                        <span className="text-xs text-gray-200 font-mono">
                             TIER {getAchievementLevel(index)}
                         </span>
                     </div>
 
-                    {/* Year Badge */}
-                    <div className="text-xs font-mono px-2 py-1 border border-gray-600 group-hover:border-white group-hover:bg-white group-hover:text-black transition-all duration-300">
+                    <div className="text-xs font-mono px-2 py-1 bg-white text-black transition-all duration-300">
                         {award.tahun}
                     </div>
                 </div>
@@ -171,9 +153,7 @@ function StatBox({ number, label }: { number: number; label: string }) {
     );
 }
 
-// Helper function to determine achievement level
 function getAchievementLevel(index: number): number {
-    // Simple logic based on index, you can customize this
     if (index % 3 === 0) return 3;
     if (index % 2 === 0) return 2;
     return 1;

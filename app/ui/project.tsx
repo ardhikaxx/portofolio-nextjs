@@ -6,15 +6,6 @@ import { HiArrowUpRight } from 'react-icons/hi2';
 export default function Project() {
     return (
         <section className="min-h-screen bg-black py-16 px-6">
-            {/* <div className="max-w-lg mx-auto text-center mb-10">
-                <h1 className="text-2xl md:text-4xl font-extrabold text-white font-mono cursor-target">
-                    PROJECTS
-                </h1>
-                <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mt-6">
-                    Exploring the intersection of technology and healthcare through innovative digital solutions
-                </p>
-            </div> */}
-
             <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-16">
                 {projects.map((project) => (
                     <ProjectCard key={project.id} project={project} />
