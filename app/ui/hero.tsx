@@ -101,10 +101,11 @@ export default function Hero() {
                         A Junior Web & Mobile Developer developing efficient and impactful digital systems
                     </p>
                 </div>
-                <div className="flex flex-col lg:flex-row gap-3">
+                {/* Container tombol yang diperbarui */}
+                <div className="w-full max-w-md lg:max-w-none flex flex-col lg:flex-row gap-3 justify-center items-center">
                     <Link 
                         href={'/about'} 
-                        className="group bg-white px-6 py-3 text-black rounded-full font-bold cursor-target text-center hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300 ease-in-out font-mono flex items-center justify-center hover:shadow-lg hover:shadow-white/20 hover:-translate-y-1 relative overflow-hidden"
+                        className="w-full lg:w-auto group bg-white px-6 py-3 text-black rounded-full font-bold cursor-target text-center hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300 ease-in-out font-mono flex items-center justify-center hover:shadow-lg hover:shadow-white/20 hover:-translate-y-1 relative overflow-hidden"
                     >
                         <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/20 to-transparent" />
                         
@@ -113,7 +114,7 @@ export default function Hero() {
                     </Link>
                     <button 
                         onClick={handleDownloadCV} 
-                        className="group bg-white/10 backdrop-blur-lg text-white px-6 py-3 border-2 border-white rounded-full font-bold cursor-target text-center hover:bg-white hover:text-black transition-all duration-300 ease-in-out font-mono flex items-center justify-center hover:shadow-lg hover:shadow-white/20 hover:-translate-y-1 relative overflow-hidden"
+                        className="w-full lg:w-auto group bg-white/10 backdrop-blur-lg text-white px-6 py-3 border-2 border-white rounded-full font-bold cursor-target text-center hover:bg-white hover:text-black transition-all duration-300 ease-in-out font-mono flex items-center justify-center hover:shadow-lg hover:shadow-white/20 hover:-translate-y-1 relative overflow-hidden"
                     >
                         <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/20 to-transparent" />
                         
