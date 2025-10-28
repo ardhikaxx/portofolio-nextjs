@@ -62,7 +62,7 @@ const NavBottom = () => {
                                 >
                                     <Icon className={`w-5 h-5 ${active ? 'scale-110' : ''} transition-transform duration-300 me-0 lg:me-1`} />
 
-                                    <span className="hidden md:inline-block text-sm font-medium whitespace-nowrap font-nokia">
+                                    <span className="hidden md:inline-block text-sm font-bold whitespace-nowrap font-mono">
                                         {item.name}
                                     </span>
                                 </button>

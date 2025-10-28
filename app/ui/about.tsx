@@ -9,7 +9,7 @@ export default function About() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, ease: "linear" }}
-                className="relative w-full max-w-4xl bg-white/10 backdrop-blur-lg border rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl transition-all duration-700 group"
+                className="relative w-full max-w-4xl bg-white/10 backdrop-blur-lg border rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl transition-all duration-700 group mb-16"
             >
                 <div className="absolute inset-0 rounded-3xl bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-size-[20px_20px] mask-[radial-gradient(ellipse_80%_50%_at_50%_50%,black_70%,transparent_100%)]"></div>
 
@@ -32,7 +32,7 @@ export default function About() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3 }}
-                        className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4 text-white cursor-target font-nokia px-2"
+                        className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4 text-white cursor-target font-mono px-2"
                     >
                         Yanuar Ardhika Rahmadhani Ubaidillah
                     </motion.h1>
@@ -58,9 +58,9 @@ export default function About() {
                         transition={{ delay: 0.9 }}
                         className="w-full border-t border-gray-800/50 pt-3 sm:pt-4 mt-2 sm:mt-auto"
                     >
-                        <div className="flex flex-row justify-between items-center gap-2 sm:gap-0 text-xs">
+                        <div className="flex flex-col lg:flex-row justify-between items-center gap-2 sm:gap-0 text-xs">
                             <div className="text-gray-500 text-center sm:text-left cursor-target">
-                                <p>Status: <span className="text-white font-semibold">Developer Mumet.in</span></p>
+                                <p>Status: <span className="text-white font-semibold">Junior Developer</span></p>
                             </div>
                             <div className="text-gray-500 flex items-center gap-1 cursor-target">
                                 <p>Role: <span className="text-white font-semibold">Web & Mobile Developer</span></p>

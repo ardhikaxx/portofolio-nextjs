@@ -6,14 +6,14 @@ import { HiArrowUpRight } from 'react-icons/hi2';
 export default function Project() {
     return (
         <section className="min-h-screen bg-black py-16 px-6">
-            <div className="max-w-lg mx-auto text-center mb-10">
-                <h1 className="text-2xl md:text-4xl font-extrabold text-white font-nokia cursor-target">
+            {/* <div className="max-w-lg mx-auto text-center mb-10">
+                <h1 className="text-2xl md:text-4xl font-extrabold text-white font-mono cursor-target">
                     PROJECTS
                 </h1>
                 <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mt-6">
                     Exploring the intersection of technology and healthcare through innovative digital solutions
                 </p>
-            </div>
+            </div> */}
 
             <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-16">
                 {projects.map((project) => (
@@ -47,7 +47,7 @@ function ProjectCard({ project }: ProjectCardProps) {
     return (
         <div className="bg-white/10 backdrop-blur-lg rounded-3xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
             <div className="p-6 pb-0">
-                <h3 className="text-lg font-bold text-white font-nokia cursor-target">{project.name}</h3>
+                <h3 className="text-lg font-bold text-white font-mono cursor-target">{project.name}</h3>
                 <p className="text-gray-300 text-sm mt-1 line-clamp-2">{project.description}</p>
             </div>
 

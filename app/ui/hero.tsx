@@ -82,7 +82,7 @@ export default function Hero() {
                 <div className="max-w-9xl cursor-target">
                     <SplitText
                         text="</Hello, I'm Yanuar Ardhika>"
-                        className="text-3xl md:text-6xl font-extrabold text-white font-nokia"
+                        className="text-3xl md:text-6xl font-extrabold text-white font-mono"
                         delay={100}
                         duration={0.6}
                         ease="power3.out"
@@ -97,14 +97,14 @@ export default function Hero() {
                     />
                 </div>
                 <div className="cursor-target mb-2">
-                    <p className="max-w-md text-lg md:text-2xl text-shadow-white font-bold">
+                    <p className="max-w-md text-lg md:text-2xl text-shadow-white font-bold font-mono">
                         A Junior Web & Mobile Developer
                     </p>
                 </div>
                 <div className="flex flex-col lg:flex-row gap-3">
                     <Link 
                         href={'/about'} 
-                        className="group bg-white px-6 py-3 text-black rounded-full font-bold cursor-target text-center hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300 ease-in-out font-nokia flex items-center justify-center hover:shadow-lg hover:shadow-white/20 hover:-translate-y-1 relative overflow-hidden"
+                        className="group bg-white px-6 py-3 text-black rounded-full font-bold cursor-target text-center hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300 ease-in-out font-mono flex items-center justify-center hover:shadow-lg hover:shadow-white/20 hover:-translate-y-1 relative overflow-hidden"
                     >
                         <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/20 to-transparent" />
                         
@@ -113,7 +113,7 @@ export default function Hero() {
                     </Link>
                     <button 
                         onClick={handleDownloadCV} 
-                        className="group bg-white/10 backdrop-blur-lg text-white px-6 py-3 border-2 border-white rounded-full font-bold cursor-target text-center hover:bg-white hover:text-black transition-all duration-300 ease-in-out font-nokia flex items-center justify-center hover:shadow-lg hover:shadow-white/20 hover:-translate-y-1 relative overflow-hidden"
+                        className="group bg-white/10 backdrop-blur-lg text-white px-6 py-3 border-2 border-white rounded-full font-bold cursor-target text-center hover:bg-white hover:text-black transition-all duration-300 ease-in-out font-mono flex items-center justify-center hover:shadow-lg hover:shadow-white/20 hover:-translate-y-1 relative overflow-hidden"
                     >
                         <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/20 to-transparent" />
                         
