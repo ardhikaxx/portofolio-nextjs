@@ -39,7 +39,7 @@ export default function Hero() {
         const handleResize = () => {
             if (window.innerWidth >= 768) {
                 setStickerSize(240);
-                setStickerPosition({ x: 20, y: -200 });
+                setStickerPosition({ x: 20, y: -225 });
             } else {
                 setStickerSize(150);
                 setStickerPosition({ x: 10, y: -200 });
@@ -82,7 +82,7 @@ export default function Hero() {
                 <div className="max-w-9xl cursor-target">
                     <SplitText
                         text="</Hello, I'm Yanuar Ardhika>"
-                        className="text-3xl md:text-6xl font-extrabold text-white font-mono"
+                        className="text-3xl md:text-6xl font-black text-white font-mono"
                         delay={100}
                         duration={0.6}
                         ease="power3.out"
@@ -97,8 +97,8 @@ export default function Hero() {
                     />
                 </div>
                 <div className="cursor-target mb-2">
-                    <p className="max-w-md text-lg md:text-2xl text-shadow-white font-bold font-mono">
-                        A Junior Web & Mobile Developer
+                    <p className="max-w-2xl text-lg md:text-2xl text-shadow-white font-medium font-mono">
+                        A Junior Web & Mobile Developer developing efficient and impactful digital systems
                     </p>
                 </div>
                 <div className="flex flex-col lg:flex-row gap-3">
