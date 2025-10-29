@@ -10,7 +10,7 @@ const SocialIcon = ({ href, children }: { href: string; children: React.ReactNod
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-white/10 backdrop-blur-lg border border-white text-white transition-all duration-300 hover:bg-white hover:text-black"
+            className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-white/10 backdrop-blur-lg border border-white text-white transition-all duration-300 hover:bg-white hover:text-black cursor-target"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
         >
