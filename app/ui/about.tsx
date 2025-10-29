@@ -1,11 +1,28 @@
 "use client";
+
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { FaInstagram, FaGithub, FaWhatsapp } from "react-icons/fa";
+
+const SocialIcon = ({ href, children }: { href: string; children: React.ReactNode }) => {
+    return (
+        <motion.a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-white/10 backdrop-blur-lg border border-white text-white transition-all duration-300 hover:bg-white hover:text-black"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+        >
+            {children}
+        </motion.a>
+    );
+};
 
 export default function About() {
     return (
         <section className="flex items-center justify-center min-h-screen bg-black w-full relative overflow-hidden px-4 py-8">
-            <motion.div 
+            <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, ease: "linear" }}
@@ -14,7 +31,7 @@ export default function About() {
                 <div className="absolute inset-0 rounded-3xl bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-size-[20px_20px] mask-[radial-gradient(ellipse_80%_50%_at_50%_50%,black_70%,transparent_100%)]"></div>
 
                 <div className="relative z-10 flex flex-col items-center text-center text-white">
-                    <motion.div 
+                    <motion.div
                         className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 mb-3 group/avatar"
                     >
                         <div className="relative w-full h-full">
@@ -28,7 +45,7 @@ export default function About() {
                         </div>
                     </motion.div>
 
-                    <motion.h1 
+                    <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3 }}
@@ -36,7 +53,7 @@ export default function About() {
                     >
                         Yanuar Ardhika Rahmadhani Ubaidillah
                     </motion.h1>
-                    <motion.p 
+                    <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.5 }}
@@ -44,15 +61,25 @@ export default function About() {
                     >
                         I am an Informatics Engineering student at Politeknik Negeri Jember, passionate about creating digital solutions in website development, mobile applications, and the Internet of Things (IoT). Through various projects, I have honed my skills—not only in building functional applications but also in driving innovation by leveraging the latest advancements in information technology. My experience spans end-to-end software development, encompassing websites, mobile apps, and IoT systems. Dedicated to delivering innovative technological solutions, I strive to create efficient and impactful information systems.
                     </motion.p>
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.7 }}
-                        className="w-full max-w-xs sm:max-w-sm grid grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6"
+                        className="w-full max-w-xs sm:max-w-sm mb-4 sm:mb-6"
                     >
-                        {/* social media dengan bg rounded full instagram, github, email */}
+                        <div className="flex justify-center items-center gap-4 sm:gap-6">
+                            <SocialIcon href="https://www.instagram.com/ardhxkaa_">
+                                <FaInstagram className="w-5 h-5 sm:w-6 sm:h-6" />
+                            </SocialIcon>
+                            <SocialIcon href="https://github.com/ardhikaxx">
+                                <FaGithub className="w-5 h-5 sm:w-6 sm:h-6" />
+                            </SocialIcon>
+                            <SocialIcon href="https://wa.me/6285933648537">
+                                <FaWhatsapp className="w-5 h-5 sm:w-6 sm:h-6" />
+                            </SocialIcon>
+                        </div>
                     </motion.div>
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.9 }}
@@ -67,7 +94,7 @@ export default function About() {
                             </div>
                         </div>
                         <p className="text-center text-gray-600 text-[10px] sm:text-xs mt-2 tracking-wider">
-                        © 2025 YANUAR ARDHIKA
+                            © 2025 YANUAR ARDHIKA
                         </p>
                     </motion.div>
                 </div>
