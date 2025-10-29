@@ -53,14 +53,13 @@ function YearSection({ year, awards }: YearSectionProps) {
                         <div className="w-4 h-4 bg-white transform rotate-45"></div>
                         <div className="absolute inset-0 w-4 h-4 bg-white transform rotate-45 animate-ping opacity-20"></div>
                     </div>
-                    <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-white transition-all duration-500">
+                    <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-white transition-all duration-500 cursor-target">
                         {year}
                     </h2>
                     <div className="h-0.5 bg-white flex-row max-w-24 group-hover:max-w-48 transition-all duration-700"></div>
                 </div>
             </div>
 
-            {/* Awards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {awards.map((award, index) => (
                     <AwardCard
@@ -86,9 +85,9 @@ interface AwardCardProps {
 function AwardCard({ award, index }: AwardCardProps) {
     const getTierColor = (index: number) => {
         const tiers = [
-            'border-white', // Tier 1
-            'border-gray-400', // Tier 2
-            'border-gray-600', // Tier 3
+            'border-white',
+            'border-gray-400',
+            'border-gray-600',
         ];
         return tiers[index % tiers.length];
     };
@@ -105,11 +104,11 @@ function AwardCard({ award, index }: AwardCardProps) {
                     AWARD #{String(index + 1).padStart(2, '0')}
                 </div>
 
-                <h3 className="text-lg font-bold mb-4 leading-tight text-white">
+                <h3 className="text-lg font-bold mb-4 leading-tight text-white cursor-target">
                     {award.namaPenghargaan}
                 </h3>
 
-                <p className="text-sm text-gray-300 mb-6 leading-relaxed">
+                <p className="text-sm text-gray-300 mb-6 leading-relaxed cursor-target">
                     {award.penyelenggara}
                 </p>
                 <div className="flex items-center justify-between pt-4 border-t border-gray-300 transition-colors duration-300">
@@ -130,7 +129,7 @@ function AwardCard({ award, index }: AwardCardProps) {
                         </span>
                     </div>
 
-                    <div className="text-xs font-mono px-2 py-1 bg-white text-black transition-all duration-300">
+                    <div className="text-xs font-mono px-2 py-1 bg-white text-black transition-all duration-300 cursor-target">
                         {award.tahun}
                     </div>
                 </div>
@@ -146,7 +145,6 @@ function StatBox({ number, label }: { number: number; label: string }) {
         <div className="group">
             <div className="text-3xl md:text-4xl font-bold mb-2 relative">
                 {number}
-                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-1000"></div>
             </div>
             <div className="text-sm text-gray-400 tracking-wider">{label}</div>
         </div>
