@@ -2,7 +2,10 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { FaInstagram, FaGithub, FaWhatsapp } from "react-icons/fa";
+import { FaInstagram, FaGithub, FaWhatsapp, FaBriefcase } from "react-icons/fa";
+import { useState } from "react";
+import ExperienceModal from "../components/ExperienceModal";
+import { experiences } from "../data/experience_data";
 
 const SocialIcon = ({ href, children }: { href: string; children: React.ReactNode }) => {
     return (
@@ -20,6 +23,22 @@ const SocialIcon = ({ href, children }: { href: string; children: React.ReactNod
 };
 
 export default function About() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedExperienceIndex, setSelectedExperienceIndex] = useState(0);
+
+    const openExperienceModal = (index: number = 0) => {
+        setSelectedExperienceIndex(index);
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
+    const navigateToExperience = (index: number) => {
+        setSelectedExperienceIndex(index);
+    };
+
     return (
         <section className="flex items-center justify-center min-h-screen bg-black w-full relative overflow-hidden px-4 py-8">
             <motion.div
@@ -61,6 +80,24 @@ export default function About() {
                     >
                         I am an Informatics Engineering student at Politeknik Negeri Jember, passionate about creating digital solutions in website development, mobile applications, and the Internet of Things (IoT). Through various projects, I have honed my skills—not only in building functional applications but also in driving innovation by leveraging the latest advancements in information technology. My experience spans end-to-end software development, encompassing websites, mobile apps, and IoT systems. Dedicated to delivering innovative technological solutions, I strive to create efficient and impactful information systems.
                     </motion.p>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.6 }}
+                        className="mb-4 sm:mb-6"
+                    >
+                        <motion.button
+                            onClick={() => openExperienceModal(0)}
+                            className="flex items-center gap-3 px-6 py-3 bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl text-white font-medium transition-all duration-300 hover:bg-white/20 hover:border-white/40 group/btn cursor-target"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            <FaBriefcase className="w-5 h-5 group-hover/btn:scale-110 transition-transform duration-300" />
+                            <span className="text-sm sm:text-base">View Experience</span>
+                        </motion.button>
+                    </motion.div>
+
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -103,6 +140,14 @@ export default function About() {
                 <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 w-4 h-4 border-b-3 border-l-3 border-white"></div>
                 <div className="absolute bottom-3 sm:bottom-4 right-3 sm:right-4 w-4 h-4 border-b-3 border-r-3 border-white"></div>
             </motion.div>
+
+            <ExperienceModal 
+                isOpen={isModalOpen}
+                onClose={closeModal}
+                experiences={experiences}
+                currentIndex={selectedExperienceIndex}
+                onNavigate={navigateToExperience}
+            />
         </section>
     );
 }
