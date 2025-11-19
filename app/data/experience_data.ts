@@ -14,7 +14,7 @@ export const experiences: Experience[] = [
     {
         id: "1",
         company: "PT. Wesclic Indonesia Neotech",
-        location: "Kabupaten Bantul, Daerah Istimewa Yogyakarta 55182",
+        location: "Ngestiharjo, Kec. Kasihan, Kabupaten Bantul, Daerah Istimewa Yogyakarta 55182",
         role: "Full-Stack Web Developer",
         period: "Agustus 2025 - Desember 2025",
         description: "Magang sebagai Full-Stack Web Developer perusahaan yang bergerak dibidang Teknologi Informasi dengan layanan perencanaan, pembuatan, pengembangan, perbaikan serta perawatan infrastruktur IT.",
