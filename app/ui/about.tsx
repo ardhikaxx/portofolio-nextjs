@@ -13,7 +13,7 @@ const SocialIcon = ({ href, children }: { href: string; children: React.ReactNod
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-white/10 backdrop-blur-lg border border-white text-white transition-all duration-300 hover:bg-white hover:text-black cursor-target"
+            className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-white/10 backdrop-blur-lg border border-white text-white transition-all duration-300 hover:bg-white hover:text-black"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
         >
@@ -58,7 +58,7 @@ export default function About() {
                                 src="/img/photo.png"
                                 alt="Holographic Avatar"
                                 fill
-                                className="object-cover rounded-full p-1 sm:p-2 mix-blend-lighten cursor-target"
+                                className="object-cover rounded-full p-1 sm:p-2 mix-blend-lighten"
                                 priority
                             />
                         </div>
@@ -68,7 +68,7 @@ export default function About() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3 }}
-                        className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4 text-white cursor-target font-mono px-2"
+                        className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4 text-white font-mono px-2"
                     >
                         Yanuar Ardhika Rahmadhani Ubaidillah
                     </motion.h1>
@@ -76,7 +76,7 @@ export default function About() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.5 }}
-                        className="text-gray-300 text-xs sm:text-sm leading-5 sm:leading-6 mb-4 sm:mb-6 max-w-2xl font-light tracking-wide cursor-target px-2 sm:px-7"
+                        className="text-gray-300 text-xs sm:text-sm leading-5 sm:leading-6 mb-4 sm:mb-6 max-w-2xl font-light tracking-wide px-2 sm:px-7"
                     >
                         I am an Informatics Engineering student at Politeknik Negeri Jember, passionate about creating digital solutions in website development, mobile applications, and the Internet of Things (IoT). Through various projects, I have honed my skills—not only in building functional applications but also in driving innovation by leveraging the latest advancements in information technology. My experience spans end-to-end software development, encompassing websites, mobile apps, and IoT systems. Dedicated to delivering innovative technological solutions, I strive to create efficient and impactful information systems.
                     </motion.p>
@@ -89,7 +89,7 @@ export default function About() {
                     >
                         <motion.button
                             onClick={() => openExperienceModal(0)}
-                            className="flex items-center gap-3 px-6 py-3 bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl text-white font-medium transition-all duration-300 hover:bg-white/20 hover:border-white/40 group/btn cursor-target"
+                            className="flex items-center gap-3 px-6 py-3 bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl text-white font-medium transition-all duration-300 hover:bg-white/20 hover:border-white/40 group/btn"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
@@ -123,10 +123,10 @@ export default function About() {
                         className="w-full border-t border-gray-800/50 pt-3 sm:pt-4 mt-2 sm:mt-auto"
                     >
                         <div className="flex flex-col lg:flex-row justify-between items-center gap-2 sm:gap-0 text-xs">
-                            <div className="text-gray-500 text-center sm:text-left cursor-target">
+                            <div className="text-gray-500 text-center sm:text-left">
                                 <p>Status: <span className="text-white font-semibold">Junior Developer</span></p>
                             </div>
-                            <div className="text-gray-500 flex items-center gap-1 cursor-target">
+                            <div className="text-gray-500 flex items-center gap-1">
                                 <p>Role: <span className="text-white font-semibold">Web & Mobile Developer</span></p>
                             </div>
                         </div>

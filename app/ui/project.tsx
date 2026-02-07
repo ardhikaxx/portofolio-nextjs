@@ -38,7 +38,7 @@ function ProjectCard({ project }: ProjectCardProps) {
     return (
         <div className="bg-white/10 backdrop-blur-lg rounded-3xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
             <div className="p-6 pb-0">
-                <h3 className="text-lg font-bold text-white font-mono cursor-target">{project.name}</h3>
+                <h3 className="text-lg font-bold text-white font-mono">{project.name}</h3>
                 <p className="text-gray-300 text-sm mt-1 line-clamp-2">{project.description}</p>
             </div>
 
@@ -49,12 +49,12 @@ function ProjectCard({ project }: ProjectCardProps) {
                     className="w-full max-h-64 object-cover transition-transform duration-500 hover:scale-105"
                 />
 
-                <span className="absolute bottom-3 left-3 text-xs text-white font-semibold bg-black px-2 py-1 rounded-lg shadow-sm font-nokia cursor-target">
+                <span className="absolute bottom-3 left-3 text-xs text-white font-semibold bg-black px-2 py-1 rounded-lg shadow-sm font-nokia">
                     {project.year}
                 </span>
                 <button
                     onClick={handleClick}
-                    className="absolute bottom-3 right-3 bg-black rounded-full p-3 shadow-md cursor-target"
+                    className="absolute bottom-3 right-3 bg-black rounded-full p-3 shadow-md"
                 >
                     <HiArrowUpRight className="w-5 h-5 text-white" />
                 </button>

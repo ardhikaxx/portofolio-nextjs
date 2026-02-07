@@ -53,7 +53,7 @@ function YearSection({ year, awards }: YearSectionProps) {
                         <div className="w-4 h-4 bg-white transform rotate-45"></div>
                         <div className="absolute inset-0 w-4 h-4 bg-white transform rotate-45 animate-ping opacity-20"></div>
                     </div>
-                    <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-white transition-all duration-500 cursor-target">
+                    <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-white transition-all duration-500">
                         {year}
                     </h2>
                     <div className="h-0.5 bg-white flex-row max-w-24 group-hover:max-w-48 transition-all duration-700"></div>
@@ -104,11 +104,11 @@ function AwardCard({ award, index }: AwardCardProps) {
                     AWARD #{String(index + 1).padStart(2, '0')}
                 </div>
 
-                <h3 className="text-lg font-bold mb-4 leading-tight text-white cursor-target">
+                <h3 className="text-lg font-bold mb-4 leading-tight text-white">
                     {award.namaPenghargaan}
                 </h3>
 
-                <p className="text-sm text-gray-300 mb-6 leading-relaxed cursor-target">
+                <p className="text-sm text-gray-300 mb-6 leading-relaxed">
                     {award.penyelenggara}
                 </p>
                 <div className="flex items-center justify-between pt-4 border-t border-gray-300 transition-colors duration-300">
@@ -129,7 +129,7 @@ function AwardCard({ award, index }: AwardCardProps) {
                         </span>
                     </div>
 
-                    <div className="text-xs font-mono px-2 py-1 bg-white text-black transition-all duration-300 cursor-target">
+                    <div className="text-xs font-mono px-2 py-1 bg-white text-black transition-all duration-300">
                         {award.tahun}
                     </div>
                 </div>

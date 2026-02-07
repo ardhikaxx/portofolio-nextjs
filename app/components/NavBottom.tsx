@@ -53,7 +53,7 @@ const NavBottom = () => {
                                     onMouseEnter={() => setHoveredItem(item.name)}
                                     onMouseLeave={() => setHoveredItem(null)}
                                     className={`
-                    flex items-center justify-center gap-2 px-4 py-3 rounded-full transition-all duration-300 cursor-target
+                    flex items-center justify-center gap-2 px-4 py-3 rounded-full transition-all duration-300
                     ${active
                                             ? 'bg-white/20 text-white'
                                             : 'text-white/70 hover:text-white hover:bg-white/10'

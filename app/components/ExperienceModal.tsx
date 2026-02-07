@@ -55,7 +55,7 @@ export default function ExperienceModal({
 
                             <button
                                 onClick={onClose}
-                                className="absolute top-4 right-4 z-30 w-8 h-8 flex items-center justify-center bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg text-white hover:bg-white/20 transition-all duration-300 cursor-target"
+                                className="absolute top-4 right-4 z-30 w-8 h-8 flex items-center justify-center bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg text-white hover:bg-white/20 transition-all duration-300"
                             >
                                 <FaTimes className="w-4 h-4" />
                             </button>
@@ -85,7 +85,7 @@ export default function ExperienceModal({
                                                 key={`company-${currentExperience.id}`}
                                                 initial={{ opacity: 0, y: 10 }}
                                                 animate={{ opacity: 1, y: 0 }}
-                                                className="text-2xl sm:text-3xl font-bold mb-2 text-white cursor-target"
+                                                className="text-2xl sm:text-3xl font-bold mb-2 text-white"
                                             >
                                                 {currentExperience.company}
                                             </motion.h2>
@@ -125,7 +125,7 @@ export default function ExperienceModal({
                                     key={`desc-${currentExperience.id}`}
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
-                                    className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6 text-center cursor-target"
+                                    className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6 text-center"
                                 >
                                     {currentExperience.description}
                                 </motion.p>
@@ -144,7 +144,7 @@ export default function ExperienceModal({
                                             {currentExperience.technologies.map((tech, index) => (
                                                 <span
                                                     key={index}
-                                                    className="px-3 py-1 bg-white/10 backdrop-blur-lg border border-white/20 rounded-full text-xs sm:text-sm text-white hover:bg-white/20 transition-all duration-300 cursor-target"
+                                                    className="px-3 py-1 bg-white/10 backdrop-blur-lg border border-white/20 rounded-full text-xs sm:text-sm text-white hover:bg-white/20 transition-all duration-300"
                                                 >
                                                     {tech}
                                                 </span>
@@ -162,7 +162,7 @@ export default function ExperienceModal({
                                         </div>
                                         <ul className="space-y-2">
                                             {currentExperience.responsibilities.map((responsibility, index) => (
-                                                <li key={index} className="flex items-start gap-2 text-sm text-gray-300 cursor-target">
+                                                <li key={index} className="flex items-start gap-2 text-sm text-gray-300">
                                                     <span className="w-1.5 h-1.5 bg-white rounded-full mt-2 shrink-0"></span>
                                                     <span>{responsibility}</span>
                                                 </li>
