@@ -1,53 +1,53 @@
-Yanuar Ardhika — Personal Portfolio
+Yanuar Ardhika - Personal Portfolio
 ===================================
 
-This project is a Next.js (App Router) portfolio for Yanuar Ardhika. The site highlights
-key sections such as hero, projects, awards, and experience, with immersive visuals powered
-by Three.js, GSAP, and modern layout/styling tools. It is designed for fast Lighthouse scores
-and deploys on Vercel.
+This is a Next.js (App Router) portfolio for modern front-end work. The site highlights
+hero, projects, awards, and experiences with immersive visuals powered by Three.js,
+GSAP, and Tailwind-style utilities, while keeping Lighthouse scores high for both
+mobile and desktop.
 
 Features
 --------
-- Hero shot with layered motion/lighting built around `StickerPeel`, `Dither`, and a
-  typographic headline.
-- Experience modal with animated details and technology / responsibility lists.
-- Project and awards grids that use modern Tailwind-inspired styling, cards, and typography.
-- Responsive navigation pill that appears on every top‑level page.
-- Performance guards (lazy-load heavy effects, prefer server components, disable unused cursors).
+- Hero composition that pairs a typographic headline with layered lighting and texture.
+- Experience modal detailing roles, periods, technologies, and responsibilities.
+- Projects and awards grids styled with glassmorphism, gradients, and responsive typography.
+- A floating navigation pill that stays on every route without heavy client-side logic.
+- Performance guards: lazy-load heavy effects, keep the hero split into server/client parts,
+  and avoid cursor helpers in production.
 
 Tech stack
 ----------
-- `next@16.0.10` + Turbopack for native performance and Fast Refresh.
+- `next@16.0.10` + Turbopack for optimized builds and Fast Refresh.
 - `react@19.2.1`, `three@0.180.0`, `@react-three/fiber`, `gsap`, `framer-motion`.
-- Tailwind-esque utility classes in plain CSS with gradients, blur, and drop shadows.
-- `react-icons`, `react-toastify` (criteria-driven), `StickerPeel`/`SplitText` custom helpers.
+- Tailwind-inspired CSS with gradients, blur, and drop shadows defined in `app/globals.css`.
+- `react-icons`, `react-toastify`, and custom helpers like `StickerPeel` + `SplitText`.
 
 Getting started
 ---------------
 
 ```bash
-npm install        # install deps
-npm run dev        # start local dev server on http://localhost:3000
+npm install
+npm run dev      # http://localhost:3000
 ```
 
-- `npm run build` creates a production build (Next.js/Turbopack).
-- `npm run lint` runs ESLint with Next.js rules.
+- `npm run build` produces the production build.
+- `npm run lint` runs ESLint with the Next.js config.
 
 Deployment
 ----------
 
-- Deployed on Vercel (default `app/` entry point). Disable React DevTools extension if
-  you hit `Invalid argument not valid semver` during local development.
-- Update the `next` dependency when Vercel warns about security patches.
+- Deploys on Vercel by default — the `app/` directory is the entry point.
+- Remove or disable the Chrome React DevTools extension if you see ``Invalid argument not valid semver`` locally.
+- Keep `next` dependency patched when Vercel warns about CVE updates.
 
 Structure notes
 ---------------
 
-- `app/ui/hero.tsx` + `app/ui/hero-effects.tsx` split static content vs client-heavy effects.
-- `app/components/NavBottom.tsx` expects a `currentPath` prop so it stays a server component.
-- Data under `app/data/` drives projects/awards, keep strings concise for Lighthouse.
+- `app/ui/hero.tsx` remains a server component while the heavy effects live in `app/ui/hero-effects.tsx`.
+- `app/components/NavBottom.tsx` takes a `currentPath` prop so it can stay server-rendered.
+- Content/data for projects and awards lives under `app/data/` and is intentionally concise to keep Lighthouse happy.
 
 Contact
 -------
 
-Email: `ardhikaxx@example.com` (swap for actual) or use the social links on the About page.
+Email: `ardhikaxx@example.com` (replace with the real address) or use the social links in the About section.
