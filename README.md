@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Yanuar Ardhika — Personal Portfolio
+===================================
 
-## Getting Started
+This project is a Next.js (App Router) portfolio for Yanuar Ardhika. The site highlights
+key sections such as hero, projects, awards, and experience, with immersive visuals powered
+by Three.js, GSAP, and modern layout/styling tools. It is designed for fast Lighthouse scores
+and deploys on Vercel.
 
-First, run the development server:
+Features
+--------
+- Hero shot with layered motion/lighting built around `StickerPeel`, `Dither`, and a
+  typographic headline.
+- Experience modal with animated details and technology / responsibility lists.
+- Project and awards grids that use modern Tailwind-inspired styling, cards, and typography.
+- Responsive navigation pill that appears on every top‑level page.
+- Performance guards (lazy-load heavy effects, prefer server components, disable unused cursors).
+
+Tech stack
+----------
+- `next@16.0.10` + Turbopack for native performance and Fast Refresh.
+- `react@19.2.1`, `three@0.180.0`, `@react-three/fiber`, `gsap`, `framer-motion`.
+- Tailwind-esque utility classes in plain CSS with gradients, blur, and drop shadows.
+- `react-icons`, `react-toastify` (criteria-driven), `StickerPeel`/`SplitText` custom helpers.
+
+Getting started
+---------------
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install        # install deps
+npm run dev        # start local dev server on http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- `npm run build` creates a production build (Next.js/Turbopack).
+- `npm run lint` runs ESLint with Next.js rules.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Deployment
+----------
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Deployed on Vercel (default `app/` entry point). Disable React DevTools extension if
+  you hit `Invalid argument not valid semver` during local development.
+- Update the `next` dependency when Vercel warns about security patches.
 
-## Learn More
+Structure notes
+---------------
 
-To learn more about Next.js, take a look at the following resources:
+- `app/ui/hero.tsx` + `app/ui/hero-effects.tsx` split static content vs client-heavy effects.
+- `app/components/NavBottom.tsx` expects a `currentPath` prop so it stays a server component.
+- Data under `app/data/` drives projects/awards, keep strings concise for Lighthouse.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Contact
+-------
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Email: `ardhikaxx@example.com` (swap for actual) or use the social links on the About page.
