@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "postinstall": "patch-package"
+    "lint": "eslint"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
@@ -32,7 +31,6 @@
     "@types/three": "^0.180.0",
     "eslint": "^9",
     "eslint-config-next": "16.0.0",
-    "patch-package": "^8.0.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

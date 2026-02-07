@@ -5,7 +5,7 @@ export default function AwardsPage() {
     return (
         <main className="min-h-screen bg-linear-to-br from-yellow-900 to-red-900">
             <Awards />
-            <NavBottom />
+            <NavBottom currentPath="/awards" />
         </main>
     );
 }

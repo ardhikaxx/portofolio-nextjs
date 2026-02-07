@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { HiDocument, HiUser } from 'react-icons/hi2';
 import HeroEffects from './hero-effects';
-import NavBottomClient from './nav-bottom-client';
+import NavBottom from '../components/NavBottom';
 
 export default function Hero() {
   return (
@@ -39,7 +39,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <NavBottomClient />
+      <NavBottom currentPath="/" />
     </section>
   );
 }
