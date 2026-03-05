@@ -44,7 +44,7 @@ function ProjectCard({ project, priority }: ProjectCardProps) {
                 <p className="text-gray-300 text-sm mt-1 line-clamp-2">{project.description}</p>
             </div>
 
-            <div className="relative mt-4 mb-5 mx-6 rounded-2xl overflow-hidden">
+            <div className="relative mt-4 mb-5 mx-6 rounded-2xl overflow-hidden h-64">
                 <Image
                     src={project.image}
                     alt={project.name}
@@ -52,7 +52,6 @@ function ProjectCard({ project, priority }: ProjectCardProps) {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover transition-transform duration-500 hover:scale-105"
                     priority={priority}
-                    loading={priority ? "eager" : "lazy"}
                 />
 
                 <span className="absolute bottom-3 left-3 text-xs text-white font-semibold bg-black px-2 py-1 rounded-lg shadow-sm font-nokia">
