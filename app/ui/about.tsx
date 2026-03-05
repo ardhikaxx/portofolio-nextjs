@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaInstagram, FaGithub, FaWhatsapp, FaBriefcase } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ExperienceModal from "../components/ExperienceModal";
 import { experiences } from "../data/experience_data";
 
@@ -21,6 +21,273 @@ const SocialIcon = ({ href, children }: { href: string; children: React.ReactNod
         </motion.a>
     );
 };
+
+function generateContributionData() {
+    const weeks: number[][] = [];
+    const today = new Date();
+    
+    for (let i = 52; i >= 0; i--) {
+        const week: number[] = [];
+        for (let j = 0; j < 7; j++) {
+            const date = new Date(today);
+            date.setDate(date.getDate() - (i * 7 + (6 - j)));
+            
+            const random = Math.random();
+            let count = 0;
+            if (random > 0.7) count = Math.floor(Math.random() * 4) + 1;
+            if (random > 0.9) count = Math.floor(Math.random() * 6) + 4;
+            if (random > 0.95) count = Math.floor(Math.random() * 10) + 10;
+            
+            if (date.getTime() > today.getTime()) {
+                count = -1;
+            }
+            
+            week.push(count);
+        }
+        weeks.push(week);
+    }
+    
+    return weeks;
+}
+
+interface ContributionDay {
+    date: string;
+    count: number;
+    level: number;
+}
+
+interface YearData {
+    year: number;
+    contributions: ContributionDay[];
+}
+
+function ContributionGraph() {
+    const [allYearData, setAllYearData] = useState<YearData[]>([]);
+    const [selectedYear, setSelectedYear] = useState<number | null>(null);
+    const [contributionData, setContributionData] = useState<number[][]>([]);
+    const [totalContributions, setTotalContributions] = useState(0);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchContributions = async () => {
+            try {
+                const response = await fetch('https://github-contributions-api.jogruber.de/v4/ardhikaxx');
+                const data = await response.json();
+                
+                const contributions = data.contributions || [];
+                const totalByYear = data.total || {};
+                
+                const years = Object.keys(totalByYear).map(Number).sort((a, b) => b - a);
+                setAllYearData(years.map(year => ({
+                    year,
+                    contributions: contributions.filter((c: ContributionDay) => c.date.startsWith(year.toString()))
+                })));
+                
+                setSelectedYear(years[0]);
+                setLoading(false);
+            } catch (error) {
+                console.error('Error fetching contributions:', error);
+                setAllYearData([{ year: new Date().getFullYear(), contributions: [] }]);
+                setSelectedYear(new Date().getFullYear());
+                setLoading(false);
+            }
+        };
+
+        fetchContributions();
+    }, []);
+
+    useEffect(() => {
+        if (!selectedYear || allYearData.length === 0) return;
+
+        const yearData = allYearData.find(y => y.year === selectedYear);
+        if (!yearData) return;
+
+        const contributions = yearData.contributions;
+        const weeks: number[][] = [];
+        
+        let total = 0;
+        const startDate = new Date(`${selectedYear}-01-01`);
+        const endDate = new Date(`${selectedYear}-12-31`);
+        
+        let currentWeek: number[] = [];
+        const startDayOfWeek = startDate.getDay();
+        
+        for (let i = 0; i < startDayOfWeek; i++) {
+            currentWeek.push(-1);
+        }
+        
+        const dayMap = new Map<string, number>();
+        contributions.forEach((day: ContributionDay) => {
+            dayMap.set(day.date, day.count);
+        });
+        
+        for (let d = new Date(startDate); d <= endDate; d.setDate(d.getDate() + 1)) {
+            const dateStr = d.toISOString().split('T')[0];
+            const dayOfWeek = d.getDay();
+            const count = dayMap.get(dateStr) || 0;
+            
+            while (currentWeek.length < dayOfWeek) {
+                currentWeek.push(-1);
+            }
+            
+            currentWeek.push(count);
+            total += count;
+            
+            if (dayOfWeek === 6) {
+                while (currentWeek.length < 7) {
+                    currentWeek.push(-1);
+                }
+                weeks.push(currentWeek);
+                currentWeek = [];
+            }
+        }
+        
+        if (currentWeek.length > 0) {
+            while (currentWeek.length < 7) {
+                currentWeek.push(-1);
+            }
+            weeks.push(currentWeek);
+        }
+        
+        while (weeks.length < 53) {
+            weeks.unshift([-1, -1, -1, -1, -1, -1, -1]);
+        }
+        
+        setContributionData(weeks.slice(0, 53));
+        setTotalContributions(total);
+    }, [selectedYear, allYearData]);
+
+    const getColor = (count: number) => {
+        if (count === -1) return "bg-transparent";
+        if (count === 0) return "bg-gray-800";
+        if (count <= 3) return "bg-gray-600";
+        if (count <= 6) return "bg-gray-500";
+        if (count <= 9) return "bg-gray-400";
+        if (count <= 15) return "bg-gray-300";
+        return "bg-white";
+    };
+
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const monthLabels: { month: string; index: number }[] = [];
+    
+    if (contributionData.length > 0) {
+        let lastMonth = -1;
+        contributionData.forEach((week, i) => {
+            const validDay = week.find(d => d !== -1);
+            if (validDay !== undefined) {
+                const weekDate = new Date(selectedYear!);
+                weekDate.setMonth(Math.floor((i / 4.33)));
+                const month = weekDate.getMonth();
+                if (month !== lastMonth) {
+                    monthLabels.push({ month: months[month], index: i });
+                    lastMonth = month;
+                }
+            }
+        });
+    }
+
+    if (loading) {
+        return (
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 }}
+                className="w-full mt-6"
+            >
+                <div className="flex justify-between items-center mb-3">
+                    <h3 className="text-white font-semibold text-sm">GitHub Contributions</h3>
+                    <span className="text-white/60 text-sm font-mono">Loading...</span>
+                </div>
+                <div className="h-20 bg-white/5 rounded-lg animate-pulse"></div>
+            </motion.div>
+        );
+    }
+
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8 }}
+            className="w-full mt-6"
+        >
+            <div className="flex justify-between items-center mb-3">
+                <div className="flex items-center gap-3">
+                    <h3 className="text-white font-semibold text-sm">GitHub Contributions</h3>
+                    {allYearData.length > 0 && (
+                        <select
+                            value={selectedYear || ''}
+                            onChange={(e) => setSelectedYear(Number(e.target.value))}
+                            className="bg-white/10 border border-white/20 text-white text-xs rounded-lg px-2 py-1 cursor-pointer outline-none hover:bg-white/20 transition-colors"
+                        >
+                            {allYearData.map((yearData) => (
+                                <option key={yearData.year} value={yearData.year} className="bg-gray-900">
+                                    {yearData.year}
+                                </option>
+                            ))}
+                        </select>
+                    )}
+                </div>
+                <span className="text-white/60 text-sm font-mono">{totalContributions} contributions</span>
+            </div>
+            
+            <div className="overflow-x-auto pb-2">
+                <div className="inline-flex flex-col gap-1">
+                    <div className="flex">
+                        <div className="w-8"></div>
+                        <div className="flex">
+                            {monthLabels.map((item, i) => (
+                                <div 
+                                    key={i} 
+                                    className="text-[10px] text-gray-500"
+                                    style={{ width: `${(monthLabels[i + 1]?.index - item.index) * 14}px` }}
+                                >
+                                    {item.month}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    
+                    <div className="flex gap-1">
+                        <div className="flex flex-col gap-1 text-[10px] text-gray-500 pr-1">
+                            <span className="h-3">Mon</span>
+                            <span className="h-3"></span>
+                            <span className="h-3">Wed</span>
+                            <span className="h-3"></span>
+                            <span className="h-3">Fri</span>
+                        </div>
+                        
+                        <div className="flex gap-[3px]">
+                            {contributionData.map((week, weekIndex) => (
+                                <div key={weekIndex} className="flex flex-col gap-[3px]">
+                                    {week.map((day, dayIndex) => (
+                                        <div
+                                            key={dayIndex}
+                                            className={`w-3 h-3 rounded-sm ${getColor(day)} transition-all duration-300 hover:scale-125`}
+                                            title={day >= 0 ? `${day} contributions` : ''}
+                                        />
+                                    ))}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div className="flex items-center justify-end gap-2 mt-2">
+                <span className="text-[10px] text-gray-500">Less</span>
+                <div className="flex gap-[3px]">
+                    <div className="w-3 h-3 rounded-sm bg-gray-800"></div>
+                    <div className="w-3 h-3 rounded-sm bg-gray-600"></div>
+                    <div className="w-3 h-3 rounded-sm bg-gray-500"></div>
+                    <div className="w-3 h-3 rounded-sm bg-gray-400"></div>
+                    <div className="w-3 h-3 rounded-sm bg-gray-300"></div>
+                    <div className="w-3 h-3 rounded-sm bg-white"></div>
+                </div>
+                <span className="text-[10px] text-gray-500">More</span>
+            </div>
+        </motion.div>
+    );
+}
 
 export default function About() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -116,6 +383,9 @@ export default function About() {
                             </SocialIcon>
                         </div>
                     </motion.div>
+
+                    <ContributionGraph />
+
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
