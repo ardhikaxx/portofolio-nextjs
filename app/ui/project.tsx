@@ -40,10 +40,10 @@ function ProjectCard({ project, priority }: ProjectCardProps) {
 
     return (
         <Link href={`/project/${project.id}`} className="block">
-            <div className="bg-white/10 backdrop-blur-lg rounded-3xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 h-full cursor-pointer group">
+            <div className="bg-white/10 backdrop-blur-lg rounded-3xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 h-full cursor-pointer group border border-white/10 hover:border-white/30">
                 <div className="p-6 pb-0">
-                    <h3 className="text-lg font-bold text-white font-mono group-hover:text-cyan-400 transition-colors">{project.name}</h3>
-                    <p className="text-gray-300 text-sm mt-1 line-clamp-2">{project.description}</p>
+                    <h3 className="text-lg font-bold text-white font-mono group-hover:text-gray-200 transition-colors">{project.name}</h3>
+                    <p className="text-gray-400 text-sm mt-1 line-clamp-2 group-hover:text-gray-300 transition-colors">{project.description}</p>
                 </div>
 
                 <div className="relative mt-4 mb-5 mx-6 rounded-2xl overflow-hidden h-64">
@@ -56,12 +56,12 @@ function ProjectCard({ project, priority }: ProjectCardProps) {
                         priority={priority}
                     />
 
-                    <span className="absolute bottom-3 left-3 text-xs text-white font-semibold bg-black px-2 py-1 rounded-lg shadow-sm font-nokia">
+                    <span className="absolute bottom-3 left-3 text-xs text-white font-semibold bg-white/20 backdrop-blur-sm px-2 py-1 rounded-lg shadow-sm font-nokia">
                         {project.year}
                     </span>
                     <button
                         onClick={handleLinkClick}
-                        className="absolute bottom-3 right-3 bg-black rounded-full p-3 shadow-md group-hover:bg-cyan-500 transition-colors"
+                        className="absolute bottom-3 right-3 bg-white/20 backdrop-blur-sm rounded-full p-3 shadow-md group-hover:bg-white/40 transition-colors"
                     >
                         <HiArrowUpRight className="w-5 h-5 text-white" />
                     </button>
