@@ -253,8 +253,8 @@ export const projects = [
   },
   {
     id: 29,
-    name: 'WISATA-WEB - Sistem Pemesanan Tiket & Booking Objek Wisata',
-    description: 'Website sistem pemesanan tiket dan booking objek wisata yang menyediakan fitur lengkap dengan multi-role: Untuk Pengguna/Tamu tersedia halaman landing page dengan daftar tempat wisata, pemesanan tiket masuk dengan upload bukti pembayaran, download e-tiket PDF dengan QR code, riwayat pemesanan, booking penginapan/fasilitas dengan manajemen pembayaran, upload bukti pembayaran, cek status booking, dan profil pengguna. Untuk Admin tersedia dashboard management, manajemen Tiket (CRUD) dan pesanan Tiket (konfirmasi/tolak), manajemen Booking (konfirmasi/tolak), manajemen Admin, cek validitas Tiket dan Booking menggunakan QR code scanner, manajemen rekening bank, dan profil admin. Sistem ini menggunakan autentikasi berbasis role dan menghasilkan QR code untuk setiap e-tiket yang dapat diverifikasi oleh admin.',
+    name: 'Banyu Biru Ticketing & Booking System - Sistem Pemesanan Tiket & Booking Objek Wisata',
+    description: 'Website pemandian air panas banyu biru nganjuk sistem pemesanan tiket dan booking objek wisata yang menyediakan fitur lengkap dengan multi-role: Untuk Pengguna/Tamu tersedia halaman landing page dengan daftar tempat wisata, pemesanan tiket masuk dengan upload bukti pembayaran, download e-tiket PDF dengan QR code, riwayat pemesanan, booking penginapan/fasilitas dengan manajemen pembayaran, upload bukti pembayaran, cek status booking, dan profil pengguna. Untuk Admin tersedia dashboard management, manajemen Tiket (CRUD) dan pesanan Tiket (konfirmasi/tolak), manajemen Booking (konfirmasi/tolak), manajemen Admin, cek validitas Tiket dan Booking menggunakan QR code scanner, manajemen rekening bank, dan profil admin. Sistem ini menggunakan autentikasi berbasis role dan menghasilkan QR code untuk setiap e-tiket yang dapat diverifikasi oleh admin.',
     languages: ['laravel', 'php', 'bootstrap', 'dompdf', 'simple qrcode', 'spatie permission'],
     image: '/projects/29.jpg',
     link: 'https://github.com/ardhikaxx/banyu-biru-nganjuk',
