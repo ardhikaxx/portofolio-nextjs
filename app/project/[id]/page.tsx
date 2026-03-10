@@ -49,7 +49,7 @@ export default function ProjectDetailPage() {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/2 rounded-full blur-[200px]" />
                 
                 {/* Grid Pattern */}
-                <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:100px_100px]" />
+                <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-size-[100px_100px]" />
             </div>
 
             {/* Navigation */}
@@ -92,7 +92,7 @@ export default function ProjectDetailPage() {
                 </div>
 
                 {/* Image Container */}
-                <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden mb-10 border border-white/10 bg-white/5 group">
+                <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-10 border border-white/10 bg-white/5 group">
                     <Image
                         src={project.image}
                         alt={project.name}
@@ -100,7 +100,7 @@ export default function ProjectDetailPage() {
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
                         priority
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
                     
                     {/* Corner Decorations */}
                     <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-white/30 rounded-tl-lg" />
@@ -203,14 +203,14 @@ export default function ProjectDetailPage() {
 
                 {/* Decorative Line */}
                 <div className="flex items-center gap-4 mt-12">
-                    <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                    <div className="h-px flex-1 bg-linear-to-r from-transparent via-white/20 to-transparent" />
                     <div className="flex gap-1">
                         <div className="w-1 h-1 rounded-full bg-white/30" />
                         <div className="w-1 h-1 rounded-full bg-white/50" />
                         <div className="w-1 h-1 rounded-full bg-white/70" />
                         <div className="w-1 h-1 rounded-full bg-white" />
                     </div>
-                    <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                    <div className="h-px flex-1 bg-linear-to-r from-transparent via-white/20 to-transparent" />
                 </div>
             </div>
         </div>
