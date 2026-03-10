@@ -57,12 +57,10 @@ export default function ProjectDetailPage() {
                 <div className="max-w-6xl mx-auto flex items-center justify-between">
                     <Link 
                         href="/project"
-                        className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors font-mono text-sm group"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white/80 hover:text-white hover:bg-white/20 hover:border-white/30 transition-all duration-300 font-mono text-sm group"
                     >
-                        <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
-                            <HiArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
-                        </div>
-                        <span className="hidden sm:inline">BACK TO PROJECTS</span>
+                        <HiArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+                        <span>Back</span>
                     </Link>
                     
                     <div className="flex items-center gap-2 text-white/50 font-mono text-xs">
