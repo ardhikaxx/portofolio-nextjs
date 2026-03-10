@@ -4,7 +4,7 @@ import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { projects } from '../../data/projects_data';
-import { HiArrowLeft, HiLink, HiCalendar, HiCode, HiDesktopComputer, HiChip, HiCube } from 'react-icons/hi';
+import { HiArrowLeft, HiLink, HiCalendar, HiCode, HiChip, HiCube } from 'react-icons/hi';
 import { useEffect, useState } from 'react';
 
 export default function ProjectDetailPage() {
@@ -101,25 +101,6 @@ export default function ProjectDetailPage() {
                         priority
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                    
-                    {/* Image Overlay Info */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 flex items-end justify-between">
-                        <div className="flex items-center gap-4">
-                            <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/10">
-                                <HiDesktopComputer className="w-6 h-6 text-white" />
-                            </div>
-                            <div>
-                                <p className="text-white/60 text-xs font-mono uppercase tracking-wider">Project Type</p>
-                                <p className="text-white font-semibold">Web Application</p>
-                            </div>
-                        </div>
-                        
-                        {/* Recording Indicator */}
-                        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-500/20 border border-red-500/30">
-                            <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                            <span className="text-red-400 text-xs font-mono">LIVE</span>
-                        </div>
-                    </div>
                     
                     {/* Corner Decorations */}
                     <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-white/30 rounded-tl-lg" />
