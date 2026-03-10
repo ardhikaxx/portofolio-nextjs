@@ -4,7 +4,7 @@ import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { projects } from '../../data/projects_data';
-import { HiArrowLeft, HiLink, HiCalendar, HiCode, HiEye, HiDesktopComputer, HiChip, HiCube } from 'react-icons/hi';
+import { HiArrowLeft, HiLink, HiCalendar, HiCode, HiDesktopComputer, HiChip, HiCube } from 'react-icons/hi';
 import { useEffect, useState } from 'react';
 
 export default function ProjectDetailPage() {
@@ -50,9 +50,6 @@ export default function ProjectDetailPage() {
                 
                 {/* Grid Pattern */}
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:100px_100px]" />
-                
-                {/* Noise Texture */}
-                <div className="absolute inset-0 opacity-[0.015]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")` }} />
             </div>
 
             {/* Navigation */}
@@ -134,7 +131,7 @@ export default function ProjectDetailPage() {
                 </div>
 
                 {/* Stats Cards */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
                     <div className="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 group">
                         <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                             <HiCalendar className="w-5 h-5 text-white/70" />
@@ -151,25 +148,17 @@ export default function ProjectDetailPage() {
                         <p className="text-2xl font-bold text-white">{project.languages.length}</p>
                     </div>
                     
-                    <div className="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 group">
-                        <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                            <HiEye className="w-5 h-5 text-white/70" />
-                        </div>
-                        <p className="text-white/50 text-xs font-mono uppercase tracking-wider mb-1">Views</p>
-                        <p className="text-2xl font-bold text-white">1.2K</p>
-                    </div>
-                    
                     <a
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-5 rounded-2xl bg-white text-black hover:bg-gray-200 transition-all duration-300 group cursor-pointer"
+                        className="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 group cursor-pointer"
                     >
-                        <div className="w-10 h-10 rounded-xl bg-black/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                            <HiLink className="w-5 h-5" />
+                        <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                            <HiLink className="w-5 h-5 text-white/70" />
                         </div>
-                        <p className="text-black/60 text-xs font-mono uppercase tracking-wider mb-1">Visit</p>
-                        <p className="text-2xl font-bold flex items-center gap-2">
+                        <p className="text-white/50 text-xs font-mono uppercase tracking-wider mb-1">Visit</p>
+                        <p className="text-xl font-bold text-white flex items-center gap-2">
                             Live Demo 
                             <HiLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </p>
