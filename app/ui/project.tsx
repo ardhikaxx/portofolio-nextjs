@@ -61,7 +61,7 @@ function ProjectCard({ project, priority }: ProjectCardProps) {
                     </span>
                     <button
                         onClick={handleLinkClick}
-                        className="absolute bottom-3 right-3 bg-black rounded-full p-3 shadow-md group-hover:bg-white/20 transition-colors"
+                        className="absolute bottom-3 right-3 bg-black rounded-full p-3 shadow-md"
                     >
                         <HiArrowUpRight className="w-5 h-5 text-white" />
                     </button>
