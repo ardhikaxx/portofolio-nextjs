@@ -224,4 +224,13 @@ export const projects = [
     link: 'https://github.com/ardhikaxx/si-besti',
     year: 2026
   },
+  {
+    id: 26,
+    name: 'EMIRA - Sistem Informasi Manajemen Rumah Sakit',
+    description: 'Website sistem informasi manajemen rumah sakit lengkap yang menyediakan fitur meliputi: Booking online untuk pasien baru dan lama, Dashboard terpusat untuk memantau operasional rumah sakit, Manajemen antrian pasien dengan fitur panggil, layani, dan selesai, Rekam medis elektronik dengan integrasi ICD-10 untuk diagnosa, Vital sign untuk mencatat tanda-tanda vital pasien, Manajemen poli klinik, dokter, jadwal dokter, dan ruangan, Inventaris kode ICD-10 dan tindakan medis, Manajemen pengguna dengan multi-role (superadmin, dokter, rekam medis), Booking management untuk konfirmasi dan pembatalan appointment, serta Pengaturan sistem komprehensif. Sistem ini menggunakan autentikasi berbasis role untuk keamanan data pasien.',
+    languages: ['laravel', 'php', 'tailwind', 'vite'],
+    image: '/projects/26.jpg',
+    link: 'https://github.com/ardhikaxx/emira',
+    year: 2026
+  },
 ];
