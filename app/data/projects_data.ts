@@ -260,4 +260,13 @@ export const projects = [
     link: 'https://github.com/ardhikaxx/banyu-biru-nganjuk',
     year: 2026
   },
+  {
+    id: 30,
+    name: 'MEDTRACK - Sistem Tracking & Peminjaman Rekam Medis',
+    description: 'Website sistem tracking dan peminjaman rekam medis yang menyediakan fitur lengkap meliputi: Dashboard dengan visualisasi data dan kalender jadwal, Manajemen Pasien (CRUD) dengan pencarian Select2 dan integrasi API wilayah Indonesia (provinsi, kabupaten, kecamatan, desa), Manajemen Rekam Medis (CRUD) dengan histori per pasien, Manajemen Peminjaman Rekam Medis dengan workflow lengkap (pengajuan, persetujuan, proses, penolakan, pembatalan) termasuk notifikasi keterlambatan, Manajemen Pengembalian Rekam Medis dengan dokumentasi kondisi, Manajemen Pengguna dengan toggle aktif dan reset password, Manajemen Unit kerja, Laporan lengkap meliputi laporan peminjaman, pengembalian, keterlambatan, statistik dokumen, dan rekap bulanan, Export laporan ke Excel dan PDF, Sistem notifikasi untuk status peminjaman, Pencarian global, Scanner QR code untuk lookup rekam medis, serta Profil pengguna dengan update data dan password. Sistem ini mendukung integrasi wilayah Indonesia untuk data alamat pasien.',
+    languages: ['laravel', 'php', 'bootstrap', 'dompdf', 'maatwebsite excel', 'simple qrcode'],
+    image: '/projects/30.jpg',
+    link: 'https://github.com/ardhikaxx/medtrack',
+    year: 2026
+  },
 ];
