@@ -233,4 +233,13 @@ export const projects = [
     link: 'https://github.com/ardhikaxx/emira',
     year: 2026
   },
+  {
+    id: 27,
+    name: 'SI-KRONIS - Sistem Informasi Manajemen Penyakit Kronis',
+    description: 'Website sistem informasi manajemen penyakit kronis yang menyediakan fitur lengkap dengan multi-role: Untuk Pasien tersedia dashboard, booking konsultasi online, riwayat medis dengan export PDF, manajemen resep dan refill obat, profil pengguna, upload hasil lab, dan chat dengan dokter. Untuk Admin tersedia dashboard, manajemen user, dokter, konsultasi, obat, template resep, riwayat medis pasien, dan laporan dengan export Excel/PDF. Untuk Dokter tersedia dashboard, manajemen jadwal praktik, konsultasi pasien, penulisan resep, dan chat dengan pasien. Untuk Perawat tersedia dashboard, manajemen booking, dan upload hasil lab. Sistem ini menggunakan autentikasi berbasis role (pasien, admin, dokter, perawat) dengan fitur search global dan export laporan.',
+    languages: ['laravel', 'php', 'bootstrap', 'dompdf', 'maatwebsite excel', 'spatie permission'],
+    image: '/projects/27.jpg',
+    link: 'https://github.com/ardhikaxx/si-kronis',
+    year: 2026
+  },
 ];
