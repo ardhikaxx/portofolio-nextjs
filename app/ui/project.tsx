@@ -56,12 +56,12 @@ function ProjectCard({ project, priority }: ProjectCardProps) {
                         priority={priority}
                     />
 
-                    <span className="absolute bottom-3 left-3 text-xs text-white font-semibold bg-white/20 backdrop-blur-sm px-2 py-1 rounded-lg shadow-sm font-nokia">
+                    <span className="absolute bottom-3 left-3 text-xs text-white font-semibold bg-black px-2 py-1 rounded-lg shadow-sm font-nokia">
                         {project.year}
                     </span>
                     <button
                         onClick={handleLinkClick}
-                        className="absolute bottom-3 right-3 bg-white/20 backdrop-blur-sm rounded-full p-3 shadow-md group-hover:bg-white/40 transition-colors"
+                        className="absolute bottom-3 right-3 bg-black rounded-full p-3 shadow-md group-hover:bg-white/20 transition-colors"
                     >
                         <HiArrowUpRight className="w-5 h-5 text-white" />
                     </button>
