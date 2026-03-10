@@ -242,4 +242,13 @@ export const projects = [
     link: 'https://github.com/ardhikaxx/si-kronis',
     year: 2026
   },
+  {
+    id: 28,
+    name: 'SIKEMBANG - Sistem Konsultasi & Edukasi Ibu Hamil Berkelanjutan',
+    description: 'Website sistem konsultasi dan edukasi ibu hamil berkelanjutan yang menyediakan fitur lengkap dengan multi-role: Untuk Ibu Hamil tersedia dashboard personal, booking konsultasi dengan bidan, chat konsultasi, akses materi edukasi kesehatan ibu danJanin, pencatatan catatan kesehatan harian, dan reminder jadwal penting (periksa kehamilan, minum obat, vitamin). Untuk Bidan tersedia dashboard monitoring, manajemen data ibu hamil, konsultasi chat dengan pasien, manajemen booking (terima, tolak, jadwal ulang, selesai), manajemen edukasi (CRUD materi), penilaian risiko kehamilan dengan kalkulasi skor risiko, dan laporan lengkap meliputi rekap konsultasi, data ibu berisiko, status booking, distribusi usia kehamilan, statistik ibu hamil, dan konsultasi per bidan dengan fitur export Excel. Sistem ini mendukung export laporan ke Excel untuk berbagai kategori.',
+    languages: ['laravel', 'php', 'bootstrap', 'maatwebsite excel'],
+    image: '/projects/28.jpg',
+    link: 'https://github.com/ardhikaxx/sikembang',
+    year: 2026
+  },
 ];
