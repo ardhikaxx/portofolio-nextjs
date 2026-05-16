@@ -269,4 +269,40 @@ export const projects = [
     link: 'https://github.com/ardhikaxx/medtrack',
     year: 2026
   },
+  {
+    id: 31,
+    name: 'Website Ar-Rahman E-Bike Bondowoso - Penjualan & Layanan Sepeda Listrik',
+    description: 'Website resmi penjualan dan layanan sepeda listrik terpercaya di Bondowoso, Jawa Timur. Fitur lengkap meliputi: Landing Page yang menampilkan katalog produk dari berbagai merk ternama, Manajemen Produk untuk mengelola daftar sepeda listrik, Manajemen Lokasi untuk 3 cabang toko offline, integrasi marketplace Shopee, layanan purna jual (service & sparepart), serta fitur konsultasi gratis. Dibangun untuk memudahkan masyarakat Bondowoso mendapatkan solusi transportasi ramah lingkungan.',
+    languages: ['laravel', 'bootstrap', 'php', 'css', 'javascript'],
+    image: '/projects/31.jpg',
+    link: 'https://github.com/ardhikaxx/web-star-electric',
+    year: 2026
+  },
+  {
+    id: 32,
+    name: 'Website Landing Page Portal Ekonomi Kreatif Kabupaten Nganjuk',
+    description: 'Landing page portal ekonomi kreatif untuk Kabupaten Nganjuk yang dirancang untuk memberdayakan UMKM lokal melalui transformasi digital. Website ini menyajikan informasi komprehensif mengenai 16 sektor kreatif, statistik pertumbuhan wirausaha kreatif, serta katalog produk unggulan daerah. Fokus utama platform ini adalah membangun ekosistem kreatif yang berkelanjutan dengan menjembatani tradisi lokal dan inovasi digital di jantung Jawa Timur.',
+    languages: ['nextjs', 'tailwind', 'typescript', 'framer motion'],
+    image: '/projects/32.jpg',
+    link: 'https://github.com/ardhikaxx/ekraf-nganjuk',
+    year: 2026
+  },
+  {
+    id: 33,
+    name: 'Website Landing Page DIKICHI - Fried Chicken & Culinary',
+    description: 'Landing page eksklusif untuk brand kuliner DIKICHI yang fokus pada penyajian ayam goreng berkualitas bintang lima dengan harga kaki lima. Website ini menampilkan katalog menu interaktif, informasi lokasi cabang (seperti DIKICHI Bandung Riau), serta sistem reservasi untuk acara spesial. Dibangun dengan fokus pada pengalaman visual yang menggugah selera menggunakan animasi modern dan desain responsif untuk memperkuat branding digital di sektor kuliner.',
+    languages: ['nextjs', 'tailwind', 'typescript', 'framer motion', 'lucide react'],
+    image: '/projects/33.jpg',
+    link: 'https://github.com/ardhikaxx/dikichi-app',
+    year: 2026
+  },
+  {
+    id: 34,
+    name: 'Website Landing Page AudioGuardAI - Audio Deepfake Detector',
+    description: 'Landing page aplikasi detektor deepfake audio yang dirancang untuk menganalisis keaslian rekaman suara. Aplikasi ini menggunakan model Hybrid CNN untuk mendeteksi manipulasi audio dalam hitungan detik. Pengguna dapat mengunggah file (MP3, WAV, FLAC, dll.) atau merekam suara langsung. Fitur utama mencakup spectral heatmap, confidence matrix, serta visualisasi frekuensi real-time. Dibangun untuk memberikan solusi keamanan digital terhadap ancaman manipulasi suara berbasis AI.',
+    languages: ['nextjs', 'tailwind', 'typescript', 'framer motion'],
+    image: '/projects/34.jpg',
+    link: 'https://github.com/ardhikaxx/audio-app',
+    year: 2026
+  }
 ];
