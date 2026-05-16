@@ -304,5 +304,14 @@ export const projects = [
     image: '/projects/34.jpg',
     link: 'https://github.com/ardhikaxx/audio-app',
     year: 2026
+  },
+  {
+    id: 35,
+    name: 'Tabung Pintar - Aplikasi Hitung Alokasi Dana Ideal',
+    description: 'Aplikasi web yang dirancang untuk membantu pengguna mengelola keuangan pribadi dengan menghitung alokasi dana ideal antara menabung dan keperluan. Pengguna dapat memilih mode menabung (konservatif, seimbang, atau agresif) untuk mendapatkan saran alokasi dana yang disesuaikan dengan penghasilan bulanan.',
+    languages: ['nextjs', 'tailwind', 'typescript', 'react', 'recharts'],
+    image: '/projects/35.jpg',
+    link: 'https://github.com/ardhikaxx/hitung-tabung',
+    year: 2026
   }
 ];
