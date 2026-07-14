@@ -348,11 +348,13 @@ export default function About() {
                         I am an Informatics Engineering student at Politeknik Negeri Jember, passionate about creating digital solutions in website development, mobile applications, and the Internet of Things (IoT). Through various projects, I have honed my skills—not only in building functional applications but also in driving innovation by leveraging the latest advancements in information technology. My experience spans end-to-end software development, encompassing websites, mobile apps, and IoT systems. Dedicated to delivering innovative technological solutions, I strive to create efficient and impactful information systems.
                     </motion.p>
 
+                    <ContributionGraph />
+
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.6 }}
-                        className="mb-4 sm:mb-6"
+                        className="mb-4 sm:mb-6 mt-2"
                     >
                         <motion.button
                             onClick={() => openExperienceModal(0)}
@@ -383,8 +385,6 @@ export default function About() {
                             </SocialIcon>
                         </div>
                     </motion.div>
-
-                    <ContributionGraph />
 
                     <motion.div
                         initial={{ opacity: 0 }}
