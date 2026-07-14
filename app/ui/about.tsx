@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { FaInstagram, FaGithub, FaWhatsapp, FaBriefcase } from "react-icons/fa";
+import { FaInstagram, FaGithub, FaLinkedin, FaBriefcase } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import ExperienceModal from "../components/ExperienceModal";
 import { experiences } from "../data/experience_data";
@@ -322,7 +322,7 @@ export default function About() {
                     >
                         <div className="relative w-full h-full">
                             <Image
-                                src="/img/photo.png"
+                                src="/img/foto-profile.webp"
                                 alt="Holographic Avatar"
                                 fill
                                 className="object-cover rounded-full p-1 sm:p-2 mix-blend-lighten"
@@ -378,8 +378,8 @@ export default function About() {
                             <SocialIcon href="https://github.com/ardhikaxx">
                                 <FaGithub className="w-5 h-5 sm:w-6 sm:h-6" />
                             </SocialIcon>
-                            <SocialIcon href="https://wa.me/6285933648537">
-                                <FaWhatsapp className="w-5 h-5 sm:w-6 sm:h-6" />
+                            <SocialIcon href="https://www.linkedin.com/in/yanuar-ardhika-rahmadhani-ubaidillah/">
+                                <FaLinkedin className="w-5 h-5 sm:w-6 sm:h-6" />
                             </SocialIcon>
                         </div>
                     </motion.div>

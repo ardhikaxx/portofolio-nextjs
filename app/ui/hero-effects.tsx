@@ -2,7 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import { useEffect, useMemo, useState } from 'react';
-import Sticker from '../../public/img/sticker.png';
+import Sticker from '../../public/img/sticker.webp';
 
 const Dither = dynamic(() => import('../components/Dither'), {
   ssr: false,

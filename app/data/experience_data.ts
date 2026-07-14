@@ -24,6 +24,6 @@ export const experiences: Experience[] = [
             "Berpartisipasi dalam code review dan agile development",
             "Mengoptimalkan sistem kinerja proyek pada perusahaan"
         ],
-        logo: "/img/experience/logo1.png"
+        logo: "/img/experience/logo1.webp"
     },
 ];
