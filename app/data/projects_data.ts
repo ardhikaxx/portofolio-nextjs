@@ -250,5 +250,14 @@ export const projects = [
     image: '/projects/33.webp',
     link: 'https://dikichi.vercel.app/',
     year: 2026
+  },
+  {
+    id: 34,
+    name: 'SPK KIP-K - Sistem Pendukung Keputusan Beasiswa KIP-K',
+    description: 'Sistem pendukung keputusan berbasis web yang dirancang untuk membantu proses seleksi penerima beasiswa KIP-Kuliah di Politeknik Negeri Jember. Menerapkan metode PROMETHEE (Preference Ranking Organization Method for Enrichment Evaluation) untuk perankingan yang objektif, transparan, dan akurat. Dilengkapi fitur multi-role authentication (Admin & Kaprodi), dynamic dashboard, bulk import data mahasiswa via Excel, dan perhitungan net flow otomatis.',
+    languages: ['laravel', 'bootstrap', 'php', 'css', 'javascript', 'mysql'],
+    image: '/projects/34.webp',
+    link: 'https://github.com/ardhikaxx/spk-kip-web',
+    year: 2026
   }
 ];
