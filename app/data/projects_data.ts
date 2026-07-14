@@ -225,48 +225,12 @@ export const projects = [
     year: 2026
   },
   {
-    id: 26,
-    name: 'EMIRA - Sistem Informasi Manajemen Rumah Sakit',
-    description: 'Website sistem informasi manajemen rumah sakit lengkap yang menyediakan fitur meliputi: Booking online untuk pasien baru dan lama, Dashboard terpusat untuk memantau operasional rumah sakit, Manajemen antrian pasien dengan fitur panggil, layani, dan selesai, Rekam medis elektronik dengan integrasi ICD-10 untuk diagnosa, Vital sign untuk mencatat tanda-tanda vital pasien, Manajemen poli klinik, dokter, jadwal dokter, dan ruangan, Inventaris kode ICD-10 dan tindakan medis, Manajemen pengguna dengan multi-role (superadmin, dokter, rekam medis), Booking management untuk konfirmasi dan pembatalan appointment, serta Pengaturan sistem komprehensif. Sistem ini menggunakan autentikasi berbasis role untuk keamanan data pasien.',
-    languages: ['laravel', 'php', 'tailwind', 'vite'],
-    image: '/projects/26.webp',
-    link: 'https://github.com/ardhikaxx/emira',
-    year: 2026
-  },
-  {
-    id: 27,
-    name: 'SI-KRONIS - Sistem Informasi Manajemen Penyakit Kronis',
-    description: 'Website sistem informasi manajemen penyakit kronis yang menyediakan fitur lengkap dengan multi-role: Untuk Pasien tersedia dashboard, booking konsultasi online, riwayat medis dengan export PDF, manajemen resep dan refill obat, profil pengguna, upload hasil lab, dan chat dengan dokter. Untuk Admin tersedia dashboard, manajemen user, dokter, konsultasi, obat, template resep, riwayat medis pasien, dan laporan dengan export Excel/PDF. Untuk Dokter tersedia dashboard, manajemen jadwal praktik, konsultasi pasien, penulisan resep, dan chat dengan pasien. Untuk Perawat tersedia dashboard, manajemen booking, dan upload hasil lab. Sistem ini menggunakan autentikasi berbasis role (pasien, admin, dokter, perawat) dengan fitur search global dan export laporan.',
-    languages: ['laravel', 'php', 'bootstrap', 'dompdf', 'maatwebsite excel', 'spatie permission'],
-    image: '/projects/27.webp',
-    link: 'https://github.com/ardhikaxx/si-kronis',
-    year: 2026
-  },
-  {
-    id: 28,
-    name: 'SIKEMBANG - Sistem Konsultasi & Edukasi Ibu Hamil Berkelanjutan',
-    description: 'Website sistem konsultasi dan edukasi ibu hamil berkelanjutan yang menyediakan fitur lengkap dengan multi-role: Untuk Ibu Hamil tersedia dashboard personal, booking konsultasi dengan bidan, chat konsultasi, akses materi edukasi kesehatan ibu danJanin, pencatatan catatan kesehatan harian, dan reminder jadwal penting (periksa kehamilan, minum obat, vitamin). Untuk Bidan tersedia dashboard monitoring, manajemen data ibu hamil, konsultasi chat dengan pasien, manajemen booking (terima, tolak, jadwal ulang, selesai), manajemen edukasi (CRUD materi), penilaian risiko kehamilan dengan kalkulasi skor risiko, dan laporan lengkap meliputi rekap konsultasi, data ibu berisiko, status booking, distribusi usia kehamilan, statistik ibu hamil, dan konsultasi per bidan dengan fitur export Excel. Sistem ini mendukung export laporan ke Excel untuk berbagai kategori.',
-    languages: ['laravel', 'php', 'bootstrap', 'maatwebsite excel'],
-    image: '/projects/28.webp',
-    link: 'https://github.com/ardhikaxx/sikembang',
-    year: 2026
-  },
-  {
     id: 29,
     name: 'Banyu Biru Ticketing & Booking System - Sistem Pemesanan Tiket & Booking Objek Wisata',
     description: 'Website pemandian air panas banyu biru nganjuk sistem pemesanan tiket dan booking objek wisata yang menyediakan fitur lengkap dengan multi-role: Untuk Pengguna/Tamu tersedia halaman landing page dengan daftar tempat wisata, pemesanan tiket masuk dengan upload bukti pembayaran, download e-tiket PDF dengan QR code, riwayat pemesanan, booking penginapan/fasilitas dengan manajemen pembayaran, upload bukti pembayaran, cek status booking, dan profil pengguna. Untuk Admin tersedia dashboard management, manajemen Tiket (CRUD) dan pesanan Tiket (konfirmasi/tolak), manajemen Booking (konfirmasi/tolak), manajemen Admin, cek validitas Tiket dan Booking menggunakan QR code scanner, manajemen rekening bank, dan profil admin. Sistem ini menggunakan autentikasi berbasis role dan menghasilkan QR code untuk setiap e-tiket yang dapat diverifikasi oleh admin.',
     languages: ['laravel', 'php', 'bootstrap', 'dompdf', 'simple qrcode', 'spatie permission'],
     image: '/projects/29.webp',
     link: 'https://github.com/ardhikaxx/banyu-biru-nganjuk',
-    year: 2026
-  },
-  {
-    id: 30,
-    name: 'MEDTRACK - Sistem Tracking & Peminjaman Rekam Medis',
-    description: 'Website sistem tracking dan peminjaman rekam medis yang menyediakan fitur lengkap meliputi: Dashboard dengan visualisasi data dan kalender jadwal, Manajemen Pasien (CRUD) dengan pencarian Select2 dan integrasi API wilayah Indonesia (provinsi, kabupaten, kecamatan, desa), Manajemen Rekam Medis (CRUD) dengan histori per pasien, Manajemen Peminjaman Rekam Medis dengan workflow lengkap (pengajuan, persetujuan, proses, penolakan, pembatalan) termasuk notifikasi keterlambatan, Manajemen Pengembalian Rekam Medis dengan dokumentasi kondisi, Manajemen Pengguna dengan toggle aktif dan reset password, Manajemen Unit kerja, Laporan lengkap meliputi laporan peminjaman, pengembalian, keterlambatan, statistik dokumen, dan rekap bulanan, Export laporan ke Excel dan PDF, Sistem notifikasi untuk status peminjaman, Pencarian global, Scanner QR code untuk lookup rekam medis, serta Profil pengguna dengan update data dan password. Sistem ini mendukung integrasi wilayah Indonesia untuk data alamat pasien.',
-    languages: ['laravel', 'php', 'bootstrap', 'dompdf', 'maatwebsite excel', 'simple qrcode'],
-    image: '/projects/30.webp',
-    link: 'https://github.com/ardhikaxx/medtrack',
     year: 2026
   },
   {
@@ -293,7 +257,7 @@ export const projects = [
     description: 'Landing page eksklusif untuk brand kuliner DIKICHI yang fokus pada penyajian ayam goreng berkualitas bintang lima dengan harga kaki lima. Website ini menampilkan katalog menu interaktif, informasi lokasi cabang (seperti DIKICHI Bandung Riau), serta sistem reservasi untuk acara spesial. Dibangun dengan fokus pada pengalaman visual yang menggugah selera menggunakan animasi modern dan desain responsif untuk memperkuat branding digital di sektor kuliner.',
     languages: ['nextjs', 'tailwind', 'typescript', 'framer motion', 'lucide react'],
     image: '/projects/33.webp',
-    link: 'https://github.com/ardhikaxx/dikichi-app',
+    link: 'https://dikichi.vercel.app/',
     year: 2026
   },
   {
@@ -303,15 +267,6 @@ export const projects = [
     languages: ['nextjs', 'tailwind', 'typescript', 'framer motion'],
     image: '/projects/34.webp',
     link: 'https://github.com/ardhikaxx/audio-app',
-    year: 2026
-  },
-  {
-    id: 35,
-    name: 'Tabung Pintar - Aplikasi Hitung Alokasi Dana Ideal',
-    description: 'Aplikasi web yang dirancang untuk membantu pengguna mengelola keuangan pribadi dengan menghitung alokasi dana ideal antara menabung dan keperluan. Pengguna dapat memilih mode menabung (konservatif, seimbang, atau agresif) untuk mendapatkan saran alokasi dana yang disesuaikan dengan penghasilan bulanan.',
-    languages: ['nextjs', 'tailwind', 'typescript', 'react', 'recharts'],
-    image: '/projects/35.webp',
-    link: 'https://github.com/ardhikaxx/hitung-tabung',
     year: 2026
   }
 ];

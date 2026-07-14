@@ -37,8 +37,9 @@ export default function ProjectDetailPage() {
         );
     }
 
-    const prevProject = projects.find(p => p.id === id - 1);
-    const nextProject = projects.find(p => p.id === id + 1);
+    const currentIndex = projects.findIndex(p => p.id === id);
+    const prevProject = currentIndex > 0 ? projects[currentIndex - 1] : undefined;
+    const nextProject = currentIndex !== -1 && currentIndex < projects.length - 1 ? projects[currentIndex + 1] : undefined;
 
     return (
         <div className="min-h-screen bg-black relative overflow-hidden">
