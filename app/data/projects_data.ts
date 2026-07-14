@@ -81,15 +81,6 @@ export const projects = [
     year: 2025
   },
   {
-    id: 10,
-    name: 'Glucozia AI - Chatbot Edukasi Diabetes',
-    description: 'Website chatbot AI yang menyediakan edukasi diabetes personalisasi. Dibangun dengan HTML, CSS, Tailwind CSS, dan JavaScript. Glucozia berfungsi sebagai asisten virtual 24/7 untuk pemantauan kesehatan dan rekomendasi nutrisi.',
-    languages: ['html', 'css', 'tailwind', 'javascript'],
-    image: '/projects/10.webp',
-    link: 'https://glucozia-ai.vercel.app/',
-    year: 2025
-  },
-  {
     id: 11,
     name: 'Website AITeC VII 2025 - Politeknik Negeri Jember',
     description: 'Website resmi Agricultural Innovation Technology Competition (AITeC) 2025 bertepatan Politeknik Negeri Jember sebagai tuan rumah untuk perlombaan nasional AITeC ke 7 2025. Saya bertanggung jawab untuk pengembangan front-end.',
@@ -258,15 +249,6 @@ export const projects = [
     languages: ['nextjs', 'tailwind', 'typescript', 'framer motion', 'lucide react'],
     image: '/projects/33.webp',
     link: 'https://dikichi.vercel.app/',
-    year: 2026
-  },
-  {
-    id: 34,
-    name: 'Website Landing Page AudioGuardAI - Audio Deepfake Detector',
-    description: 'Landing page aplikasi detektor deepfake audio yang dirancang untuk menganalisis keaslian rekaman suara. Aplikasi ini menggunakan model Hybrid CNN untuk mendeteksi manipulasi audio dalam hitungan detik. Pengguna dapat mengunggah file (MP3, WAV, FLAC, dll.) atau merekam suara langsung. Fitur utama mencakup spectral heatmap, confidence matrix, serta visualisasi frekuensi real-time. Dibangun untuk memberikan solusi keamanan digital terhadap ancaman manipulasi suara berbasis AI.',
-    languages: ['nextjs', 'tailwind', 'typescript', 'framer motion'],
-    image: '/projects/34.webp',
-    link: 'https://github.com/ardhikaxx/audio-app',
     year: 2026
   }
 ];
