@@ -145,17 +145,6 @@ export default function Awards() {
                 </div>
             )}
 
-            {/* Stats */}
-            <div className="max-w-7xl mx-auto mt-24 mb-16">
-                <div className="border-t border-white pt-12">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                        <StatBox number={penghargaanData.length} label="Total Awards" />
-                        <StatBox number={years.length} label="Active Years" />
-                        <StatBox number={Math.max(...penghargaanData.map(a => parseInt(a.tahun)))} label="Latest Year" />
-                        <StatBox number={Math.min(...penghargaanData.map(a => parseInt(a.tahun)))} label="Starting Year" />
-                    </div>
-                </div>
-            </div>
         </section>
     );
 }
@@ -263,17 +252,6 @@ function AwardCard({ award, index }: AwardCardProps) {
             </div>
 
             <div className="absolute inset-0 border-2 border-white opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
-        </div>
-    );
-}
-
-function StatBox({ number, label }: { number: number; label: string }) {
-    return (
-        <div className="group">
-            <div className="text-3xl md:text-4xl font-bold mb-2 relative">
-                {number}
-            </div>
-            <div className="text-sm text-gray-400 tracking-wider">{label}</div>
         </div>
     );
 }
