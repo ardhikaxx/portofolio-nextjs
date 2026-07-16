@@ -126,21 +126,6 @@ export default function Publications() {
                         <PublicationCard key={pub.id} pub={pub} index={index} />
                     ))}
                 </div>
-            )}
-
-            {/* Stats */}
-            <div className="max-w-4xl mx-auto mt-8 mb-16">
-                <div className="border-t border-white/10 pt-10">
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
-                        <StatBox number={publications.length} label="Total Publikasi" />
-                        <StatBox number={availableYears.length} label="Tahun Aktif" />
-                        <StatBox
-                            number={Math.max(...publications.map((p) => p.year))}
-                            label="Tahun Terbaru"
-                        />
-                    </div>
-                </div>
-            </div>
         </section>
     );
 }
@@ -232,11 +217,3 @@ function PublicationCard({ pub, index }: PublicationCardProps) {
     );
 }
 
-function StatBox({ number, label }: { number: number; label: string }) {
-    return (
-        <div>
-            <div className="text-3xl md:text-4xl font-bold text-white mb-1">{number}</div>
-            <div className="text-sm text-gray-500 tracking-wider">{label}</div>
-        </div>
-    );
-}
