@@ -195,8 +195,8 @@ function ContributionGraph() {
                 className="w-full mt-6"
             >
                 <div className="flex justify-between items-center mb-3">
-                    <h3 className="text-white font-semibold text-sm">GitHub Contributions</h3>
-                    <span className="text-white/60 text-sm font-mono">Loading...</span>
+                    <h3 className="text-white font-semibold text-sm">Kontribusi GitHub</h3>
+                    <span className="text-white/60 text-sm font-mono">Memuat...</span>
                 </div>
                 <div className="h-20 bg-white/5 rounded-lg animate-pulse"></div>
             </motion.div>
@@ -212,7 +212,7 @@ function ContributionGraph() {
         >
             <div className="flex justify-between items-center mb-3">
                 <div className="flex items-center gap-3">
-                    <h3 className="text-white font-semibold text-sm">GitHub Contributions</h3>
+                    <h3 className="text-white font-semibold text-sm">Kontribusi GitHub</h3>
                     {allYearData.length > 0 && (
                         <select
                             value={selectedYear || ''}
@@ -227,7 +227,7 @@ function ContributionGraph() {
                         </select>
                     )}
                 </div>
-                <span className="text-white/60 text-sm font-mono">{totalContributions} contributions</span>
+                <span className="text-white/60 text-sm font-mono">{totalContributions} kontribusi</span>
             </div>
             
             <div className="overflow-x-auto pb-2">
@@ -249,11 +249,11 @@ function ContributionGraph() {
                     
                     <div className="flex gap-1">
                         <div className="flex flex-col gap-1 text-[10px] text-gray-500 pr-1">
-                            <span className="h-3">Mon</span>
+                            <span className="h-3">Sen</span>
                             <span className="h-3"></span>
-                            <span className="h-3">Wed</span>
+                            <span className="h-3">Rab</span>
                             <span className="h-3"></span>
-                            <span className="h-3">Fri</span>
+                            <span className="h-3">Jum</span>
                         </div>
                         
                         <div className="flex gap-[3px]">
@@ -263,7 +263,7 @@ function ContributionGraph() {
                                         <div
                                             key={dayIndex}
                                             className={`w-3 h-3 rounded-sm ${getColor(day)} transition-all duration-300 hover:scale-125`}
-                                            title={day >= 0 ? `${day} contributions` : ''}
+                                            title={day >= 0 ? `${day} kontribusi` : ''}
                                         />
                                     ))}
                                 </div>
@@ -274,7 +274,7 @@ function ContributionGraph() {
             </div>
             
             <div className="flex items-center justify-end gap-2 mt-2">
-                <span className="text-[10px] text-gray-500">Less</span>
+                <span className="text-[10px] text-gray-500">Jarang</span>
                 <div className="flex gap-[3px]">
                     <div className="w-3 h-3 rounded-sm bg-gray-800"></div>
                     <div className="w-3 h-3 rounded-sm bg-gray-600"></div>
@@ -283,7 +283,7 @@ function ContributionGraph() {
                     <div className="w-3 h-3 rounded-sm bg-gray-300"></div>
                     <div className="w-3 h-3 rounded-sm bg-white"></div>
                 </div>
-                <span className="text-[10px] text-gray-500">More</span>
+                <span className="text-[10px] text-gray-500">Sering</span>
             </div>
         </motion.div>
     );
@@ -345,7 +345,7 @@ export default function About() {
                         transition={{ delay: 0.5 }}
                         className="text-gray-300 text-xs sm:text-sm leading-5 sm:leading-6 mb-4 sm:mb-6 max-w-2xl font-light tracking-wide px-2 sm:px-7"
                     >
-                        I am an Informatics Engineering student at Politeknik Negeri Jember, passionate about creating digital solutions in website development, mobile applications, and the Internet of Things (IoT). Through various projects, I have honed my skills—not only in building functional applications but also in driving innovation by leveraging the latest advancements in information technology. My experience spans end-to-end software development, encompassing websites, mobile apps, and IoT systems. Dedicated to delivering innovative technological solutions, I strive to create efficient and impactful information systems.
+                        Saya adalah mahasiswa Teknik Informatika di Politeknik Negeri Jember yang bersemangat menciptakan solusi digital di bidang pengembangan website, aplikasi mobile, dan Internet of Things (IoT). Melalui berbagai proyek, saya telah mengasah kemampuan tidak hanya dalam membangun aplikasi yang fungsional, tetapi juga dalam mendorong inovasi dengan memanfaatkan perkembangan teknologi informasi terkini. Pengalaman saya mencakup pengembangan perangkat lunak end-to-end yang meliputi website, aplikasi mobile, dan sistem IoT. Dengan dedikasi untuk menghadirkan solusi teknologi yang inovatif, saya berupaya menciptakan sistem informasi yang efisien dan berdampak nyata.
                     </motion.p>
 
                     <ContributionGraph />
@@ -363,7 +363,7 @@ export default function About() {
                             whileTap={{ scale: 0.95 }}
                         >
                             <FaBriefcase className="w-5 h-5 group-hover/btn:scale-110 transition-transform duration-300" />
-                            <span className="text-sm sm:text-base">View Experience</span>
+                            <span className="text-sm sm:text-base">Lihat Pengalaman</span>
                         </motion.button>
                     </motion.div>
 
@@ -397,7 +397,7 @@ export default function About() {
                                 <p>Status: <span className="text-white font-semibold">Junior Developer</span></p>
                             </div>
                             <div className="text-gray-500 flex items-center gap-1">
-                                <p>Role: <span className="text-white font-semibold">Web & Mobile Developer</span></p>
+                                <p>Peran: <span className="text-white font-semibold">Web & Mobile Developer</span></p>
                             </div>
                         </div>
                         <p className="text-center text-gray-600 text-[10px] sm:text-xs mt-2 tracking-wider">

@@ -16,7 +16,7 @@ export default function Hero() {
         </div>
         <div className="mb-2">
           <p className="max-w-2xl text-lg md:text-2xl text-shadow-white font-medium font-mono">
-            A Junior Web & Mobile Developer developing efficient and impactful digital systems
+            Junior Web & Mobile Developer yang membangun sistem digital efisien dan berdampak
           </p>
         </div>
         <div className="w-full max-w-md lg:max-w-none flex flex-col lg:flex-row gap-3 justify-center items-center">
@@ -27,7 +27,7 @@ export default function Hero() {
           >
             <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/20 to-transparent" />
             <HiUser className="me-3 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12 relative z-10" size={24} />
-            <span className="relative z-10">About Me</span>
+            <span className="relative z-10">Tentang Saya</span>
           </Link>
           <div
             className="w-full lg:w-auto group bg-white/10 backdrop-blur-lg text-white px-6 py-3 border-2 border-white rounded-full font-bold text-center font-mono flex items-center justify-center relative overflow-hidden"
@@ -35,7 +35,7 @@ export default function Hero() {
           >
             <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/20 to-transparent" />
             <HiDocument className="me-3 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12 relative z-10" size={24} />
-            <span className="relative z-10">CV Coming Soon</span>
+            <span className="relative z-10">CV Segera Hadir</span>
           </div>
         </div>
       </div>

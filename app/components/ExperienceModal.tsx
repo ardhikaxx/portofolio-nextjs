@@ -138,7 +138,7 @@ export default function ExperienceModal({
                                     >
                                         <div className="flex items-center gap-2 mb-3">
                                             <FaCode className="w-4 h-4 text-white" />
-                                            <h3 className="font-semibold text-lg">Technologies</h3>
+                                            <h3 className="font-semibold text-lg">Teknologi</h3>
                                         </div>
                                         <div className="flex flex-wrap gap-2">
                                             {currentExperience.technologies.map((tech, index) => (
@@ -158,7 +158,7 @@ export default function ExperienceModal({
                                     >
                                         <div className="flex items-center gap-2 mb-3">
                                             <FaTasks className="w-4 h-4 text-white" />
-                                            <h3 className="font-semibold text-lg">Responsibilities</h3>
+                                            <h3 className="font-semibold text-lg">Tanggung Jawab</h3>
                                         </div>
                                         <ul className="space-y-2">
                                             {currentExperience.responsibilities.map((responsibility, index) => (

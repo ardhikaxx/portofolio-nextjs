@@ -27,10 +27,10 @@ export default function ProjectDetailPage() {
                         <HiCube className="w-12 h-12 text-white/50" />
                     </div>
                     <h1 className="text-4xl font-bold text-white mb-4 font-mono">404</h1>
-                    <p className="text-gray-400 mb-6">Project not found</p>
+                    <p className="text-gray-400 mb-6">Project tidak ditemukan</p>
                     <Link href="/project" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-full font-mono font-bold hover:bg-gray-200 transition-colors">
                         <HiArrowLeft className="w-4 h-4" />
-                        Back to Projects
+                        Kembali ke Projects
                     </Link>
                 </div>
             </div>
@@ -61,7 +61,7 @@ export default function ProjectDetailPage() {
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white/80 hover:text-white hover:bg-white/20 hover:border-white/30 transition-all duration-300 font-mono text-sm group"
                     >
                         <HiArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-                        <span>Back</span>
+                        <span>Kembali</span>
                     </Link>
                     
                     <div className="flex items-center gap-2 text-white/50 font-mono text-xs">
@@ -78,7 +78,7 @@ export default function ProjectDetailPage() {
                     <div className="flex items-center gap-3 mb-4">
                         <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/60 text-xs font-mono">
                             <HiCube className="w-3 h-3" />
-                            PROJECT
+                            PROYEK
                         </div>
                         <span className="text-white/30 font-mono text-sm">#{project.id.toString().padStart(2, '0')}</span>
                     </div>
@@ -116,7 +116,7 @@ export default function ProjectDetailPage() {
                         <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                             <HiCalendar className="w-5 h-5 text-white/70" />
                         </div>
-                        <p className="text-white/50 text-xs font-mono uppercase tracking-wider mb-1">Year</p>
+                        <p className="text-white/50 text-xs font-mono uppercase tracking-wider mb-1">Tahun</p>
                         <p className="text-2xl font-bold text-white">{project.year}</p>
                     </div>
                     
@@ -124,7 +124,7 @@ export default function ProjectDetailPage() {
                         <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                             <HiCode className="w-5 h-5 text-white/70" />
                         </div>
-                        <p className="text-white/50 text-xs font-mono uppercase tracking-wider mb-1">Tech Stack</p>
+                        <p className="text-white/50 text-xs font-mono uppercase tracking-wider mb-1">Teknologi</p>
                         <p className="text-2xl font-bold text-white">{project.languages.length}</p>
                     </div>
                     
@@ -137,9 +137,9 @@ export default function ProjectDetailPage() {
                         <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                             <HiLink className="w-5 h-5 text-white/70" />
                         </div>
-                        <p className="text-white/50 text-xs font-mono uppercase tracking-wider mb-1">Visit</p>
+                        <p className="text-white/50 text-xs font-mono uppercase tracking-wider mb-1">Kunjungi</p>
                         <p className="text-xl font-bold text-white flex items-center gap-2">
-                            Live Demo 
+                            Demo Langsung
                             <HiLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </p>
                     </a>
@@ -151,7 +151,7 @@ export default function ProjectDetailPage() {
                         <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
                             <HiChip className="w-5 h-5 text-white" />
                         </div>
-                        <h2 className="text-xl font-bold text-white">Technologies Used</h2>
+                        <h2 className="text-xl font-bold text-white">Teknologi yang Digunakan</h2>
                     </div>
                     
                     <div className="flex flex-wrap gap-2">
@@ -178,7 +178,7 @@ export default function ProjectDetailPage() {
                                 <HiArrowLeft className="w-5 h-5 text-white group-hover:-translate-x-1 transition-transform" />
                             </div>
                             <div className="hidden sm:block">
-                                <p className="text-white/50 text-xs font-mono">PREVIOUS</p>
+                                <p className="text-white/50 text-xs font-mono">SEBELUMNYA</p>
                                 <p className="text-white font-medium group-hover:text-gray-200 transition-colors line-clamp-1 max-w-[200px]">{prevProject.name}</p>
                             </div>
                         </Link>
@@ -192,7 +192,7 @@ export default function ProjectDetailPage() {
                             className="group flex items-center gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors text-right"
                         >
                             <div className="hidden sm:block">
-                                <p className="text-white/50 text-xs font-mono">NEXT</p>
+                                <p className="text-white/50 text-xs font-mono">BERIKUTNYA</p>
                                 <p className="text-white font-medium group-hover:text-gray-200 transition-colors line-clamp-1 max-w-[200px]">{nextProject.name}</p>
                             </div>
                             <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">

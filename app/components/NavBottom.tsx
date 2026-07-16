@@ -19,11 +19,11 @@ type NavBottomProps = {
 
 const NavBottom = ({ currentPath }: NavBottomProps) => {
     const navItems: NavItem[] = [
-        { name: 'Home', icon: HiHome, path: '/' },
-        { name: 'About', icon: HiUser, path: '/about' },
-        { name: 'Project', icon: HiFolder, path: '/project' },
-        { name: 'Awards', icon: HiTrophy, path: '/awards' },
-        { name: 'Publications', icon: HiBookOpen, path: '/publications' },
+        { name: 'Beranda', icon: HiHome, path: '/' },
+        { name: 'Tentang', icon: HiUser, path: '/about' },
+        { name: 'Proyek', icon: HiFolder, path: '/project' },
+        { name: 'Penghargaan', icon: HiTrophy, path: '/awards' },
+        { name: 'Publikasi', icon: HiBookOpen, path: '/publications' },
     ];
 
     const isActive = (path: string) => {
