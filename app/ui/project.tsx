@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react';
 import { projects } from '../data/projects_data';
 import { HiArrowUpRight } from 'react-icons/hi2';
-import { HiFolderOpen } from 'react-icons/hi';
+import { HiChevronDown, HiFolderOpen, HiX } from 'react-icons/hi';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -33,10 +33,17 @@ export default function Project() {
         });
     }, [searchQuery, selectedYear]);
 
+    const isFilterActive = searchQuery.trim().length > 0 || selectedYear !== 'all';
+
+    const handleClearFilter = () => {
+        setSearchQuery('');
+        setSelectedYear('all');
+    };
+
     return (
         <section className="min-h-screen bg-black py-16 px-6">
-            <div className="max-w-6xl mx-auto mb-10 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-                <div className="w-full md:max-w-xl">
+            <div className="max-w-6xl mx-auto mb-10 flex flex-col gap-4 md:flex-row md:items-end">
+                <div className="w-full md:flex-1">
                     <label htmlFor="project-search" className="mb-2 block text-sm font-medium text-gray-200">
                         Cari project
                     </label>
@@ -50,26 +57,41 @@ export default function Project() {
                     />
                 </div>
 
-                <div className="w-full md:max-w-xs">
+                <div className="w-full md:w-64">
                     <label htmlFor="project-year-filter" className="mb-2 block text-sm font-medium text-gray-200">
                         Filter tahun
                     </label>
-                    <select
-                        id="project-year-filter"
-                        value={selectedYear}
-                        onChange={(e) => setSelectedYear(e.target.value)}
-                        className="w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white outline-none transition focus:border-white/40 focus:bg-white/15"
-                    >
-                        <option value="all" className="bg-gray-950 text-white">
-                            Semua tahun
-                        </option>
-                        {availableYears.map((year) => (
-                            <option key={year} value={year} className="bg-gray-950 text-white">
-                                {year}
+                    <div className="relative">
+                        <select
+                            id="project-year-filter"
+                            value={selectedYear}
+                            onChange={(e) => setSelectedYear(e.target.value)}
+                            className="w-full appearance-none rounded-2xl border border-white/15 bg-white/10 px-4 py-3 pr-11 text-sm text-white outline-none transition hover:border-white/25 focus:border-white/40 focus:bg-white/15"
+                        >
+                            <option value="all" className="bg-gray-950 text-white">
+                                Semua tahun
                             </option>
-                        ))}
-                    </select>
+                            {availableYears.map((year) => (
+                                <option key={year} value={year} className="bg-gray-950 text-white">
+                                    {year}
+                                </option>
+                            ))}
+                        </select>
+                        <HiChevronDown className="pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
+                    </div>
                 </div>
+
+                {isFilterActive && (
+                    <div className="w-full md:w-auto md:pb-0.5">
+                        <button
+                            onClick={handleClearFilter}
+                            className="flex w-full md:w-auto items-center justify-center gap-2 rounded-2xl border border-white/20 bg-white/10 px-5 py-3 text-sm text-white transition hover:bg-white/20 hover:border-white/40 active:scale-95"
+                        >
+                            <HiX className="h-4 w-4" />
+                            Reset filter
+                        </button>
+                    </div>
+                )}
             </div>
 
             <div className="max-w-6xl mx-auto mb-8 flex items-center justify-between text-sm text-gray-400">
@@ -85,7 +107,14 @@ export default function Project() {
                             <HiFolderOpen className="h-10 w-10 text-white/60" />
                         </div>
                     </div>
-                    Tidak ada project yang cocok dengan pencarian atau filter tahun.
+                    <p className="mb-4">Tidak ada project yang cocok dengan pencarian atau filter tahun.</p>
+                    <button
+                        onClick={handleClearFilter}
+                        className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-4 py-2 text-sm text-white transition hover:bg-white/20"
+                    >
+                        <HiX className="h-4 w-4" />
+                        Reset filter
+                    </button>
                 </div>
             ) : (
                 <div className="max-w-6xl mx-auto grid grid-cols-1 gap-10 mb-16 sm:grid-cols-2 lg:grid-cols-3">
@@ -119,6 +148,9 @@ function ProjectCard({ project, priority }: ProjectCardProps) {
         window.open(project.link, '_blank');
     };
 
+    const visibleBadges = project.languages.slice(0, 3);
+    const remainingCount = project.languages.length - visibleBadges.length;
+
     return (
         <Link href={`/project/${project.id}`} className="block">
             <div className="bg-white/10 backdrop-blur-lg rounded-3xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 h-full cursor-pointer group border border-white/10 hover:border-white/30">
@@ -146,6 +178,22 @@ function ProjectCard({ project, priority }: ProjectCardProps) {
                     >
                         <HiArrowUpRight className="w-5 h-5 text-white" />
                     </button>
+                </div>
+
+                <div className="px-6 pb-5 flex flex-wrap gap-1.5">
+                    {visibleBadges.map((lang) => (
+                        <span
+                            key={lang}
+                            className="rounded-full border border-white/15 bg-white/10 px-2.5 py-0.5 text-xs text-gray-300 capitalize"
+                        >
+                            {lang}
+                        </span>
+                    ))}
+                    {remainingCount > 0 && (
+                        <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-xs text-gray-500">
+                            +{remainingCount}
+                        </span>
+                    )}
                 </div>
             </div>
         </Link>
