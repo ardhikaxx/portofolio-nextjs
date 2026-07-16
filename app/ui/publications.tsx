@@ -136,7 +136,7 @@ interface PublicationCardProps {
         id: number;
         title: string;
         year: number;
-        link: string;
+        links: { label: string; url: string }[];
         authors: string[];
         abstract: string;
     };
@@ -199,20 +199,25 @@ function PublicationCard({ pub, index }: PublicationCardProps) {
             </div>
 
             {/* Footer */}
-            <div className="border-t border-white/10 pt-4 flex items-center justify-between">
-                <span className="text-xs font-mono text-gray-600 uppercase tracking-wider">
+            <div className="border-t border-white/10 pt-4 flex items-center justify-between gap-3">
+                <span className="text-xs font-mono text-gray-600 uppercase tracking-wider shrink-0">
                     Artikel Ilmiah
                 </span>
-                <a
-                    href={pub.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-xs text-white transition hover:bg-white/20 hover:border-white/30"
-                    onClick={(e) => e.stopPropagation()}
-                >
-                    Lihat Publikasi
-                    <HiArrowUpRight className="h-3.5 w-3.5" />
-                </a>
+                <div className="flex flex-wrap gap-2 justify-end">
+                    {pub.links.map((link) => (
+                        <a
+                            key={link.url}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-xs text-white transition hover:bg-white/20 hover:border-white/30"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            {link.label}
+                            <HiArrowUpRight className="h-3.5 w-3.5" />
+                        </a>
+                    ))}
+                </div>
             </div>
         </div>
     );
