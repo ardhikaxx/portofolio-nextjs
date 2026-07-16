@@ -32,7 +32,7 @@ const NavBottom = ({ currentPath }: NavBottomProps) => {
     };
 
     return (
-        <nav className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
+        <nav className="fixed bottom-6 left-1/2 z-50 -translate-x-1/2" aria-label="Primary navigation">
             <div className="bg-white/10 backdrop-blur-lg rounded-full border border-gray-100 shadow-2xl">
                 <div className="flex items-center justify-center p-2 gap-1">
                     {navItems.map((item) => {

@@ -5,11 +5,13 @@ import { HiArrowUpRight } from 'react-icons/hi2';
 import Image from 'next/image';
 import Link from 'next/link';
 
+const latestProjectsFirst = [...projects].reverse();
+
 export default function Project() {
     return (
         <section className="min-h-screen bg-black py-16 px-6">
             <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-16">
-                {projects.map((project, index) => (
+                {latestProjectsFirst.map((project, index) => (
                     <ProjectCard key={project.id} project={project} priority={index < 6} />
                 ))}
             </div>
