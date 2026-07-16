@@ -126,6 +126,7 @@ export default function Publications() {
                         <PublicationCard key={pub.id} pub={pub} index={index} />
                     ))}
                 </div>
+            )}
         </section>
     );
 }
