@@ -42,7 +42,7 @@ export default function Publications() {
             <div className="max-w-4xl mx-auto mb-10">
                 <p className="text-xs font-mono text-gray-500 tracking-widest uppercase mb-2">Riset & Penulisan</p>
                 <h1 className="text-4xl md:text-5xl font-black text-white font-mono tracking-tight mb-4">
-                    Publications
+                    Publikasi
                 </h1>
                 <p className="text-gray-400 text-sm leading-relaxed max-w-xl">
                     Karya ilmiah dan artikel penelitian yang telah dipublikasikan.
