@@ -1,30 +1,151 @@
 'use client';
 
+import { useMemo, useState } from 'react';
 import { penghargaanData } from '../data/awards_data';
+import { HiFolderOpen } from 'react-icons/hi';
+import { HiX } from 'react-icons/hi';
 
 export default function Awards() {
-    const awardsByYear = penghargaanData.reduce((acc, award) => {
-        if (!acc[award.tahun]) {
-            acc[award.tahun] = [];
-        }
-        acc[award.tahun].push(award);
-        return acc;
-    }, {} as Record<string, typeof penghargaanData>);
+    const [searchQuery, setSearchQuery] = useState('');
+    const [selectedYear, setSelectedYear] = useState('all');
 
-    const years = Object.keys(awardsByYear).sort((a, b) => parseInt(b) - parseInt(a));
+    const awardsByYear = useMemo(() =>
+        penghargaanData.reduce((acc, award) => {
+            if (!acc[award.tahun]) acc[award.tahun] = [];
+            acc[award.tahun].push(award);
+            return acc;
+        }, {} as Record<string, typeof penghargaanData>),
+        []
+    );
+
+    const years = useMemo(
+        () => Object.keys(awardsByYear).sort((a, b) => parseInt(b) - parseInt(a)),
+        [awardsByYear]
+    );
+
+    const filteredAwardsByYear = useMemo(() => {
+        const normalizedQuery = searchQuery.trim().toLowerCase();
+
+        const result: Record<string, typeof penghargaanData> = {};
+
+        for (const year of years) {
+            if (selectedYear !== 'all' && year !== selectedYear) continue;
+
+            const filtered = awardsByYear[year].filter((award) => {
+                if (normalizedQuery.length === 0) return true;
+                return (
+                    award.namaPenghargaan.toLowerCase().includes(normalizedQuery) ||
+                    award.penyelenggara.toLowerCase().includes(normalizedQuery)
+                );
+            });
+
+            if (filtered.length > 0) result[year] = filtered;
+        }
+
+        return result;
+    }, [searchQuery, selectedYear, awardsByYear, years]);
+
+    const filteredYears = Object.keys(filteredAwardsByYear).sort((a, b) => parseInt(b) - parseInt(a));
+    const totalFiltered = filteredYears.reduce((sum, y) => sum + filteredAwardsByYear[y].length, 0);
+    const isFilterActive = searchQuery.trim().length > 0 || selectedYear !== 'all';
+
+    const handleClearFilter = () => {
+        setSearchQuery('');
+        setSelectedYear('all');
+    };
 
     return (
         <section className="min-h-screen bg-black text-white py-16 px-4">
-            <div className="max-w-7xl mx-auto space-y-20">
-                {years.map((year) => (
-                    <YearSection
-                        key={year}
-                        year={year}
-                        awards={awardsByYear[year]}
-                    />
-                ))}
+            {/* Search & Filter */}
+            <div className="max-w-7xl mx-auto mb-12">
+                <div className="flex flex-col gap-4 md:flex-row md:items-center">
+                    {/* Search input */}
+                    <div className="w-full md:flex-1">
+                        <input
+                            type="text"
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            placeholder="Cari nama penghargaan atau penyelenggara..."
+                            className="w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-gray-400 outline-none transition focus:border-white/40 focus:bg-white/15"
+                        />
+                    </div>
+
+                    {/* Clear button */}
+                    {isFilterActive && (
+                        <button
+                            onClick={handleClearFilter}
+                            className="flex shrink-0 items-center gap-2 rounded-2xl border border-white/20 bg-white/10 px-5 py-3 text-sm text-white transition hover:bg-white/20 hover:border-white/40 active:scale-95"
+                        >
+                            <HiX className="h-4 w-4" />
+                            Reset filter
+                        </button>
+                    )}
+                </div>
+
+                {/* Year chips */}
+                <div className="mt-4 flex flex-wrap gap-2">
+                    <button
+                        onClick={() => setSelectedYear('all')}
+                        className={`rounded-full border px-4 py-1.5 text-sm font-mono transition active:scale-95 ${
+                            selectedYear === 'all'
+                                ? 'border-white bg-white text-black'
+                                : 'border-white/20 bg-white/10 text-gray-300 hover:border-white/40 hover:bg-white/15'
+                        }`}
+                    >
+                        Semua
+                    </button>
+                    {years.map((year) => (
+                        <button
+                            key={year}
+                            onClick={() => setSelectedYear(year === selectedYear ? 'all' : year)}
+                            className={`rounded-full border px-4 py-1.5 text-sm font-mono transition active:scale-95 ${
+                                selectedYear === year
+                                    ? 'border-white bg-white text-black'
+                                    : 'border-white/20 bg-white/10 text-gray-300 hover:border-white/40 hover:bg-white/15'
+                            }`}
+                        >
+                            {year}
+                        </button>
+                    ))}
+                </div>
+
+                {/* Counter */}
+                <p className="mt-4 text-sm text-gray-400">
+                    Menampilkan {totalFiltered} dari {penghargaanData.length} penghargaan
+                </p>
             </div>
 
+            {/* Results */}
+            {filteredYears.length === 0 ? (
+                <div className="max-w-7xl mx-auto rounded-3xl border border-white/10 bg-white/5 px-6 py-12 text-center text-gray-300">
+                    <div className="mb-4 flex justify-center">
+                        <div className="rounded-full border border-white/10 bg-white/5 p-4">
+                            <HiFolderOpen className="h-10 w-10 text-white/60" />
+                        </div>
+                    </div>
+                    <p className="mb-4">Tidak ada penghargaan yang cocok dengan pencarian.</p>
+                    <button
+                        onClick={handleClearFilter}
+                        className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-4 py-2 text-sm text-white transition hover:bg-white/20"
+                    >
+                        <HiX className="h-4 w-4" />
+                        Reset filter
+                    </button>
+                </div>
+            ) : (
+                <div className="max-w-7xl mx-auto space-y-20">
+                    {filteredYears.map((year) => (
+                        <YearSection
+                            key={year}
+                            year={year}
+                            awards={filteredAwardsByYear[year]}
+                            totalInYear={awardsByYear[year].length}
+                        />
+                    ))}
+                </div>
+            )}
+
+            {/* Stats */}
             <div className="max-w-7xl mx-auto mt-24 mb-16">
                 <div className="border-t border-white pt-12">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
@@ -42,9 +163,12 @@ export default function Awards() {
 interface YearSectionProps {
     year: string;
     awards: typeof penghargaanData;
+    totalInYear: number;
 }
 
-function YearSection({ year, awards }: YearSectionProps) {
+function YearSection({ year, awards, totalInYear }: YearSectionProps) {
+    const isFiltered = awards.length < totalInYear;
+
     return (
         <div className="group">
             <div className="flex items-center mb-12">
@@ -57,6 +181,9 @@ function YearSection({ year, awards }: YearSectionProps) {
                         {year}
                     </h2>
                     <div className="h-0.5 bg-white flex-row max-w-24 group-hover:max-w-48 transition-all duration-700"></div>
+                    <span className="text-sm font-mono text-gray-400">
+                        {isFiltered ? `${awards.length} / ${totalInYear}` : `${totalInYear}`} awards
+                    </span>
                 </div>
             </div>
 
