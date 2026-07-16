@@ -3,7 +3,8 @@ import {
     HiHome,
     HiUser,
     HiFolder,
-    HiTrophy
+    HiTrophy,
+    HiBookOpen
 } from 'react-icons/hi2';
 
 interface NavItem {
@@ -22,6 +23,7 @@ const NavBottom = ({ currentPath }: NavBottomProps) => {
         { name: 'About', icon: HiUser, path: '/about' },
         { name: 'Project', icon: HiFolder, path: '/project' },
         { name: 'Awards', icon: HiTrophy, path: '/awards' },
+        { name: 'Publications', icon: HiBookOpen, path: '/publications' },
     ];
 
     const isActive = (path: string) => {
