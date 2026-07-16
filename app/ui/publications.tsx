@@ -2,8 +2,8 @@
 
 import { useMemo, useState } from 'react';
 import { publications } from '../data/publications_data';
-import { HiArrowUpRight, HiChevronDown, HiChevronUp, HiFolderOpen } from 'react-icons/hi';
-import { HiX } from 'react-icons/hi';
+import { HiArrowUpRight } from 'react-icons/hi2';
+import { HiChevronDown, HiChevronUp, HiFolderOpen, HiX } from 'react-icons/hi';
 
 export default function Publications() {
     const [searchQuery, setSearchQuery] = useState('');
