@@ -179,7 +179,6 @@ const StickerPeel: React.FC<StickerPeelProps> = ({
             peelHoverEasing,
             width,
             shadowIntensity,
-            lightingIntensity,
             peelDirection,
             defaultPadding
         ]

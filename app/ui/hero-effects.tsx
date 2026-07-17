@@ -96,7 +96,6 @@ export default function HeroEffects() {
         peelBackHoverPct={10}
         peelBackActivePct={20}
         shadowIntensity={0.3}
-        lightingIntensity={0.1}
         initialPosition={stickerPosition}
         className="z-50"
       />
