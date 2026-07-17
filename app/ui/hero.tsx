@@ -2,6 +2,15 @@ import Link from 'next/link';
 import { HiDocument, HiUser } from 'react-icons/hi2';
 import HeroEffects from './hero-effects';
 import NavBottom from '../components/NavBottom';
+import { projects } from '../data/projects_data';
+import { penghargaanData } from '../data/awards_data';
+import { publications } from '../data/publications_data';
+
+const stats = [
+  { value: projects.length, label: 'Proyek', href: '/project' },
+  { value: penghargaanData.length, label: 'Penghargaan', href: '/awards' },
+  { value: publications.length, label: 'Publikasi', href: '/publications' },
+];
 
 export default function Hero() {
   return (
@@ -37,6 +46,31 @@ export default function Hero() {
             <HiDocument className="me-3 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12 relative z-10" size={24} />
             <span className="relative z-10">CV Segera Hadir</span>
           </div>
+        </div>
+
+        {/* Stats */}
+        <div className="mt-8 flex items-center gap-6 sm:gap-10">
+          {stats.map((stat, i) => (
+            <Link
+              key={stat.label}
+              href={stat.href}
+              prefetch={false}
+              className="group flex flex-col items-center gap-0.5 hover:-translate-y-1 transition-transform duration-300"
+            >
+              <span className="text-2xl sm:text-3xl font-black text-white font-mono group-hover:text-gray-200 transition-colors">
+                {stat.value}
+              </span>
+              <span className="text-xs text-gray-400 font-mono tracking-wider uppercase group-hover:text-gray-300 transition-colors">
+                {stat.label}
+              </span>
+            </Link>
+          )).reduce<React.ReactNode[]>((acc, el, i) => {
+            if (i > 0) acc.push(
+              <span key={`sep-${i}`} className="text-white/20 text-lg font-mono select-none">·</span>
+            );
+            acc.push(el);
+            return acc;
+          }, [])}
         </div>
       </div>
       <NavBottom currentPath="/" />
