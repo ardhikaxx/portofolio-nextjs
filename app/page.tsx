@@ -9,8 +9,8 @@ export default function Home() {
 
   return (
     <main>
-      {loaded && <Hero />}
-      <LoadingScreen onComplete={() => setLoaded(true)} />
+      <Hero />
+      {!loaded && <LoadingScreen onComplete={() => setLoaded(true)} />}
     </main>
   )
 }

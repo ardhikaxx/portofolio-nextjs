@@ -19,7 +19,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0 bg-[radial-gradient(80%_50%_at_50%_50%,rgba(255,255,255,0.08)_0%,rgba(0,0,0,0.8)_60%)]"></div>
       <div className="relative z-40 flex flex-col items-center justify-center gap-2 text-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-9xl">
-          <h1 className="text-3xl md:text-6xl font-black text-white font-mono">
+          <h1 className="text-3xl md:text-6xl font-bold text-white font-mono tracking-tight">
             {'</Hello, I\'m Yanuar Ardhika>'}
           </h1>
         </div>

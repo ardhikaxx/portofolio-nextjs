@@ -71,7 +71,7 @@ export default function LoadingScreen({ onComplete }: { onComplete: () => void }
 
   return (
     <motion.div
-      className="fixed inset-0 bg-black flex items-end justify-start p-12 z-50"
+      className={`fixed inset-0 bg-black flex items-end justify-start p-12 z-50 ${exiting ? 'pointer-events-none' : ''}`}
       animate={exiting ? { opacity: 0 } : { opacity: 1 }}
       transition={{ duration: 0.6, ease: 'easeInOut' }}
     >
