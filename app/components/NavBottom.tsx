@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
     HiHome,
     HiUser,
@@ -50,34 +50,40 @@ const NavBottom = ({ currentPath }: NavBottomProps) => {
                                 href={item.path}
                                 aria-current={active ? 'page' : undefined}
                                 prefetch={false}
-                                className="relative flex items-center justify-center gap-2 px-4 py-3 rounded-full transition-colors duration-300"
+                                className="relative flex items-center justify-center px-4 py-3 rounded-full"
                             >
                                 {active && (
                                     <motion.div
                                         layoutId="active-bg"
                                         className="absolute inset-0 bg-white/20 rounded-full"
-                                        transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                                        transition={{ type: 'spring', stiffness: 300, damping: 35 }}
                                     />
                                 )}
                                 <motion.div
-                                    className="relative z-10 flex items-center gap-2"
-                                    animate={{ scale: active ? 1.1 : 1 }}
-                                    transition={{ duration: 0.2 }}
+                                    className="relative z-10 flex items-center gap-1.5"
+                                    layout
+                                    transition={{ type: 'spring', stiffness: 300, damping: 35 }}
                                 >
-                                    <Icon className="w-5 h-5" />
-                                    <AnimatePresence mode="wait">
-                                        {active && (
-                                            <motion.span
-                                                initial={{ opacity: 0, x: -8, width: 0 }}
-                                                animate={{ opacity: 1, x: 0, width: 'auto' }}
-                                                exit={{ opacity: 0, x: -8, width: 0 }}
-                                                transition={{ duration: 0.2 }}
-                                                className="text-sm font-bold whitespace-nowrap font-mono overflow-hidden"
-                                            >
-                                                {item.name}
-                                            </motion.span>
-                                        )}
-                                    </AnimatePresence>
+                                    <motion.div
+                                        layout
+                                        animate={{ scale: active ? 1.1 : 1 }}
+                                        transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                                    >
+                                        <Icon className="w-5 h-5" />
+                                    </motion.div>
+                                    <motion.span
+                                        layout
+                                        initial={false}
+                                        animate={{
+                                            maxWidth: active ? 120 : 0,
+                                            opacity: active ? 1 : 0,
+                                            marginLeft: active ? 4 : 0,
+                                        }}
+                                        transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                                        className="text-sm font-bold whitespace-nowrap font-mono overflow-hidden"
+                                    >
+                                        {item.name}
+                                    </motion.span>
                                 </motion.div>
                             </Link>
                         );
