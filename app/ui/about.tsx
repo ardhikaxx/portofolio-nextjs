@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { FaInstagram, FaGithub, FaLinkedin, FaBriefcase } from "react-icons/fa";
+import { FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
 import { useState, useEffect } from "react";
-import ExperienceModal from "../components/ExperienceModal";
 import { experiences } from "../data/experience_data";
+import ExperienceTimeline from "./experience-timeline";
 
 const SocialIcon = ({ href, children }: { href: string; children: React.ReactNode }) => {
     return (
@@ -277,22 +277,6 @@ function ContributionGraph() {
 }
 
 export default function About() {
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [selectedExperienceIndex, setSelectedExperienceIndex] = useState(0);
-
-    const openExperienceModal = (index: number = 0) => {
-        setSelectedExperienceIndex(index);
-        setIsModalOpen(true);
-    };
-
-    const closeModal = () => {
-        setIsModalOpen(false);
-    };
-
-    const navigateToExperience = (index: number) => {
-        setSelectedExperienceIndex(index);
-    };
-
     return (
         <section className="flex items-center justify-center min-h-screen bg-black w-full relative overflow-hidden px-4 py-8">
             <div
@@ -328,17 +312,7 @@ export default function About() {
 
                     <ContributionGraph />
 
-                    <div
-                        className="mb-4 sm:mb-6 mt-2"
-                    >
-                        <button
-                            onClick={() => openExperienceModal(0)}
-                            className="flex items-center gap-3 px-6 py-3 bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl text-white font-medium transition-all duration-300 hover:bg-white/20 hover:border-white/40 group/btn"
-                        >
-                            <FaBriefcase className="w-5 h-5 group-hover/btn:scale-110 transition-transform duration-300" />
-                            <span className="text-sm sm:text-base">Lihat Pengalaman</span>
-                        </button>
-                    </div>
+                    <ExperienceTimeline />
 
                     <div
                         className="w-full max-w-xs sm:max-w-sm mb-4 sm:mb-6"
@@ -378,13 +352,6 @@ export default function About() {
                 <div className="absolute bottom-3 sm:bottom-4 right-3 sm:right-4 w-4 h-4 border-b-3 border-r-3 border-white"></div>
             </div>
 
-            <ExperienceModal 
-                isOpen={isModalOpen}
-                onClose={closeModal}
-                experiences={experiences}
-                currentIndex={selectedExperienceIndex}
-                onNavigate={navigateToExperience}
-            />
         </section>
     );
 }
