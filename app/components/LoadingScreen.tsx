@@ -10,18 +10,18 @@ export default function LoadingScreen({ onComplete }: { onComplete: () => void }
   useEffect(() => {
     let frame: number
     let startTime = performance.now()
-    let previousPause = 0
-    let totalPause = 0
     let isPaused = false
     let pauseDuration = 0
 
+    const MIN_DURATION = 1500
+
     const segments = [
-      { from: 0, to: 45, duration: 100 },
-      { from: 45, to: 55, duration: 100, pauseAfter: 50 },
-      { from: 55, to: 78, duration: 80 },
-      { from: 78, to: 85, duration: 100, pauseAfter: 50 },
-      { from: 85, to: 93, duration: 70 },
-      { from: 93, to: 100, duration: 100, pauseAfter: 50 },
+      { from: 0, to: 30, duration: 200 },
+      { from: 30, to: 45, duration: 150, pauseAfter: 80 },
+      { from: 45, to: 65, duration: 120 },
+      { from: 65, to: 80, duration: 130, pauseAfter: 80 },
+      { from: 80, to: 92, duration: 100 },
+      { from: 92, to: 100, duration: 150, pauseAfter: 100 },
     ]
 
     let currentSegment = 0
@@ -56,7 +56,9 @@ export default function LoadingScreen({ onComplete }: { onComplete: () => void }
           segmentStartTime = now
         } else {
           setExiting(true)
-          setTimeout(onComplete, 600)
+          const elapsed = now - startTime
+          const remaining = Math.max(MIN_DURATION - elapsed, 0)
+          setTimeout(onComplete, remaining + 600)
           return
         }
       }
