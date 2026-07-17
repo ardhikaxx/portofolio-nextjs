@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { HiArrowLeft, HiHome } from 'react-icons/hi2';
 
 export default function NotFound() {
@@ -24,31 +23,18 @@ export default function NotFound() {
                 <div className="absolute -bottom-6 -right-6 w-6 h-6 border-b-2 border-r-2 border-white/30" />
 
                 {/* 404 number */}
-                <motion.div
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                >
+                <div>
                     <p className="text-xs font-mono text-gray-500 tracking-widest uppercase mb-4">Error 404</p>
                     <h1 className="text-[8rem] md:text-[12rem] font-black text-white font-mono leading-none tracking-tighter">
                         404
                     </h1>
-                </motion.div>
+                </div>
 
                 {/* Divider line */}
-                <motion.div
-                    initial={{ scaleX: 0 }}
-                    animate={{ scaleX: 1 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    className="h-px bg-white/20 my-6"
-                />
+                <div className="h-px bg-white/20 my-6" />
 
                 {/* Message */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                >
+                <div>
                     <h2 className="text-xl md:text-2xl font-bold text-white font-mono mb-3">
                         Halaman Tidak Ditemukan
                     </h2>
@@ -56,15 +42,10 @@ export default function NotFound() {
                         Halaman yang kamu cari tidak ada atau sudah dipindahkan.
                         Kembali ke beranda dan jelajahi konten lainnya.
                     </p>
-                </motion.div>
+                </div>
 
                 {/* Buttons */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                    className="flex flex-col sm:flex-row gap-3 justify-center"
-                >
+                <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <Link
                         href="/"
                         className="flex items-center justify-center gap-2 px-6 py-3 bg-white text-black rounded-full font-bold font-mono text-sm hover:bg-gray-200 transition-all duration-300 hover:-translate-y-0.5"
@@ -79,17 +60,12 @@ export default function NotFound() {
                         <HiArrowLeft className="w-4 h-4" />
                         Kembali
                     </button>
-                </motion.div>
+                </div>
 
                 {/* Footer note */}
-                <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.6 }}
-                    className="mt-10 text-xs font-mono text-gray-600 tracking-wider"
-                >
+                <p className="mt-10 text-xs font-mono text-gray-600 tracking-wider">
                     © YANUAR ARDHIKA
-                </motion.p>
+                </p>
             </div>
         </main>
     );

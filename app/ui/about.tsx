@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { FaInstagram, FaGithub, FaLinkedin, FaBriefcase } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import ExperienceModal from "../components/ExperienceModal";
@@ -9,16 +8,14 @@ import { experiences } from "../data/experience_data";
 
 const SocialIcon = ({ href, children }: { href: string; children: React.ReactNode }) => {
     return (
-        <motion.a
+        <a
             href={href}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-white/10 backdrop-blur-lg border border-white text-white transition-all duration-300 hover:bg-white hover:text-black"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
         >
             {children}
-        </motion.a>
+        </a>
     );
 };
 
@@ -188,28 +185,18 @@ function ContributionGraph() {
 
     if (loading) {
         return (
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8 }}
-                className="w-full mt-6"
-            >
+            <div className="w-full mt-6">
                 <div className="flex justify-between items-center mb-3">
                     <h3 className="text-white font-semibold text-sm">Kontribusi GitHub</h3>
                     <span className="text-white/60 text-sm font-mono">Memuat...</span>
                 </div>
                 <div className="h-20 bg-white/5 rounded-lg animate-pulse"></div>
-            </motion.div>
+            </div>
         );
     }
 
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
-            className="w-full mt-6"
-        >
+        <div className="w-full mt-6">
             <div className="flex justify-between items-center mb-3">
                 <div className="flex items-center gap-3">
                     <h3 className="text-white font-semibold text-sm">Kontribusi GitHub</h3>
@@ -285,7 +272,7 @@ function ContributionGraph() {
                 </div>
                 <span className="text-[10px] text-gray-500">Sering</span>
             </div>
-        </motion.div>
+        </div>
     );
 }
 
@@ -308,16 +295,13 @@ export default function About() {
 
     return (
         <section className="flex items-center justify-center min-h-screen bg-black w-full relative overflow-hidden px-4 py-8">
-            <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, ease: "linear" }}
+            <div
                 className="relative w-full max-w-4xl bg-white/10 backdrop-blur-lg border rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl transition-all duration-700 group mb-16"
             >
                 <div className="absolute inset-0 rounded-3xl bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-size-[20px_20px] mask-[radial-gradient(ellipse_80%_50%_at_50%_50%,black_70%,transparent_100%)]"></div>
 
                 <div className="relative z-10 flex flex-col items-center text-center text-white">
-                    <motion.div
+                    <div
                         className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 mb-3 group/avatar"
                     >
                         <div className="relative w-full h-full">
@@ -329,48 +313,34 @@ export default function About() {
                                 priority
                             />
                         </div>
-                    </motion.div>
+                    </div>
 
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3 }}
+                    <h1
                         className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4 text-white font-mono px-2"
                     >
                         Yanuar Ardhika Rahmadhani Ubaidillah
-                    </motion.h1>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.5 }}
+                    </h1>
+                    <p
                         className="text-gray-300 text-xs sm:text-sm leading-5 sm:leading-6 mb-4 sm:mb-6 max-w-2xl font-light tracking-wide px-2 sm:px-7"
                     >
                         Saya adalah mahasiswa Teknik Informatika di Politeknik Negeri Jember yang bersemangat menciptakan solusi digital di bidang pengembangan website, aplikasi mobile, dan Internet of Things (IoT). Melalui berbagai proyek, saya telah mengasah kemampuan tidak hanya dalam membangun aplikasi yang fungsional, tetapi juga dalam mendorong inovasi dengan memanfaatkan perkembangan teknologi informasi terkini. Pengalaman saya mencakup pengembangan perangkat lunak end-to-end yang meliputi website, aplikasi mobile, dan sistem IoT. Dengan dedikasi untuk menghadirkan solusi teknologi yang inovatif, saya berupaya menciptakan sistem informasi yang efisien dan berdampak nyata.
-                    </motion.p>
+                    </p>
 
                     <ContributionGraph />
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.6 }}
+                    <div
                         className="mb-4 sm:mb-6 mt-2"
                     >
-                        <motion.button
+                        <button
                             onClick={() => openExperienceModal(0)}
                             className="flex items-center gap-3 px-6 py-3 bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl text-white font-medium transition-all duration-300 hover:bg-white/20 hover:border-white/40 group/btn"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
                         >
                             <FaBriefcase className="w-5 h-5 group-hover/btn:scale-110 transition-transform duration-300" />
                             <span className="text-sm sm:text-base">Lihat Pengalaman</span>
-                        </motion.button>
-                    </motion.div>
+                        </button>
+                    </div>
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.7 }}
+                    <div
                         className="w-full max-w-xs sm:max-w-sm mb-4 sm:mb-6"
                     >
                         <div className="flex justify-center items-center gap-4 sm:gap-6">
@@ -384,12 +354,9 @@ export default function About() {
                                 <FaLinkedin className="w-5 h-5 sm:w-6 sm:h-6" />
                             </SocialIcon>
                         </div>
-                    </motion.div>
+                    </div>
 
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.9 }}
+                    <div
                         className="w-full border-t border-gray-800/50 pt-3 sm:pt-4 mt-2 sm:mt-auto"
                     >
                         <div className="flex flex-col lg:flex-row justify-between items-center gap-2 sm:gap-0 text-xs">
@@ -403,13 +370,13 @@ export default function About() {
                         <p className="text-center text-gray-600 text-[10px] sm:text-xs mt-2 tracking-wider">
                             © 2025 YANUAR ARDHIKA
                         </p>
-                    </motion.div>
+                    </div>
                 </div>
                 <div className="absolute top-3 sm:top-4 left-3 sm:left-4 w-4 h-4 border-t-3 border-l-3 border-white"></div>
                 <div className="absolute top-3 sm:top-4 right-2 sm:right-4 w-4 h-4 border-t-3 border-r-3 border-white"></div>
                 <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 w-4 h-4 border-b-3 border-l-3 border-white"></div>
                 <div className="absolute bottom-3 sm:bottom-4 right-3 sm:right-4 w-4 h-4 border-b-3 border-r-3 border-white"></div>
-            </motion.div>
+            </div>
 
             <ExperienceModal 
                 isOpen={isModalOpen}
