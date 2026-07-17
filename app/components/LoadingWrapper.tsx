@@ -9,7 +9,10 @@ export default function LoadingWrapper() {
   const [loaded, setLoaded] = useState(true)
 
   useEffect(() => {
-    if (!hasShownLoading) {
+    const navEntry = performance.getEntriesByType?.('navigation')?.[0] as PerformanceNavigationTiming
+    const isReload = navEntry?.type === 'reload'
+
+    if (isReload || !hasShownLoading) {
       hasShownLoading = true
       setLoaded(false)
     }
