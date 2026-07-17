@@ -6,6 +6,7 @@ import { HiArrowUpRight } from 'react-icons/hi2';
 import { HiChevronDown, HiFolderOpen, HiX } from 'react-icons/hi';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useParallax } from 'react-scroll-parallax';
 
 const latestProjectsFirst = [...projects].reverse();
 
@@ -143,6 +144,7 @@ interface ProjectCardProps {
 }
 
 function ProjectCard({ project, priority }: ProjectCardProps) {
+    const parallax = useParallax({ translateY: [-15, 15] });
     const handleLinkClick = (e: React.MouseEvent) => {
         e.preventDefault();
         window.open(project.link, '_blank');
@@ -153,7 +155,7 @@ function ProjectCard({ project, priority }: ProjectCardProps) {
 
     return (
         <Link href={`/project/${project.id}`} className="block">
-            <div className="bg-white/10 backdrop-blur-lg rounded-3xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 h-full cursor-pointer group border border-white/10 hover:border-white/30">
+            <div ref={parallax.ref as React.RefObject<HTMLDivElement | null>} className="bg-white/10 backdrop-blur-lg rounded-3xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 h-full cursor-pointer group border border-white/10 hover:border-white/30">
                 <div className="p-6 pb-0">
                     <h3 className="text-lg font-bold text-white font-mono group-hover:text-gray-200 transition-colors">{project.name}</h3>
                     <p className="text-gray-400 text-sm mt-1 line-clamp-2 group-hover:text-gray-300 transition-colors">{project.description}</p>
