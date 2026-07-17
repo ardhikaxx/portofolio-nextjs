@@ -2,23 +2,19 @@
 
 import { useEffect, useState } from 'react'
 import LoadingScreen from './LoadingScreen'
-
-let hasShownLoading = false
+import { useLoading } from './LoadingContext'
 
 export default function LoadingWrapper() {
   const [loaded, setLoaded] = useState(true)
+  const { hasLoaded, markLoaded } = useLoading()
 
   useEffect(() => {
-    const navEntry = performance.getEntriesByType?.('navigation')?.[0] as PerformanceNavigationTiming
-    const isReload = navEntry?.type === 'reload'
-
-    if (isReload || !hasShownLoading) {
-      hasShownLoading = true
+    if (!hasLoaded) {
       setLoaded(false)
     }
-  }, [])
+  }, [hasLoaded])
 
   if (loaded) return null
 
-  return <LoadingScreen onComplete={() => setLoaded(true)} />
+  return <LoadingScreen onComplete={() => { markLoaded(); setLoaded(true) }} />
 }

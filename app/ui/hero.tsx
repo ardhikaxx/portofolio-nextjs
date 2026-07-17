@@ -38,14 +38,15 @@ export default function Hero() {
             <HiUser className="me-3 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12 relative z-10" size={24} />
             <span className="relative z-10">Tentang Saya</span>
           </Link>
-          <div
-            className="w-full lg:w-auto group bg-white/10 backdrop-blur-lg text-white px-6 py-3 border-2 border-white rounded-full font-bold text-center font-mono flex items-center justify-center relative overflow-hidden"
-            aria-disabled="true"
+          <Link
+            href={'/cv'}
+            prefetch={false}
+            className="w-full lg:w-auto group bg-white/10 backdrop-blur-lg text-white px-6 py-3 border-2 border-white rounded-full font-bold text-center font-mono flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 ease-in-out relative overflow-hidden"
           >
             <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/20 to-transparent" />
             <HiDocument className="me-3 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12 relative z-10" size={24} />
-            <span className="relative z-10">CV Segera Hadir</span>
-          </div>
+            <span className="relative z-10">Lihat CV</span>
+          </Link>
         </div>
 
         {/* Stats */}
