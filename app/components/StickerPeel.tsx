@@ -13,7 +13,6 @@ interface StickerPeelProps {
     peelHoverEasing?: string;
     width?: number;
     shadowIntensity?: number;
-    lightingIntensity?: number;
     initialPosition?: 'center' | 'random' | { x: number; y: number };
     peelDirection?: number;
     className?: string;
@@ -28,7 +27,6 @@ interface CSSVars extends CSSProperties {
     '--sticker-peel-hover-easing'?: string;
     '--sticker-width'?: string;
     '--sticker-shadow-opacity'?: number;
-    '--sticker-lighting-constant'?: number;
     '--peel-direction'?: string;
     '--sticker-start'?: string;
     '--sticker-end'?: string;
@@ -43,15 +41,12 @@ const StickerPeel: React.FC<StickerPeelProps> = ({
     peelHoverEasing = 'power2.out',
     width = 200,
     shadowIntensity = 0.6,
-    lightingIntensity = 0.1,
     initialPosition = 'center',
     peelDirection = 0,
     className = ''
 }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const dragTargetRef = useRef<HTMLDivElement>(null);
-    const pointLightRef = useRef<SVGFEPointLightElement>(null);
-    const pointLightFlippedRef = useRef<SVGFEPointLightElement>(null);
     const draggableInstanceRef = useRef<Draggable | null>(null);
 
     const defaultPadding = 12;
@@ -137,41 +132,7 @@ const StickerPeel: React.FC<StickerPeelProps> = ({
         };
     }, []);
 
-    useEffect(() => {
-        const updateLight = (e: Event) => {
-            const mouseEvent = e as MouseEvent;
-            const rect = containerRef.current?.getBoundingClientRect();
-            if (!rect) return;
 
-            const x = mouseEvent.clientX - rect.left;
-            const y = mouseEvent.clientY - rect.top;
-
-            if (pointLightRef.current) {
-                gsap.set(pointLightRef.current, { attr: { x, y } });
-            }
-
-            const normalizedAngle = Math.abs(peelDirection % 360);
-            if (pointLightFlippedRef.current) {
-                if (normalizedAngle !== 180) {
-                    gsap.set(pointLightFlippedRef.current, {
-                        attr: { x, y: rect.height - y }
-                    });
-                } else {
-                    gsap.set(pointLightFlippedRef.current, {
-                        attr: { x: -1000, y: -1000 }
-                    });
-                }
-            }
-        };
-
-        const container = containerRef.current;
-        const eventType = 'mousemove';
-
-        if (container) {
-            container.addEventListener(eventType, updateLight);
-            return () => container.removeEventListener(eventType, updateLight);
-        }
-    }, [peelDirection]);
 
     useEffect(() => {
         const container = containerRef.current;
@@ -206,7 +167,6 @@ const StickerPeel: React.FC<StickerPeelProps> = ({
             '--sticker-peel-hover-easing': peelHoverEasing,
             '--sticker-width': `${width}px`,
             '--sticker-shadow-opacity': shadowIntensity,
-            '--sticker-lighting-constant': lightingIntensity,
             '--peel-direction': `${peelDirection}deg`,
             '--sticker-start': `calc(-1 * ${defaultPadding}px)`,
             '--sticker-end': `calc(100% + ${defaultPadding}px)`
@@ -275,42 +235,13 @@ const StickerPeel: React.FC<StickerPeelProps> = ({
             clip-path: polygon(var(--sticker-start) var(--sticker-start), var(--sticker-end) var(--sticker-start), var(--sticker-end) var(--sticker-peelback-active), var(--sticker-start) var(--sticker-peelback-active)) !important;
             top: calc(-100% + 2 * var(--sticker-peelback-active) - 1px) !important;
           }
+
         `
                 }}
             />
 
             <svg width="0" height="0">
                 <defs>
-                    <filter id="pointLight">
-                        <feGaussianBlur stdDeviation="1" result="blur" />
-                        <feSpecularLighting
-                            result="spec"
-                            in="blur"
-                            specularExponent="100"
-                            specularConstant={lightingIntensity}
-                            lightingColor="white"
-                        >
-                            <fePointLight ref={pointLightRef} x="100" y="100" z="300" />
-                        </feSpecularLighting>
-                        <feComposite in="spec" in2="SourceGraphic" result="lit" />
-                        <feComposite in="lit" in2="SourceAlpha" operator="in" />
-                    </filter>
-
-                    <filter id="pointLightFlipped">
-                        <feGaussianBlur stdDeviation="10" result="blur" />
-                        <feSpecularLighting
-                            result="spec"
-                            in="blur"
-                            specularExponent="10"
-                            specularConstant={lightingIntensity * 7}
-                            lightingColor="white"
-                        >
-                            <fePointLight ref={pointLightFlippedRef} x="100" y="100" z="300" />
-                        </feSpecularLighting>
-                        <feComposite in="spec" in2="SourceGraphic" result="lit" />
-                        <feComposite in="lit" in2="SourceAlpha" operator="in" />
-                    </filter>
-
                     <filter id="dropShadow">
                         <feDropShadow
                             dx="2"
@@ -342,7 +273,7 @@ const StickerPeel: React.FC<StickerPeelProps> = ({
                 }}
             >
                 <div className="sticker-main" style={stickerMainStyle}>
-                    <div style={{ filter: 'url(#pointLight)' }}>
+                    <div>
                         <img
                             src={imageSrc}
                             alt=""
@@ -368,7 +299,7 @@ const StickerPeel: React.FC<StickerPeelProps> = ({
                 </div>
 
                 <div className="sticker-flap absolute w-full h-full left-0" style={flapStyle}>
-                    <div style={{ filter: 'url(#pointLightFlipped)' }}>
+                    <div>
                         <img
                             src={imageSrc}
                             alt=""
