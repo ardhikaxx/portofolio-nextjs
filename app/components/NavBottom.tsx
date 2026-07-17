@@ -57,7 +57,7 @@ const NavBottom = ({ currentPath }: NavBottomProps) => {
                             >
                                 <Icon className={`w-5 h-5 ${active ? 'scale-110' : ''} transition-transform duration-300 me-0 lg:me-1`} />
 
-                                <span className="hidden md:inline-block text-sm font-bold whitespace-nowrap font-mono">
+                                <span className={`text-sm font-bold whitespace-nowrap font-mono ${active ? 'inline-block' : 'hidden'}`}>
                                     {item.name}
                                 </span>
                             </Link>
