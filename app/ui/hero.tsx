@@ -16,7 +16,7 @@ export default function Hero() {
         </div>
         <div className="mb-2">
           <p className="max-w-2xl text-lg md:text-2xl text-shadow-white font-medium font-mono">
-            Junior Web & Mobile Developer yang membangun sistem digital efisien dan berdampak
+            IT / Developer yang membangun sistem digital efisien dan berdampak
           </p>
         </div>
         <div className="w-full max-w-md lg:max-w-none flex flex-col lg:flex-row gap-3 justify-center items-center">
