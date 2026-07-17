@@ -63,7 +63,7 @@ export const metadata: Metadata = {
       "Portofolio Yanuar Ardhika Rahmadhani Ubaidillah — Web & Mobile Developer berpengalaman di Laravel, Flutter, Next.js, dan IoT.",
     images: [
       {
-        url: "/og-image.png",
+        url: `${BASE_URL}/og-image.png`,
         width: 1456,
         height: 816,
         alt: "Yanuar Ardhika - Web & Mobile Developer",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     title: "Yanuar Ardhika - Web & Mobile Developer",
     description:
       "Portofolio Yanuar Ardhika Rahmadhani Ubaidillah — Web & Mobile Developer berpengalaman di Laravel, Flutter, Next.js, dan IoT.",
-    images: ["/og-image.png"],
+    images: [`${BASE_URL}/og-image.png`],
   },
   alternates: {
     canonical: BASE_URL,
