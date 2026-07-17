@@ -6,6 +6,8 @@ import Image from 'next/image';
 import { projects } from '../../data/projects_data';
 import { HiArrowLeft, HiLink, HiCalendar, HiCode, HiChip, HiCube } from 'react-icons/hi';
 import { useEffect, useState } from 'react';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 export default function ProjectDetailPage() {
     const params = useParams();
@@ -93,22 +95,31 @@ export default function ProjectDetailPage() {
                 </div>
 
                 {/* Image Container */}
-                <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-10 border border-white/10 bg-white/5 group">
-                    <Image
-                        src={project.image}
-                        alt={project.name}
-                        fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
-                        priority
-                    />
-                    <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
-                    
-                    {/* Corner Decorations */}
-                    <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-white/30 rounded-tl-lg" />
-                    <div className="absolute top-4 right-4 w-8 h-8 border-r-2 border-t-2 border-white/30 rounded-tr-lg" />
-                    <div className="absolute bottom-4 left-4 w-8 h-8 border-l-2 border-b-2 border-white/30 rounded-bl-lg" />
-                    <div className="absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-white/30 rounded-br-lg" />
-                </div>
+                <PhotoProvider>
+                    <PhotoView src={project.image}>
+                        <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-10 border border-white/10 bg-white/5 group cursor-pointer">
+                            <Image
+                                src={project.image}
+                                alt={project.name}
+                                fill
+                                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                priority
+                            />
+                            <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
+                            
+                            {/* Corner Decorations */}
+                            <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-white/30 rounded-tl-lg" />
+                            <div className="absolute top-4 right-4 w-8 h-8 border-r-2 border-t-2 border-white/30 rounded-tr-lg" />
+                            <div className="absolute bottom-4 left-4 w-8 h-8 border-l-2 border-b-2 border-white/30 rounded-bl-lg" />
+                            <div className="absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-white/30 rounded-br-lg" />
+                            
+                            {/* Zoom hint */}
+                            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-sm px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span className="text-white/80 text-xs font-mono">Klik untuk perbesar</span>
+                            </div>
+                        </div>
+                    </PhotoView>
+                </PhotoProvider>
 
                 {/* Stats Cards */}
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
