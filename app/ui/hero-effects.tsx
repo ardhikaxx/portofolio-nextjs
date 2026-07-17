@@ -16,7 +16,7 @@ const StickerPeel = dynamic(() => import('../components/StickerPeel'), {
 
 export default function HeroEffects() {
   const [enabled, setEnabled] = useState(false);
-  const [stickerSize, setStickerSize] = useState(130);
+  const [stickerSize, setStickerSize] = useState(100);
   const [stickerPosition, setStickerPosition] = useState({ x: 40, y: -140 });
 
   useEffect(() => {
@@ -58,7 +58,7 @@ export default function HeroEffects() {
     if (!enabled) return;
     const handleResize = () => {
       if (window.innerWidth >= 768) {
-        setStickerSize(200);
+        setStickerSize(180);
         setStickerPosition({ x: 20, y: -225 });
       } else {
         setStickerSize(150);
