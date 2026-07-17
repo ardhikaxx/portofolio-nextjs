@@ -4,12 +4,14 @@ import { useEffect, useState } from 'react'
 import LoadingScreen from './components/LoadingScreen'
 import Hero from './ui/hero'
 
+let hasShownLoading = false
+
 export default function Home() {
   const [loaded, setLoaded] = useState(true)
 
   useEffect(() => {
-    const shown = sessionStorage.getItem('loaded')
-    if (!shown) {
+    if (!hasShownLoading) {
+      hasShownLoading = true
       setLoaded(false)
     }
   }, [])
@@ -17,10 +19,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      {!loaded && <LoadingScreen onComplete={() => {
-        sessionStorage.setItem('loaded', '1')
-        setLoaded(true)
-      }} />}
+      {!loaded && <LoadingScreen onComplete={() => setLoaded(true)} />}
     </main>
   )
 }
