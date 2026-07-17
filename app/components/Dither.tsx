@@ -310,6 +310,14 @@ export default function Dither({
     enableMouseInteraction = true,
     mouseRadius = 1
 }: DitherProps) {
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if (!mounted) return <div className="w-full h-full" />;
+
     return (
         <Canvas
             className="w-full h-full relative"
