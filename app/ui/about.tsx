@@ -368,7 +368,7 @@ export default function About() {
                             </div>
                         </div>
                         <p className="text-center text-gray-600 text-[10px] sm:text-xs mt-2 tracking-wider">
-                            © 2025 YANUAR ARDHIKA
+                            © {new Date().getFullYear()} YANUAR ARDHIKA
                         </p>
                     </div>
                 </div>
