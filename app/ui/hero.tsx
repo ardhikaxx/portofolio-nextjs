@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { HiDocument, HiUser } from 'react-icons/hi2';
+import { HiDocument, HiUser, HiStar } from 'react-icons/hi2';
 import HeroEffects from './hero-effects';
 import NavBottom from '../components/NavBottom';
 import { projects } from '../data/projects_data';
@@ -47,6 +47,16 @@ export default function Hero() {
             <HiDocument className="me-3 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12 relative z-10" size={24} />
             <span className="relative z-10">Lihat CV</span>
           </Link>
+          <a
+            href="https://reviews-dhika.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full lg:w-auto group bg-white/10 backdrop-blur-lg text-white px-6 py-3 border-2 border-white rounded-full font-bold text-center font-mono flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 ease-in-out relative overflow-hidden"
+          >
+            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/20 to-transparent" />
+            <HiStar className="me-3 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12 relative z-10" size={24} />
+            <span className="relative z-10">Review Jasa</span>
+          </a>
         </div>
 
         {/* Stats */}
