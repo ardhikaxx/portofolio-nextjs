@@ -1,11 +1,7 @@
-'use client';
-
-import { useState } from 'react';
 import Link from 'next/link';
-import { HiDocument, HiUser, HiStar, HiEnvelope } from 'react-icons/hi2';
+import { HiDocument, HiUser, HiStar } from 'react-icons/hi2';
 import HeroEffects from './hero-effects';
 import NavBottom from '../components/NavBottom';
-import ContactModal from '../components/ContactModal';
 import { projects } from '../data/projects_data';
 import { penghargaanData } from '../data/awards_data';
 import { publications } from '../data/publications_data';
@@ -17,38 +13,21 @@ const stats = [
 ];
 
 export default function Hero() {
-  const [isContactOpen, setIsContactOpen] = useState(false);
-
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
       <HeroEffects />
       <div className="absolute inset-0 z-0 bg-[radial-gradient(80%_50%_at_50%_50%,rgba(255,255,255,0.08)_0%,rgba(0,0,0,0.8)_60%)]"></div>
       <div className="relative z-40 flex flex-col items-center justify-center gap-2 text-center px-4 sm:px-6 lg:px-8">
-        
-        {/* Availability Badge */}
-        <button
-          onClick={() => setIsContactOpen(true)}
-          className="mb-2 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono hover:bg-emerald-500/20 transition-all duration-300 cursor-pointer hover:scale-105"
-        >
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-          </span>
-          <span>Available for Freelance & Full-time</span>
-        </button>
-
         <div className="max-w-9xl">
           <h1 className="text-3xl md:text-6xl font-bold text-white font-mono tracking-tight">
             {'</Hello, I\'m Yanuar Ardhika>'}
           </h1>
         </div>
-        <div className="mb-3">
+        <div className="mb-2">
           <p className="max-w-2xl text-lg md:text-2xl text-shadow-white font-medium font-mono">
             IT / Developer yang membangun sistem digital efisien dan berdampak
           </p>
         </div>
-
-        {/* Action Buttons */}
         <div className="w-full max-w-md lg:max-w-none flex flex-col lg:flex-row gap-3 justify-center items-center">
           <Link
             href={'/about'}
@@ -105,8 +84,7 @@ export default function Hero() {
           }, [])}
         </div>
       </div>
-      <NavBottom currentPath="/" onOpenContact={() => setIsContactOpen(true)} />
-      <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
+      <NavBottom currentPath="/" />
     </section>
   );
 }
