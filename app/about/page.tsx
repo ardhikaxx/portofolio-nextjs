@@ -5,14 +5,14 @@ import NavBottom from "../components/NavBottom";
 export const metadata: Metadata = {
     title: "Tentang Saya",
     description:
-        "Profil Yanuar Ardhika Rahmadhani Ubaidillah — mahasiswa Teknik Informatika Politeknik Negeri Jember, Web & Mobile Developer berpengalaman di Laravel, Flutter, Next.js, dan IoT.",
+        "Profil Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom. — lulusan Teknik Informatika Politeknik Negeri Jember, Web & Mobile Developer berpengalaman di Laravel, Flutter, Next.js, dan IoT.",
     alternates: {
         canonical: "https://yanuar-ardhika.vercel.app/about",
     },
     openGraph: {
         title: "Tentang Yanuar Ardhika",
         description:
-            "Profil Yanuar Ardhika Rahmadhani Ubaidillah — mahasiswa Teknik Informatika Politeknik Negeri Jember, Web & Mobile Developer.",
+            "Profil Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom. — lulusan Teknik Informatika Politeknik Negeri Jember, Web & Mobile Developer.",
         url: "https://yanuar-ardhika.vercel.app/about",
     },
 };

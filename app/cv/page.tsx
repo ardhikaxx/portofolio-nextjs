@@ -3,13 +3,13 @@ import CVPageClient from "../ui/cv-page-client";
 
 export const metadata: Metadata = {
   title: "CV",
-  description: "CV Yanuar Ardhika Rahmadhani Ubaidillah - Web & Mobile Developer",
+  description: "CV Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom. - Web & Mobile Developer",
   alternates: {
     canonical: "https://yanuar-ardhika.vercel.app/cv",
   },
   openGraph: {
     title: "CV Yanuar Ardhika",
-    description: "CV Yanuar Ardhika Rahmadhani Ubaidillah - Web & Mobile Developer",
+    description: "CV Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom. - Web & Mobile Developer",
     url: "https://yanuar-ardhika.vercel.app/cv",
   },
 };

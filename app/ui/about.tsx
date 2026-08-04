@@ -302,12 +302,12 @@ export default function About() {
                     <h1
                         className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4 text-white font-mono px-2"
                     >
-                        Yanuar Ardhika Rahmadhani Ubaidillah
+                        Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom.
                     </h1>
                     <p
                         className="text-gray-300 text-xs sm:text-sm leading-5 sm:leading-6 mb-4 sm:mb-6 max-w-2xl font-light tracking-wide px-2 sm:px-7"
                     >
-                        Saya adalah mahasiswa Teknik Informatika di Politeknik Negeri Jember yang bersemangat menciptakan solusi digital di bidang pengembangan website, aplikasi mobile, dan Internet of Things (IoT). Melalui berbagai proyek, saya telah mengasah kemampuan tidak hanya dalam membangun aplikasi yang fungsional, tetapi juga dalam mendorong inovasi dengan memanfaatkan perkembangan teknologi informasi terkini. Pengalaman saya mencakup pengembangan perangkat lunak end-to-end yang meliputi website, aplikasi mobile, dan sistem IoT. Dengan dedikasi untuk menghadirkan solusi teknologi yang inovatif, saya berupaya menciptakan sistem informasi yang efisien dan berdampak nyata.
+                        Saya adalah lulusan Teknik Informatika dari Politeknik Negeri Jember yang bersemangat menciptakan solusi digital di bidang pengembangan website, aplikasi mobile, dan Internet of Things (IoT). Melalui berbagai proyek, saya telah mengasah kemampuan tidak hanya dalam membangun aplikasi yang fungsional, tetapi juga dalam mendorong inovasi dengan memanfaatkan perkembangan teknologi informasi terkini. Pengalaman saya mencakup pengembangan perangkat lunak end-to-end yang meliputi website, aplikasi mobile, dan sistem IoT. Dengan dedikasi untuk menghadirkan solusi teknologi yang inovatif, saya berupaya menciptakan sistem informasi yang efisien dan berdampak nyata.
                     </p>
 
                     <ContributionGraph />
