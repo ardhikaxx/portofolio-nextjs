@@ -2,9 +2,11 @@
 
 import Image from "next/image";
 import { FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
+import { HiEnvelope } from "react-icons/hi2";
 import { useState, useEffect } from "react";
 import { experiences } from "../data/experience_data";
 import ExperienceTimeline from "./experience-timeline";
+import ContactModal from "../components/ContactModal";
 
 const SocialIcon = ({ href, children }: { href: string; children: React.ReactNode }) => {
     return (
@@ -277,6 +279,8 @@ function ContributionGraph() {
 }
 
 export default function About() {
+    const [isContactOpen, setIsContactOpen] = useState(false);
+
     return (
         <section className="flex items-center justify-center min-h-screen bg-black w-full relative overflow-hidden px-4 py-8">
             <div
@@ -310,6 +314,17 @@ export default function About() {
                         Saya adalah lulusan Teknik Informatika dari Politeknik Negeri Jember yang bersemangat menciptakan solusi digital di bidang pengembangan website, aplikasi mobile, dan Internet of Things (IoT). Melalui berbagai proyek, saya telah mengasah kemampuan tidak hanya dalam membangun aplikasi yang fungsional, tetapi juga dalam mendorong inovasi dengan memanfaatkan perkembangan teknologi informasi terkini. Pengalaman saya mencakup pengembangan perangkat lunak end-to-end yang meliputi website, aplikasi mobile, dan sistem IoT. Dengan dedikasi untuk menghadirkan solusi teknologi yang inovatif, saya berupaya menciptakan sistem informasi yang efisien dan berdampak nyata.
                     </p>
 
+                    {/* CTA Contact Button */}
+                    <div className="mb-6">
+                        <button
+                            onClick={() => setIsContactOpen(true)}
+                            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white text-black hover:bg-gray-200 font-mono text-xs sm:text-sm font-bold shadow-xl hover:shadow-white/20 transition-all duration-300 hover:scale-105 cursor-pointer"
+                        >
+                            <HiEnvelope size={18} />
+                            <span>Hubungi Saya / Hire Me</span>
+                        </button>
+                    </div>
+
                     <ContributionGraph />
 
                     <ExperienceTimeline />
@@ -335,7 +350,7 @@ export default function About() {
                     >
                         <div className="flex flex-col lg:flex-row justify-between items-center gap-2 sm:gap-0 text-xs">
                             <div className="text-gray-500 text-center sm:text-left">
-                                <p>Status: <span className="text-white font-semibold">IT Developer</span></p>
+                                <p>Status: <button onClick={() => setIsContactOpen(true)} className="text-emerald-400 font-semibold hover:underline cursor-pointer">IT Developer (Available)</button></p>
                             </div>
                             <div className="text-gray-500 flex items-center gap-1">
                                 <p>Peran: <span className="text-white font-semibold">Web & Mobile Developer</span></p>
@@ -352,6 +367,7 @@ export default function About() {
                 <div className="absolute bottom-3 sm:bottom-4 right-3 sm:right-4 w-4 h-4 border-b-3 border-r-3 border-white"></div>
             </div>
 
+            <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
         </section>
     );
 }

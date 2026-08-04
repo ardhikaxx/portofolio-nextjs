@@ -1,7 +1,11 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
-import { HiDocument, HiUser, HiStar } from 'react-icons/hi2';
+import { HiDocument, HiUser, HiStar, HiEnvelope } from 'react-icons/hi2';
 import HeroEffects from './hero-effects';
 import NavBottom from '../components/NavBottom';
+import ContactModal from '../components/ContactModal';
 import { projects } from '../data/projects_data';
 import { penghargaanData } from '../data/awards_data';
 import { publications } from '../data/publications_data';
@@ -13,11 +17,26 @@ const stats = [
 ];
 
 export default function Hero() {
+  const [isContactOpen, setIsContactOpen] = useState(false);
+
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
       <HeroEffects />
       <div className="absolute inset-0 z-0 bg-[radial-gradient(80%_50%_at_50%_50%,rgba(255,255,255,0.08)_0%,rgba(0,0,0,0.8)_60%)]"></div>
       <div className="relative z-40 flex flex-col items-center justify-center gap-2 text-center px-4 sm:px-6 lg:px-8">
+        
+        {/* Availability Badge */}
+        <button
+          onClick={() => setIsContactOpen(true)}
+          className="mb-2 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono hover:bg-emerald-500/20 transition-all duration-300 cursor-pointer hover:scale-105"
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span>Available for Freelance & Full-time</span>
+        </button>
+
         <div className="max-w-9xl">
           <h1 className="text-3xl md:text-6xl font-bold text-white font-mono tracking-tight">
             {'</Hello, I\'m Yanuar Ardhika>'}
@@ -29,10 +48,18 @@ export default function Hero() {
           </p>
         </div>
         <div className="w-full max-w-md lg:max-w-none flex flex-col lg:flex-row gap-3 justify-center items-center">
+          <button
+            onClick={() => setIsContactOpen(true)}
+            className="w-full lg:w-auto group bg-white px-6 py-3 text-black rounded-full font-bold text-center hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300 ease-in-out font-mono flex items-center justify-center hover:shadow-lg hover:shadow-white/20 hover:-translate-y-1 relative overflow-hidden cursor-pointer"
+          >
+            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/20 to-transparent" />
+            <HiEnvelope className="me-3 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12 relative z-10" size={24} />
+            <span className="relative z-10">Hubungi Saya</span>
+          </button>
           <Link
             href={'/about'}
             prefetch={false}
-            className="w-full lg:w-auto group bg-white px-6 py-3 text-black rounded-full font-bold text-center hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300 ease-in-out font-mono flex items-center justify-center hover:shadow-lg hover:shadow-white/20 hover:-translate-y-1 relative overflow-hidden"
+            className="w-full lg:w-auto group bg-white/10 backdrop-blur-lg text-white px-6 py-3 border-2 border-white rounded-full font-bold text-center font-mono flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 ease-in-out relative overflow-hidden"
           >
             <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/20 to-transparent" />
             <HiUser className="me-3 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12 relative z-10" size={24} />
@@ -84,7 +111,9 @@ export default function Hero() {
           }, [])}
         </div>
       </div>
-      <NavBottom currentPath="/" />
+      <NavBottom currentPath="/" onOpenContact={() => setIsContactOpen(true)} />
+      <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
     </section>
   );
 }
+
