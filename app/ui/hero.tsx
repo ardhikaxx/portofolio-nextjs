@@ -55,7 +55,7 @@ export default function Hero() {
           >
             <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/20 to-transparent" />
             <HiStar className="me-3 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12 relative z-10" size={24} />
-            <span className="relative z-10">Review Jasa</span>
+            <span className="relative z-10">Testimoni & Ulasan</span>
           </a>
         </div>
 
