@@ -42,24 +42,18 @@ export default function Hero() {
             {'</Hello, I\'m Yanuar Ardhika>'}
           </h1>
         </div>
-        <div className="mb-2">
+        <div className="mb-3">
           <p className="max-w-2xl text-lg md:text-2xl text-shadow-white font-medium font-mono">
             IT / Developer yang membangun sistem digital efisien dan berdampak
           </p>
         </div>
+
+        {/* Action Buttons */}
         <div className="w-full max-w-md lg:max-w-none flex flex-col lg:flex-row gap-3 justify-center items-center">
-          <button
-            onClick={() => setIsContactOpen(true)}
-            className="w-full lg:w-auto group bg-white px-6 py-3 text-black rounded-full font-bold text-center hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300 ease-in-out font-mono flex items-center justify-center hover:shadow-lg hover:shadow-white/20 hover:-translate-y-1 relative overflow-hidden cursor-pointer"
-          >
-            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/20 to-transparent" />
-            <HiEnvelope className="me-3 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12 relative z-10" size={24} />
-            <span className="relative z-10">Hubungi Saya</span>
-          </button>
           <Link
             href={'/about'}
             prefetch={false}
-            className="w-full lg:w-auto group bg-white/10 backdrop-blur-lg text-white px-6 py-3 border-2 border-white rounded-full font-bold text-center font-mono flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 ease-in-out relative overflow-hidden"
+            className="w-full lg:w-auto group bg-white px-6 py-3 text-black rounded-full font-bold text-center hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300 ease-in-out font-mono flex items-center justify-center hover:shadow-lg hover:shadow-white/20 hover:-translate-y-1 relative overflow-hidden"
           >
             <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/20 to-transparent" />
             <HiUser className="me-3 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12 relative z-10" size={24} />
