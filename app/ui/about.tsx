@@ -311,7 +311,7 @@ export default function About() {
                     <p
                         className="text-gray-300 text-xs sm:text-sm leading-5 sm:leading-6 mb-4 sm:mb-6 max-w-2xl font-light tracking-wide px-2 sm:px-7"
                     >
-                        Saya adalah lulusan Teknik Informatika dari Politeknik Negeri Jember yang bersemangat menciptakan solusi digital di bidang pengembangan website, aplikasi mobile, dan Internet of Things (IoT). Melalui berbagai proyek, saya telah mengasah kemampuan tidak hanya dalam membangun aplikasi yang fungsional, tetapi juga dalam mendorong inovasi dengan memanfaatkan perkembangan teknologi informasi terkini. Pengalaman saya mencakup pengembangan perangkat lunak end-to-end yang meliputi website, aplikasi mobile, dan sistem IoT. Dengan dedikasi untuk menghadirkan solusi teknologi yang inovatif, saya berupaya menciptakan sistem informasi yang efisien dan berdampak nyata.
+                        Software Engineer dan lulusan Sarjana Terapan (S.Tr.Kom.) Teknik Informatika Politeknik Negeri Jember dengan spesialisasi pengembangan web dan mobile (Next.js, Laravel, Flutter). Memiliki rekam jejak dalam merancang serta membangun aplikasi end-to-end yang skalabel, efisien, dan ramah pengguna — mulai dari sistem informasi instansi, proyek riset terdanai PKM, hingga pengalaman industri. Berorientasi pada clean code, pemecahan masalah nyata, dan siap memberikan kontribusi optimal dalam pengembangan produk digital.
                     </p>
 
                     {/* CTA Contact Button */}

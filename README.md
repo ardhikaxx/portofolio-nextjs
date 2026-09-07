@@ -66,9 +66,9 @@ npm run lint      # ESLint
 
 ## Tentang Saya
 
-**Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom.** — Web & Mobile Developer
+**Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom.** — Software Engineer
 
-Lulusan Teknik Informatika di Politeknik Negeri Jember yang berpengalaman dalam pengembangan web (Laravel, Next.js) dan mobile (Flutter). Aktif dalam proyek PKM, pengembangan sistem informasi, dan aplikasi berbasis IoT.
+Software Engineer dan lulusan Sarjana Terapan (S.Tr.Kom.) Teknik Informatika Politeknik Negeri Jember dengan spesialisasi pengembangan web dan mobile (Next.js, Laravel, Flutter). Berpengalaman membangun aplikasi end-to-end, proyek riset PKM, dan sistem digital di industri.
 
 - GitHub: [@ardhikaxx](https://github.com/ardhikaxx)
 - LinkedIn: [Yanuar Ardhika](https://www.linkedin.com/in/yanuar-ardhika-rahmadhani-ubaidillah/)
