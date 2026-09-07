@@ -350,14 +350,14 @@ export default function About() {
                     >
                         <div className="flex flex-col lg:flex-row justify-between items-center gap-2 sm:gap-0 text-xs">
                             <div className="text-gray-500 text-center sm:text-left">
-                                <p>Status: <span className="text-white font-semibold">IT Developer</span></p>
+                                <p>Status: <span className="text-white font-semibold">Lulusan Teknik Informatika</span></p>
                             </div>
                             <div className="text-gray-500 flex items-center gap-1">
-                                <p>Peran: <span className="text-white font-semibold">Web & Mobile Developer</span></p>
+                                <p>Peran: <span className="text-white font-semibold">Software Engineer</span></p>
                             </div>
                         </div>
                         <p className="text-center text-gray-600 text-[10px] sm:text-xs mt-2 tracking-wider">
-                            © {new Date().getFullYear()} YANUAR ARDHIKA
+                            © {new Date().getFullYear()} YANUAR ARDHIKA, S.Tr.Kom.
                         </p>
                     </div>
                 </div>
