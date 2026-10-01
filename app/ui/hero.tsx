@@ -48,7 +48,7 @@ export default function Hero() {
             <span className="relative z-10">Lihat CV</span>
           </Link>
           <a
-            href="https://reviews-dhika.vercel.app/"
+            href="https://page-reviews.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full lg:w-auto group bg-white/10 backdrop-blur-lg text-white px-6 py-3 border-2 border-white rounded-full font-bold text-center font-mono flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 ease-in-out relative overflow-hidden"
