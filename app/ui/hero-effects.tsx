@@ -2,22 +2,13 @@
 
 import dynamic from 'next/dynamic';
 import { useEffect, useMemo, useState } from 'react';
-import Sticker from '../../public/img/sticker.webp';
-
 const Dither = dynamic(() => import('../components/Dither'), {
-  ssr: false,
-  loading: () => null,
-});
-
-const StickerPeel = dynamic(() => import('../components/StickerPeel'), {
   ssr: false,
   loading: () => null,
 });
 
 export default function HeroEffects() {
   const [enabled, setEnabled] = useState(false);
-  const [stickerSize, setStickerSize] = useState(100);
-  const [stickerPosition, setStickerPosition] = useState({ x: 40, y: -140 });
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -54,23 +45,6 @@ export default function HeroEffects() {
     return cleanup;
   }, []);
 
-  useEffect(() => {
-    if (!enabled) return;
-    const handleResize = () => {
-      if (window.innerWidth >= 768) {
-        setStickerSize(180);
-        setStickerPosition({ x: 20, y: -225 });
-      } else {
-        setStickerSize(150);
-        setStickerPosition({ x: 10, y: -230 });
-      }
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [enabled]);
-
   const ditherProps = useMemo(
     () => ({
       waveColor: [0.5, 0.5, 0.5] as [number, number, number],
@@ -88,21 +62,9 @@ export default function HeroEffects() {
   if (!enabled) return null;
 
   return (
-    <>
-      <StickerPeel
-        imageSrc={Sticker.src}
-        width={stickerSize}
-        rotate={0}
-        peelBackHoverPct={10}
-        peelBackActivePct={20}
-        shadowIntensity={0.3}
-        initialPosition={stickerPosition}
-        className="z-50"
-      />
-      <div className="absolute inset-0 z-0">
-        <Dither {...ditherProps} />
-        <div className="absolute inset-0 bg-black/30 backdrop-blur-[1px] z-10"></div>
-      </div>
-    </>
+    <div className="absolute inset-0 z-0">
+      <Dither {...ditherProps} />
+      <div className="absolute inset-0 bg-black/30 backdrop-blur-[1px] z-10"></div>
+    </div>
   );
 }

@@ -1,91 +1,85 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { HiDocument, HiUser, HiStar } from 'react-icons/hi2';
 import HeroEffects from './hero-effects';
 import NavBottom from '../components/NavBottom';
-import { projects } from '../data/projects_data';
-import { penghargaanData } from '../data/awards_data';
-import { publications } from '../data/publications_data';
-
-const stats = [
-  { value: projects.length, label: 'Proyek', href: '/project' },
-  { value: penghargaanData.length, label: 'Penghargaan', href: '/awards' },
-  { value: publications.length, label: 'Publikasi', href: '/publications' },
-];
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen w-full flex flex-col justify-between lg:justify-center items-center overflow-hidden bg-black pt-16 sm:pt-24 lg:pt-0">
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+            @import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap');
+            .font-jaro {
+              font-family: 'Jaro', sans-serif !important;
+            }
+          `,
+        }}
+      />
       <HeroEffects />
       <div className="absolute inset-0 z-0 bg-[radial-gradient(80%_50%_at_50%_50%,rgba(255,255,255,0.08)_0%,rgba(0,0,0,0.8)_60%)]"></div>
-      <div className="relative z-40 flex flex-col items-center justify-center gap-2 text-center px-4 sm:px-6 lg:px-8">
-        <div className="max-w-9xl">
-          <h1 className="text-3xl md:text-6xl font-bold text-white font-mono tracking-tight">
-            {'</Hello, I\'m Yanuar Ardhika>'}
-          </h1>
-        </div>
-        <div className="mb-2">
-          <p className="max-w-2xl text-lg md:text-2xl text-shadow-white font-medium font-mono">
-            Software Engineer yang membangun sistem digital efisien dan berdampak
-          </p>
-        </div>
-        <div className="w-full max-w-md lg:max-w-none flex flex-col lg:flex-row gap-3 justify-center items-center">
+
+      {/* Main Content (Title, Subtitle, Buttons) */}
+      <div className="relative z-20 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 max-w-5xl my-auto lg:my-0">
+        <h1
+          style={{ fontFamily: "'Jaro', sans-serif" }}
+          className="font-jaro text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem] tracking-tight text-white leading-none select-none"
+        >
+          {'</Yanuar Ardhika>'}
+        </h1>
+
+        <p
+          style={{ fontFamily: "'Poppins', sans-serif" }}
+          className="font-poppins text-white text-xs sm:text-sm md:text-base lg:text-lg font-normal leading-relaxed text-center mt-3 sm:mt-4 mb-6 sm:mb-8 max-w-xl"
+        >
+          Software Engineer yang membangun sistem
+          <br />
+          digital efisien dan berdampak
+        </p>
+
+        <div className="w-full max-w-xs sm:max-w-sm lg:max-w-none flex flex-col lg:flex-row gap-3 sm:gap-4 justify-center items-center">
           <Link
-            href={'/about'}
+            href="/about"
             prefetch={false}
-            className="w-full lg:w-auto group bg-white px-6 py-3 text-black rounded-full font-bold text-center hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300 ease-in-out font-mono flex items-center justify-center hover:shadow-lg hover:shadow-white/20 hover:-translate-y-1 relative overflow-hidden"
+            className="group w-full lg:w-auto bg-white text-black px-7 py-3 rounded-full font-mono font-bold text-sm tracking-wide flex items-center justify-center gap-2.5 border-2 border-white hover:bg-neutral-200 transition-all duration-300"
           >
-            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/20 to-transparent" />
-            <HiUser className="me-3 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12 relative z-10" size={24} />
-            <span className="relative z-10">Tentang Saya</span>
+            <HiUser className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover:scale-110" />
+            <span>Tentang Saya</span>
           </Link>
           <Link
-            href={'/cv'}
+            href="/cv"
             prefetch={false}
-            className="w-full lg:w-auto group bg-white/10 backdrop-blur-lg text-white px-6 py-3 border-2 border-white rounded-full font-bold text-center font-mono flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 ease-in-out relative overflow-hidden"
+            className="group w-full lg:w-auto bg-transparent text-white border-2 border-white px-7 py-3 rounded-full font-mono font-bold text-sm tracking-wide flex items-center justify-center gap-2.5 hover:bg-white hover:text-black transition-all duration-300"
           >
-            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/20 to-transparent" />
-            <HiDocument className="me-3 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12 relative z-10" size={24} />
-            <span className="relative z-10">Lihat CV</span>
+            <HiDocument className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover:scale-110" />
+            <span>Lihat CV</span>
           </Link>
           <a
             href="https://page-reviews.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full lg:w-auto group bg-white/10 backdrop-blur-lg text-white px-6 py-3 border-2 border-white rounded-full font-bold text-center font-mono flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 ease-in-out relative overflow-hidden"
+            className="group w-full lg:w-auto bg-transparent text-white border-2 border-white px-7 py-3 rounded-full font-mono font-bold text-sm tracking-wide flex items-center justify-center gap-2.5 hover:bg-white hover:text-black transition-all duration-300"
           >
-            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/20 to-transparent" />
-            <HiStar className="me-3 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12 relative z-10" size={24} />
-            <span className="relative z-10">Testimoni & Ulasan</span>
+            <HiStar className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover:scale-110" />
+            <span>Testimoni & Ulasan</span>
           </a>
         </div>
-
-        {/* Stats */}
-        <div className="mt-8 flex items-center gap-6 sm:gap-10">
-          {stats.map((stat, i) => (
-            <Link
-              key={stat.label}
-              href={stat.href}
-              prefetch={false}
-              className="group flex flex-col items-center gap-0.5 hover:-translate-y-1 transition-transform duration-300"
-            >
-              <span className="text-2xl sm:text-3xl font-black text-white font-mono group-hover:text-gray-200 transition-colors">
-                {stat.value}
-              </span>
-              <span className="text-xs text-gray-400 font-mono tracking-wider uppercase group-hover:text-gray-300 transition-colors">
-                {stat.label}
-              </span>
-            </Link>
-          )).reduce<React.ReactNode[]>((acc, el, i) => {
-            if (i > 0) acc.push(
-              <span key={`sep-${i}`} className="text-white/20 text-lg font-mono select-none">·</span>
-            );
-            acc.push(el);
-            return acc;
-          }, [])}
-        </div>
       </div>
+
+      {/* Mascot Laptop */}
+      <div className="relative z-10 mt-auto lg:mt-0 w-full max-w-[340px] sm:max-w-[420px] lg:max-w-none lg:w-[480px] xl:w-[560px] 2xl:w-[640px] flex justify-center items-end lg:absolute lg:bottom-0 lg:right-0 pointer-events-none select-none">
+        <Image
+          src="/img/sticker.webp"
+          alt="Laptop Mascot"
+          width={600}
+          height={522}
+          priority
+          className="w-full h-auto object-contain"
+        />
+      </div>
+
       <NavBottom currentPath="/" />
     </section>
   );
 }
-
