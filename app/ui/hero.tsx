@@ -23,8 +23,8 @@ export default function Hero() {
 
       {/* Main Content (Title, Subtitle, Buttons) */}
       <div className="relative z-20 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 max-w-5xl my-auto lg:my-0">
-        <div className="mb-2 sm:mb-3">
-          <PageMascot size={130} />
+        <div className="mb-2 sm:mb-3 lg:mb-4">
+          <PageMascot />
         </div>
 
         <h1
