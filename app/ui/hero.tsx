@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { HiDocument, HiUser, HiStar } from 'react-icons/hi2';
 import HeroEffects from './hero-effects';
 import NavBottom from '../components/NavBottom';
+import PageMascot from '../components/PageMascot';
 
 export default function Hero() {
   return (
@@ -22,6 +23,10 @@ export default function Hero() {
 
       {/* Main Content (Title, Subtitle, Buttons) */}
       <div className="relative z-20 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 max-w-5xl my-auto lg:my-0">
+        <div className="mb-2 sm:mb-3">
+          <PageMascot size={130} />
+        </div>
+
         <h1
           style={{ fontFamily: "'Jaro', sans-serif" }}
           className="font-jaro text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem] tracking-tight text-white leading-none select-none"
