@@ -66,8 +66,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: `${BASE_URL}/og-image.png`,
-        width: 1456,
-        height: 816,
+        width: 1920,
+        height: 1080,
         alt: "Yanuar Ardhika - Web & Mobile Developer",
       },
     ],
