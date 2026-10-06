@@ -65,9 +65,10 @@ export const metadata: Metadata = {
       "Portofolio Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom. — Web & Mobile Developer berpengalaman di Laravel, Flutter, Next.js, dan IoT.",
     images: [
       {
-        url: `${BASE_URL}/og-image.png`,
-        width: 1920,
-        height: 1080,
+        url: `${BASE_URL}/og-image.png?v=2`,
+        width: 1200,
+        height: 630,
+        type: "image/png",
         alt: "Yanuar Ardhika - Web & Mobile Developer",
       },
     ],
@@ -77,7 +78,7 @@ export const metadata: Metadata = {
     title: "Yanuar Ardhika - Web & Mobile Developer",
     description:
       "Portofolio Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom. — Web & Mobile Developer berpengalaman di Laravel, Flutter, Next.js, dan IoT.",
-    images: [`${BASE_URL}/og-image.png`],
+    images: [`${BASE_URL}/og-image.png?v=2`],
   },
   alternates: {
     canonical: BASE_URL,
@@ -90,7 +91,7 @@ const jsonLd = {
   name: "Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom.",
   alternateName: "Yanuar Ardhika",
   url: BASE_URL,
-  image: `${BASE_URL}/og-image.png`,
+  image: `${BASE_URL}/og-image.png?v=2`,
   jobTitle: "Web & Mobile Developer",
   description:
     "Lulusan Teknik Informatika Politeknik Negeri Jember yang berpengalaman dalam pengembangan web, mobile, dan IoT.",
