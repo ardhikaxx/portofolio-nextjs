@@ -42,6 +42,8 @@ next-env.d.ts
 
 # reference images
 *.jpg
+!app/*.jpg
+!public/*.jpg
 
 # mascot raw source sheets
 characters/

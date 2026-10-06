@@ -65,10 +65,10 @@ export const metadata: Metadata = {
       "Portofolio Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom. — Web & Mobile Developer berpengalaman di Laravel, Flutter, Next.js, dan IoT.",
     images: [
       {
-        url: `${BASE_URL}/og-image.png?v=2`,
+        url: `${BASE_URL}/og-image.jpg`,
         width: 1200,
         height: 630,
-        type: "image/png",
+        type: "image/jpeg",
         alt: "Yanuar Ardhika - Web & Mobile Developer",
       },
     ],
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     title: "Yanuar Ardhika - Web & Mobile Developer",
     description:
       "Portofolio Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom. — Web & Mobile Developer berpengalaman di Laravel, Flutter, Next.js, dan IoT.",
-    images: [`${BASE_URL}/og-image.png?v=2`],
+    images: [`${BASE_URL}/og-image.jpg`],
   },
   alternates: {
     canonical: BASE_URL,
@@ -91,7 +91,7 @@ const jsonLd = {
   name: "Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom.",
   alternateName: "Yanuar Ardhika",
   url: BASE_URL,
-  image: `${BASE_URL}/og-image.png?v=2`,
+  image: `${BASE_URL}/og-image.jpg`,
   jobTitle: "Web & Mobile Developer",
   description:
     "Lulusan Teknik Informatika Politeknik Negeri Jember yang berpengalaman dalam pengembangan web, mobile, dan IoT.",
@@ -131,6 +131,12 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
           rel="stylesheet"
         />
+        <meta property="og:image" content={`${BASE_URL}/og-image.jpg`} />
+        <meta property="og:image:secure_url" content={`${BASE_URL}/og-image.jpg`} />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <link rel="image_src" href={`${BASE_URL}/og-image.jpg`} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
