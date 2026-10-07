@@ -235,28 +235,10 @@ export const projects = [
   },
   {
     id: 27,
-    name: 'Website Landing Page DIKICHI - Fried Chicken & Culinary',
-    description: 'Landing page eksklusif untuk brand kuliner DIKICHI yang fokus pada penyajian ayam goreng berkualitas bintang lima dengan harga kaki lima. Website ini menampilkan katalog menu interaktif, informasi lokasi cabang (seperti DIKICHI Bandung Riau), serta sistem reservasi untuk acara spesial. Dibangun dengan fokus pada pengalaman visual yang menggugah selera menggunakan animasi modern dan desain responsif untuk memperkuat branding digital di sektor kuliner.',
-    languages: ['nextjs', 'tailwind', 'typescript', 'framer motion', 'lucide react'],
-    image: '/projects/27.webp',
-    link: 'https://dikichi.vercel.app/',
-    year: 2026
-  },
-  {
-    id: 28,
-    name: 'Website Landing Page Portal Ekonomi Kreatif Kabupaten Nganjuk',
-    description: 'Landing page portal ekonomi kreatif untuk Kabupaten Nganjuk yang dirancang untuk memberdayakan UMKM lokal melalui transformasi digital. Website ini menyajikan informasi komprehensif mengenai 16 sektor kreatif, statistik pertumbuhan wirausaha kreatif, serta katalog produk unggulan daerah. Fokus utama platform ini adalah membangun ekosistem kreatif yang berkelanjutan dengan menjembatani tradisi lokal dan inovasi digital di jantung Jawa Timur.',
-    languages: ['nextjs', 'tailwind', 'typescript', 'framer motion'],
-    image: '/projects/28.webp',
-    link: 'https://github.com/ardhikaxx/ekraf-nganjuk',
-    year: 2026
-  },
-  {
-    id: 29,
     name: 'SPK KIP-K - Sistem Pendukung Keputusan Beasiswa KIP-K',
     description: 'Sistem pendukung keputusan berbasis web yang dirancang untuk membantu proses seleksi penerima beasiswa KIP-Kuliah di Politeknik Negeri Jember. Menerapkan metode PROMETHEE (Preference Ranking Organization Method for Enrichment Evaluation) untuk perankingan yang objektif, transparan, dan akurat. Dilengkapi fitur multi-role authentication (Admin & Kaprodi), dynamic dashboard, bulk import data mahasiswa via Excel, dan perhitungan net flow otomatis.',
     languages: ['laravel', 'bootstrap', 'php', 'css', 'javascript', 'mysql'],
-    image: '/projects/29.webp',
+    image: '/projects/27.webp',
     link: 'https://github.com/ardhikaxx/spk-kip-web',
     year: 2026
   }
