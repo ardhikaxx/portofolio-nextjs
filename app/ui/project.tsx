@@ -144,58 +144,87 @@ interface ProjectCardProps {
 
 function ProjectCard({ project, priority }: ProjectCardProps) {
     const handleLinkClick = (e: React.MouseEvent) => {
-        e.preventDefault();
-        window.open(project.link, '_blank');
+        e.stopPropagation();
     };
 
-    const visibleBadges = project.languages.slice(0, 3);
-    const remainingCount = project.languages.length - visibleBadges.length;
+    const techSubtitle =
+        project.languages.slice(0, 3).join(', ') +
+        (project.languages.length > 3 ? ` +${project.languages.length - 3}` : '');
 
     return (
-        <Link href={`/project/${project.id}`} className="block">
-            <div className="bg-white/10 backdrop-blur-lg rounded-3xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 h-full cursor-pointer group border border-white/10 hover:border-white/30">
-                <div className="p-6 pb-0">
-                    <h3 className="text-lg font-bold text-white font-mono group-hover:text-gray-200 transition-colors">{project.name}</h3>
-                    <p className="text-gray-400 text-sm mt-1 line-clamp-2 group-hover:text-gray-300 transition-colors">{project.description}</p>
-                </div>
+        <div className="group relative flex flex-col h-full bg-neutral-950 rounded-3xl sm:rounded-[28px] border border-white/10 overflow-hidden shadow-xl transition-all duration-500 hover:border-white/25 hover:shadow-2xl hover:-translate-y-1.5">
+            {/* Bagian Gambar dengan Overlay Pemisah */}
+            <Link
+                href={`/project/${project.id}`}
+                className="relative block w-full h-56 sm:h-64 overflow-hidden shrink-0 cursor-pointer"
+                aria-label={`Lihat detail ${project.name}`}
+            >
+                <BlurImage
+                    src={project.image}
+                    alt={project.name}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover object-top sm:object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                    priority={priority}
+                />
 
-                <div className="relative mt-4 mb-5 mx-6 rounded-2xl overflow-hidden h-64">
-                    <BlurImage
-                        src={project.image}
-                        alt={project.name}
-                        fill
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        priority={priority}
-                    />
+                {/* Overlay gradasi pemisah gambar dari judul dan deskripsi */}
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 from-10% via-neutral-950/70 via-50% to-transparent pointer-events-none" />
 
-                    <span className="absolute bottom-3 left-3 text-xs text-white font-semibold bg-black px-2 py-1 rounded-lg shadow-sm font-nokia">
+                {/* Badge Tahun di pojok kiri atas */}
+                <div className="absolute top-4 left-4 z-10 pointer-events-none">
+                    <span className="px-3 py-1 rounded-full text-[11px] font-mono font-medium bg-black/60 backdrop-blur-md text-white/90 border border-white/15 shadow-sm">
                         {project.year}
                     </span>
-                    <button
-                        onClick={handleLinkClick}
-                        className="absolute bottom-3 right-3 bg-black rounded-full p-3 shadow-md"
-                    >
-                        <HiArrowUpRight className="w-5 h-5 text-white" />
-                    </button>
+                </div>
+            </Link>
+
+            {/* External Demo Link di pojok kanan atas (lingkaran semi-transparan seperti di image.png) */}
+            {project.link && (
+                <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={handleLinkClick}
+                    title="Kunjungi tautan live/demo proyek"
+                    aria-label={`Buka tautan ${project.name}`}
+                    className="absolute top-4 right-4 z-20 flex items-center justify-center w-9 h-9 rounded-full bg-black/50 hover:bg-black/80 backdrop-blur-md border border-white/20 text-white transition-all duration-300 hover:scale-110 active:scale-95 shadow-md"
+                >
+                    <HiArrowUpRight className="w-4 h-4" />
+                </a>
+            )}
+
+            {/* Konten: Judul, Subtitle, Deskripsi & Tombol Detail */}
+            <div className="relative px-6 pb-6 pt-2 sm:px-7 sm:pb-7 flex flex-col flex-1 justify-between bg-neutral-950">
+                <div>
+                    {/* Nama Aplikasi / Judul Proyek */}
+                    <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight group-hover:text-gray-100 transition-colors line-clamp-2">
+                        <Link href={`/project/${project.id}`}>
+                            {project.name}
+                        </Link>
+                    </h3>
+
+                    {/* Subtitle (Teknologi & Kategori sesuai posisi 'Oromia, Ethiopia' di image.png) */}
+                    <p className="text-xs sm:text-sm text-neutral-400 font-medium mt-1 mb-3 capitalize tracking-wide">
+                        {techSubtitle}
+                    </p>
+
+                    {/* Deskripsi Aplikasi */}
+                    <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed line-clamp-3 font-light">
+                        {project.description}
+                    </p>
                 </div>
 
-                <div className="px-6 pb-5 flex flex-wrap gap-1.5">
-                    {visibleBadges.map((lang) => (
-                        <span
-                            key={lang}
-                            className="rounded-full border border-white/15 bg-white/10 px-2.5 py-0.5 text-xs text-gray-300 capitalize"
-                        >
-                            {lang}
-                        </span>
-                    ))}
-                    {remainingCount > 0 && (
-                        <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-xs text-gray-500">
-                            +{remainingCount}
-                        </span>
-                    )}
+                {/* Tombol Lihat Detail (Pill Button di pojok kanan bawah seperti 'Visit right now' di image.png) */}
+                <div className="mt-6 pt-2 flex items-center justify-end">
+                    <Link
+                        href={`/project/${project.id}`}
+                        className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-[#f0f4f8] text-neutral-900 text-xs sm:text-sm font-semibold hover:bg-white hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 shadow-md"
+                    >
+                        Lihat Detail
+                    </Link>
                 </div>
             </div>
-        </Link>
+        </div>
     );
 }
