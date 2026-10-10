@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { HiDocument, HiUser, HiStar } from 'react-icons/hi2';
-import HeroEffects from './hero-effects';
 import NavBottom from '../components/NavBottom';
 import PageMascot from '../components/PageMascot';
+import LetterGlitch from '../components/LetterGlitch';
 
 export default function Hero() {
   return (
@@ -18,8 +18,19 @@ export default function Hero() {
           `,
         }}
       />
-      <HeroEffects />
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(80%_50%_at_50%_50%,rgba(255,255,255,0.08)_0%,rgba(0,0,0,0.8)_60%)]"></div>
+      {/* Letter Glitch Background (Monochrome Black & White) */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <LetterGlitch
+          glitchColors={['#ffffff', '#e4e4e7', '#a1a1aa', '#71717a', '#3f3f46', '#27272a']}
+          glitchSpeed={50}
+          centerVignette={false}
+          outerVignette={true}
+          smooth={true}
+        />
+      </div>
+
+      {/* Thin Black Overlay */}
+      <div className="absolute inset-0 z-10 pointer-events-none bg-black/60"></div>
 
       {/* Main Content (Title, Subtitle, Buttons) */}
       <div className="relative z-20 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 max-w-5xl my-auto lg:my-0">
