@@ -21,17 +21,16 @@ export default function Hero() {
       {/* Letter Glitch Background (Subtle Muted Monochrome) */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <LetterGlitch
-          glitchColors={['#71717a', '#52525b', '#3f3f46', '#27272a', '#18181b', '#3f3f46']}
-          glitchSpeed={65}
-          centerVignette={true}
+          glitchColors={['#d4d4d8', '#a1a1aa', '#71717a', '#52525b', '#3f3f46', '#27272a']}
+          glitchSpeed={55}
+          centerVignette={false}
           outerVignette={true}
           smooth={true}
         />
       </div>
 
-      {/* Dark Overlay - Higher opacity and radial focus so background doesn't clash with content */}
-      <div className="absolute inset-0 z-10 pointer-events-none bg-black/80"></div>
-      <div className="absolute inset-0 z-10 pointer-events-none bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.7)_0%,rgba(0,0,0,0)_65%)]"></div>
+      {/* Black Overlay 70% */}
+      <div className="absolute inset-0 z-10 pointer-events-none bg-black/70"></div>
 
       {/* Main Content (Title, Subtitle, Buttons) */}
       <div className="relative z-20 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 max-w-5xl my-auto lg:my-0">
