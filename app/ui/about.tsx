@@ -311,7 +311,7 @@ export default function About() {
                     <p
                         className="text-gray-300 text-xs sm:text-sm leading-5 sm:leading-6 mb-4 sm:mb-6 max-w-2xl font-light tracking-wide px-2 sm:px-7"
                     >
-                        Software Engineer dan lulusan Sarjana Terapan (S.Tr.Kom.) Teknik Informatika Politeknik Negeri Jember dengan spesialisasi pengembangan web dan mobile (Next.js, Laravel, Flutter). Memiliki rekam jejak dalam merancang serta membangun aplikasi end-to-end yang skalabel, efisien, dan ramah pengguna — mulai dari sistem informasi instansi, proyek riset terdanai PKM, hingga pengalaman industri. Berorientasi pada clean code, pemecahan masalah nyata, dan siap memberikan kontribusi optimal dalam pengembangan produk digital.
+                        Saya lulusan Sarjana Terapan (S.Tr.Kom.) Program Studi D4 Teknik Informatika Politeknik Negeri Jember dengan spesialisasi pengembangan web dan mobile aplikasi. Memiliki rekam jejak dalam merancang serta membangun aplikasi end-to-end yang skalabel, efisien, dan ramah pengguna — mulai dari sistem informasi instansi, proyek riset terdanai, hingga pengalaman industri. Berorientasi pada clean code, pemecahan masalah nyata, dan siap memberikan kontribusi optimal dalam pengembangan produk digital.
                     </p>
 
                     {/* CTA Contact Button */}
