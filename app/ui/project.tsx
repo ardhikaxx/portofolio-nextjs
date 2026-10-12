@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { projects } from '../data/projects_data';
 import { HiArrowUpRight, HiArrowRight, HiMagnifyingGlass } from 'react-icons/hi2';
 import { HiChevronDown, HiFolderOpen, HiX } from 'react-icons/hi';
@@ -187,8 +188,18 @@ interface BentoCardProps {
 }
 
 function BentoCard({ project, priority, isMdSpan2, isLgSpan2 }: BentoCardProps) {
+    const router = useRouter();
+
     const handleLinkClick = (e: React.MouseEvent) => {
         e.stopPropagation();
+    };
+
+    const handleCardClick = (e: React.MouseEvent) => {
+        const target = e.target as HTMLElement;
+        if (target.closest('a[target="_blank"]') || target.closest('button')) {
+            return;
+        }
+        router.push(`/project/${project.id}`);
     };
 
     // Card styling variants
@@ -196,9 +207,10 @@ function BentoCard({ project, priority, isMdSpan2, isLgSpan2 }: BentoCardProps) 
         // Wide Bento Card (Horizontal Split on large screens)
         return (
             <div
+                onClick={handleCardClick}
                 className={`group relative flex flex-col ${
                     isMdSpan2 ? 'md:flex-row md:col-span-2' : 'lg:flex-row md:col-span-1'
-                } lg:col-span-2 rounded-[28px] sm:rounded-3xl bg-gradient-to-b from-neutral-900/60 via-neutral-950/80 to-black/95 border border-white/10 hover:border-white/30 overflow-hidden shadow-2xl transition-all duration-500 hover:-translate-y-1.5`}
+                } lg:col-span-2 rounded-[28px] sm:rounded-3xl bg-gradient-to-b from-neutral-900/60 via-neutral-950/80 to-black/95 border border-white/10 hover:border-white/30 overflow-hidden shadow-2xl transition-all duration-500 hover:-translate-y-1.5 cursor-pointer`}
             >
                 {/* Top Border Sheen Highlight */}
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent z-10" />
@@ -317,7 +329,10 @@ function BentoCard({ project, priority, isMdSpan2, isLgSpan2 }: BentoCardProps) 
 
     // Standard Bento Card (Compact)
     return (
-        <div className="group relative flex flex-col h-full col-span-1 rounded-[28px] sm:rounded-3xl bg-gradient-to-b from-neutral-900/50 via-neutral-950/80 to-black/95 border border-white/10 hover:border-white/30 overflow-hidden shadow-xl transition-all duration-500 hover:shadow-2xl hover:-translate-y-1.5">
+        <div
+            onClick={handleCardClick}
+            className="group relative flex flex-col h-full col-span-1 rounded-[28px] sm:rounded-3xl bg-gradient-to-b from-neutral-900/50 via-neutral-950/80 to-black/95 border border-white/10 hover:border-white/30 overflow-hidden shadow-xl transition-all duration-500 hover:shadow-2xl hover:-translate-y-1.5 cursor-pointer"
+        >
             {/* Top Border Sheen */}
             <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent z-10" />
 
