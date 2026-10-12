@@ -70,15 +70,15 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Mascot Laptop - Fully responsive, scales down on smaller screens/laptops to avoid overlapping buttons */}
-      <div className="relative z-10 mt-auto lg:mt-0 w-[170px] sm:w-[210px] md:w-[240px] lg:w-[260px] xl:w-[320px] 2xl:w-[380px] max-h-[20vh] sm:max-h-[24vh] lg:max-h-[32vh] xl:max-h-[38vh] flex justify-center items-end lg:absolute lg:bottom-2 lg:right-2 xl:right-4 2xl:right-8 pointer-events-none select-none">
+      {/* Mascot Laptop - Larger and prominent on mobile and desktop */}
+      <div className="relative z-10 mt-auto lg:mt-0 w-[240px] sm:w-[290px] md:w-[340px] lg:w-[340px] xl:w-[430px] 2xl:w-[500px] max-h-[26vh] sm:max-h-[30vh] lg:max-h-[44vh] xl:max-h-[50vh] 2xl:max-h-[56vh] pb-20 sm:pb-24 lg:pb-0 flex justify-center items-end lg:absolute lg:bottom-3 lg:right-3 xl:bottom-4 xl:right-6 2xl:right-8 pointer-events-none select-none">
         <Image
           src="/img/sticker.webp"
           alt="Laptop Mascot"
           width={600}
           height={522}
           priority
-          className="w-full h-auto max-h-[inherit] object-contain drop-shadow-2xl"
+          className="w-full h-auto max-h-[inherit] object-contain drop-shadow-[0_10px_25px_rgba(0,0,0,0.8)]"
         />
       </div>
     </section>
