@@ -205,5 +205,14 @@ export const projects = [
     image: '/projects/23.webp',
     link: 'https://github.com/ardhikaxx/spk-kip-web',
     year: 2026
+  },
+  {
+    id: 24,
+    name: 'Sistem Informasi Manajemen Operasional Klinik Hewan - Aurora Vet & Petcare',
+    description: 'Aplikasi web sistem informasi manajemen operasional klinik hewan internal (Aurora Vet & Petcare) yang dirancang untuk mengelola seluruh alur operasional harian klinik secara terintegrasi dan real-time. Fitur lengkap meliputi: Autentikasi custom berbasis Role-Based Access Control (RBAC) dengan pemisahan hak akses ketat antara Karyawan (front office, kasir, logistik) dan Dokter (medis), Manajemen Pemilik (Owner) dengan deteksi duplikasi kontak otomatis, Manajemen Pasien Hewan (Pet) dengan multi-spesies dan riwayat medis komprehensif, Pendaftaran Kunjungan & Antrean otomatis dengan state-machine status kunjungan, Modul Pemeriksaan & Rekam Medis Dokter ramah tablet dengan pencatatan keluhan, anamnesis, vital sign, multi-diagnosis, serta rekomendasi tanggal kontrol, E-Resep terintegrasi stok obat real-time, Kasir & Point of Sales (POS) dengan kalkulasi otomatis snapshot harga, diskon, multi-metode pembayaran (Tunai, Transfer, QRIS, Debit), cetak struk nota termal & standar, Manajemen Inventaris Obat & Stok Opname atomik dengan peringatan low-stock, Katalog Jasa Layanan & Master Supplier, Laporan Operasional & Keuangan klinik dengan filter periode, serta Audit Log lengkap untuk memantau setiap aktivitas transaksi dan perubahan data sistem.',
+    languages: ['laravel', 'bootstrap', 'php', 'css', 'javascript', 'mysql'],
+    image: '/projects/24.webp',
+    link: 'https://github.com/ardhikaxx/klinik-hewan-web',
+    year: 2026
   }
 ];
