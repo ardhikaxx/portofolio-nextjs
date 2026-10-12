@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Publications from "../ui/publications";
-import NavBottom from "../components/NavBottom";
 
 export const metadata: Metadata = {
     title: "Publikasi",
@@ -21,7 +20,6 @@ export default function PublicationsPage() {
     return (
         <main className="min-h-screen bg-black">
             <Publications />
-            <NavBottom currentPath="/publications" />
         </main>
     );
 }

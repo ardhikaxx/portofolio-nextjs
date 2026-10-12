@@ -1,23 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { HiDocument, HiUser, HiStar } from 'react-icons/hi2';
-import NavBottom from '../components/NavBottom';
 import PageMascot from '../components/PageMascot';
 import LetterGlitch from '../components/LetterGlitch';
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen w-full flex flex-col justify-between lg:justify-center items-center overflow-hidden bg-black pt-16 sm:pt-24 lg:pt-0">
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-            @import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap');
-            .font-jaro {
-              font-family: 'Jaro', sans-serif !important;
-            }
-          `,
-        }}
-      />
       {/* Letter Glitch Background (Subtle Muted Monochrome) */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <LetterGlitch
@@ -57,7 +46,6 @@ export default function Hero() {
         <div className="w-full max-w-xs sm:max-w-sm lg:max-w-none flex flex-col lg:flex-row gap-3 sm:gap-4 justify-center items-center">
           <Link
             href="/about"
-            prefetch={false}
             className="group w-full lg:w-auto bg-white text-black px-7 py-3 rounded-full font-mono font-bold text-sm tracking-wide flex items-center justify-center gap-2.5 border-2 border-white hover:bg-neutral-200 transition-all duration-300 shadow-lg shadow-black/50"
           >
             <HiUser className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover:scale-110" />
@@ -65,7 +53,6 @@ export default function Hero() {
           </Link>
           <Link
             href="/cv"
-            prefetch={false}
             className="group w-full lg:w-auto bg-black/40 backdrop-blur-md text-white border-2 border-white/80 px-7 py-3 rounded-full font-mono font-bold text-sm tracking-wide flex items-center justify-center gap-2.5 hover:bg-white hover:text-black transition-all duration-300 shadow-lg shadow-black/50"
           >
             <HiDocument className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover:scale-110" />
@@ -94,8 +81,6 @@ export default function Hero() {
           className="w-full h-auto max-h-[inherit] object-contain drop-shadow-2xl"
         />
       </div>
-
-      <NavBottom currentPath="/" />
     </section>
   );
 }

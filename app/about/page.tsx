@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import About from "../ui/about";
-import NavBottom from "../components/NavBottom";
 
 export const metadata: Metadata = {
     title: "Tentang Saya",
@@ -19,9 +18,8 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
     return (
-        <main className="min-h-screen bg-linear-to-br from-blue-900 to-purple-900">
+        <main className="min-h-screen bg-black">
             <About />
-            <NavBottom currentPath="/about" />
         </main>
     );
 }

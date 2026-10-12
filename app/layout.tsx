@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "./components/SmoothScroll";
+import NavBottom from "./components/NavBottom";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -122,8 +123,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="id" className={`dark ${geistSans.variable} ${geistMono.variable} bg-black text-white`}>
       <head>
+        <meta name="theme-color" content="#000000" />
+        <meta name="color-scheme" content="dark" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
@@ -141,10 +144,11 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="antialiased">
+      <body className="antialiased bg-black text-white min-h-screen">
         <SmoothScroll>
           {children}
         </SmoothScroll>
+        <NavBottom />
       </body>
     </html>
   );

@@ -3,8 +3,9 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #ededed;
+  color-scheme: dark;
 }
 
 :root {
@@ -16,7 +17,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #000000;
     --foreground: #ededed;
   }
 }
@@ -30,8 +31,9 @@ code, pre {
   font-family: var(--font-geist-mono);
 }
 
+html,
 body {
-  background: var(--background);
+  background-color: #000000;
   color: var(--foreground);
   font-family: var(--font-geist-sans);
 }

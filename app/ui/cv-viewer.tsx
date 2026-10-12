@@ -5,7 +5,6 @@ import { Document, Page, pdfjs } from 'react-pdf';
 import type { PDFDocumentProxy } from 'pdfjs-dist';
 import Link from 'next/link';
 import { HiArrowLeft, HiArrowDownTray, HiMinus, HiPlus } from 'react-icons/hi2';
-import NavBottom from '../components/NavBottom';
 
 pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.mjs';
 
@@ -127,8 +126,6 @@ export default function CVViewer() {
           )}
         </div>
       </div>
-
-      <NavBottom currentPath="/" />
     </main>
   );
 }

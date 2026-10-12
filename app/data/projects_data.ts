@@ -214,5 +214,14 @@ export const projects = [
     image: '/projects/24.webp',
     link: 'https://github.com/ardhikaxx/klinik-hewan-web',
     year: 2026
+  },
+  {
+    id: 25,
+    name: 'Website Profil Korporat Kantor Advokat & Konsultan Hukum - Holong Siregar & Co',
+    description: 'Platform website profil korporat resmi untuk Kantor Advokat & Konsultan Hukum Holong Siregar, S.H., M.H. & Rekan (Holong Siregar & Co. Law Office) yang berbasis di Tangerang Raya dan Bogor Raya. Dibangun dengan arsitektur Zero-Database High-Performance berbasis konfigurasi terpusat (config-driven) yang menghasilkan waktu respons server (TTFB) di bawah 20ms tanpa risiko latensi database dan kebal SQL injection. Fitur lengkap meliputi: Desain visual eksekutif bertema navy & gold dengan tipografi Cinzel dan ilustrasi Dewi Keadilan, 6 Ruang Lingkup Praktik Utama (Hukum Perdata, Pidana, Korporasi & Bisnis, Ketenagakerjaan/PHI, Sengketa Properti & Pertanahan, serta Hukum Keluarga & Waris), 14 Halaman Layanan Hukum Spesifik (/layanan-hukum/{slug}) dengan konten edukasi mendalam dan FAQ terverifikasi, Landing Page Otoritas SEO Lokal Tangerang Raya (/wilayah-layanan/pengacara-tangerang) yang memetakan yurisdiksi PN Tangerang Kelas 1A Khusus hingga PA & PTUN, Halaman Profil Advokat Resmi dengan verifikasi kredensial PERADI (NIA & Berita Acara Sumpah PT), Integrasi Formulir Konsultasi WhatsApp interaktif dengan perlindungan Rate Limiter anti-spam (throttle), Struktur Data Schema.org JSON-LD komprehensif (LegalService, Attorney, Person, BreadcrumbList, FAQPage) untuk optimasi Google Rich Snippets & E-E-A-T, Dynamic XML Sitemap & Robots.txt teroptimasi, serta 100% lulus pengujian otomatis Pest Testing (23 skenario Feature Test & 357 assertion).',
+    languages: ['laravel', 'php', 'tailwind', 'javascript', 'vite'],
+    image: '/projects/25.webp',
+    link: 'https://github.com/ardhikaxx/web-office-law',
+    year: 2026
   }
 ];

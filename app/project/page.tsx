@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Project from "../ui/project";
-import NavBottom from "../components/NavBottom";
 
 export const metadata: Metadata = {
     title: "Proyek",
@@ -21,7 +20,6 @@ export default function ProjectPage() {
     return (
         <main className="min-h-screen bg-black">
             <Project />
-            <NavBottom currentPath="/project" />
         </main>
     );
 }

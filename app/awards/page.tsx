@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Awards from "../ui/awards";
-import NavBottom from "../components/NavBottom";
 
 export const metadata: Metadata = {
     title: "Penghargaan",
@@ -19,9 +18,8 @@ export const metadata: Metadata = {
 
 export default function AwardsPage() {
     return (
-        <main className="min-h-screen bg-linear-to-br from-yellow-900 to-red-900">
+        <main className="min-h-screen bg-black">
             <Awards />
-            <NavBottom currentPath="/awards" />
         </main>
     );
 }
