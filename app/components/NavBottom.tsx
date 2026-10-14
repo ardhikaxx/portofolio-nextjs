@@ -71,6 +71,7 @@ const NavBottom = ({ currentPath }: NavBottomProps) => {
                             <Link
                                 key={item.name}
                                 href={item.path}
+                                aria-label={item.name}
                                 aria-current={active ? 'page' : undefined}
                                 prefetch={true}
                                 onClick={(e) => {
@@ -87,11 +88,13 @@ const NavBottom = ({ currentPath }: NavBottomProps) => {
                                 }`}
                             >
                                 <div className="flex items-center gap-1.5">
-                                    <Icon className="w-5 h-5 shrink-0" />
-                                    {active && (
+                                    <Icon className="w-5 h-5 shrink-0" aria-hidden="true" />
+                                    {active ? (
                                         <span className="text-xs sm:text-sm font-bold whitespace-nowrap font-mono text-black pr-0.5">
                                             {item.name}
                                         </span>
+                                    ) : (
+                                        <span className="sr-only">{item.name}</span>
                                     )}
                                 </div>
                             </Link>

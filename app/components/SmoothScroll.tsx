@@ -1,51 +1,61 @@
-'use client'
+'use client';
 
-import { useEffect, useRef } from 'react'
-import { usePathname } from 'next/navigation'
-import Lenis from 'lenis'
+import { useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function SmoothScroll({ children }: { children: React.ReactNode }) {
-  const lenisRef = useRef<Lenis | null>(null)
-  const pathname = usePathname()
+  const lenisRef = useRef<{ scrollTo: (target: number, opts?: { immediate?: boolean }) => void; destroy: () => void } | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
-    // Enable custom smooth scroll wheel only on desktop with fine pointer
-    if (typeof window !== 'undefined' && !window.matchMedia('(pointer: fine)').matches) {
+    // Only import and initialize Lenis on desktop devices with a precision mouse/pointer
+    if (typeof window === 'undefined' || !window.matchMedia('(pointer: fine)').matches) {
       return;
     }
 
-    const lenis = new Lenis({
-      duration: 1.0,
-      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-      wheelMultiplier: 1,
-      syncTouch: false,
-    })
+    let animationFrameId: number;
+    let isCancelled = false;
 
-    lenisRef.current = lenis
+    // Dynamically import Lenis to prevent shipping 30+ KiB of unused JS to mobile devices
+    import('lenis').then(({ default: Lenis }) => {
+      if (isCancelled) return;
 
-    let animationFrameId: number
+      const lenis = new Lenis({
+        duration: 1.0,
+        easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+        wheelMultiplier: 1,
+        syncTouch: false,
+      });
 
-    function raf(time: number) {
-      lenis.raf(time)
-      animationFrameId = requestAnimationFrame(raf)
-    }
+      lenisRef.current = lenis;
 
-    animationFrameId = requestAnimationFrame(raf)
+      function raf(time: number) {
+        lenis.raf(time);
+        animationFrameId = requestAnimationFrame(raf);
+      }
+
+      animationFrameId = requestAnimationFrame(raf);
+    });
 
     return () => {
-      cancelAnimationFrame(animationFrameId)
-      lenis.destroy()
-    }
-  }, [])
+      isCancelled = true;
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+      if (lenisRef.current) {
+        lenisRef.current.destroy();
+        lenisRef.current = null;
+      }
+    };
+  }, []);
 
   // Reset scroll to top cleanly when route changes
   useEffect(() => {
     if (lenisRef.current) {
-      lenisRef.current.scrollTo(0, { immediate: true })
+      lenisRef.current.scrollTo(0, { immediate: true });
     }
-  }, [pathname])
+  }, [pathname]);
 
-  return <>{children}</>
+  return <>{children}</>;
 }
-

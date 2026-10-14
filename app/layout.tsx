@@ -341,6 +341,14 @@ export default function RootLayout({
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <link rel="image_src" href={`${BASE_URL}/og-image.jpg`} />
+        {/* Preload LCP Hero Sticker Image directly from initial HTML document */}
+        <link
+          rel="preload"
+          as="image"
+          href="/img/sticker.webp"
+          type="image/webp"
+          fetchPriority="high"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
