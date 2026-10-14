@@ -16,28 +16,6 @@ import { useEffect, useState, useMemo } from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 
-function getProjectCategory(project: { languages: string[]; name: string }): string {
-    const langs = project.languages.map((l) => l.toLowerCase());
-    const nameLower = project.name.toLowerCase();
-
-    if (langs.includes('flutter') || langs.includes('dart') || nameLower.includes('mobile') || nameLower.includes('aplikasi mobile')) {
-        return 'Mobile Application';
-    }
-    if (langs.includes('iot') || nameLower.includes('iot') || nameLower.includes('smart')) {
-        return 'IoT & Embedded';
-    }
-    if (langs.includes('naive bayes') || langs.includes('machine learning') || langs.includes('promethee') || nameLower.includes('spk')) {
-        return 'AI & Decision Support';
-    }
-    if (nameLower.includes('travel') || nameLower.includes('kopi') || nameLower.includes('korporat') || nameLower.includes('landing page')) {
-        return 'Corporate & Profile';
-    }
-    if (langs.includes('laravel') || langs.includes('php') || langs.includes('mysql')) {
-        return 'Web System & ERP';
-    }
-    return 'Web Application';
-}
-
 interface ProjectDetailClientProps {
     projectId?: number;
 }
@@ -202,12 +180,9 @@ export default function ProjectDetailClient({ projectId }: ProjectDetailClientPr
                         {/* 2. Judul, Deskripsi & Penjelasan di Bawah Gambar Secara Simple */}
                         <div className="p-6 sm:p-8 md:p-10 flex flex-col flex-1 justify-between bg-neutral-950/80">
                             <div>
-                                {/* Badge Kategori (Tema Hitam Putih Bersih Tanpa Dot) */}
+                                {/* Metadata Tahun & Jumlah Teknologi */}
                                 <div className="flex flex-wrap items-center gap-2.5 mb-4">
                                     <span className="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-mono font-medium bg-white/10 border border-white/15 text-white shadow-sm">
-                                        {getProjectCategory(project)}
-                                    </span>
-                                    <span className="text-xs font-mono text-neutral-400">
                                         Tahun {project.year}
                                     </span>
                                     <span className="text-xs font-mono text-neutral-600">•</span>
@@ -302,9 +277,9 @@ export default function ProjectDetailClient({ projectId }: ProjectDetailClientPr
                                             {p.name}
                                         </h3>
                                         <div className="flex items-center gap-2 mt-2 text-[11px] font-mono text-neutral-400">
-                                            <span>{p.year}</span>
+                                            <span>Tahun {p.year}</span>
                                             <span>•</span>
-                                            <span className="truncate">{getProjectCategory(p)}</span>
+                                            <span>{p.languages.length} Teknologi</span>
                                         </div>
                                     </div>
                                 </Link>
@@ -366,11 +341,6 @@ export default function ProjectDetailClient({ projectId }: ProjectDetailClientPr
                                 </div>
                                 <div className="p-5 flex flex-col flex-1 justify-between bg-neutral-950/80">
                                     <div>
-                                        <div className="flex items-center gap-2 mb-2.5">
-                                            <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono bg-white/5 border border-white/10 text-neutral-300">
-                                                {getProjectCategory(item)}
-                                            </span>
-                                        </div>
                                         <h3 className="font-bold text-neutral-200 text-base line-clamp-1 group-hover:text-white transition-colors">
                                             {item.name}
                                         </h3>
