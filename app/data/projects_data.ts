@@ -232,5 +232,14 @@ export const projects = [
     image: '/projects/26.webp',
     link: 'https://github.com/ardhikaxx/label-gizi',
     year: 2026
+  },
+  {
+    id: 27,
+    name: 'Website Profil Resmi PPAk FEB UNESA - Sistem Informasi Akademik & CMS',
+    description: 'Platform website profil kelembagaan resmi dan sistem informasi akademik untuk Program Studi Pendidikan Profesi Akuntan (PPAk Kode Prodi 62902) Fakultas Ekonomika dan Bisnis Universitas Negeri Surabaya (FEB UNESA) yang dilengkapi Content Management System (CMS) mandiri terintegrasi. Dibangun dengan Controller-Repository Pattern untuk memisahkan penyajian konten dinamis berbasis basis data tanpa mengubah integritas desain antarmuka publik Blade. Fitur lengkap meliputi: Portal informasi publik komprehensif (27 rute terintegrasi) mencakup profil prodi, visi-misi, legalitas akreditasi LAMEMBA, direktori dosen & tenaga pengajar, struktur kurikulum semesteran terpetakan CPL (Capaian Pembelajaran Lulusan), kalender akademik dinamis Ganjil/Genap, informasi gelar & sertifikasi profesi akuntan (Chartered Accountant), panduan admisi jalur masuk & biaya kuliah (UKT) historis, direktori riset, PKM & jejaring kemitraan, warta berita terkini dengan generator slug unik dan mekanisme soft-delete, agenda kegiatan, galeri foto, portal unduhan dokumen PDF resmi institusi (non-destructive update), formulir helpdesk interaktif dengan proteksi laju kirim (rate limiting), panel admin CMS multi-role dengan Role-Based Access Control (Super Admin & Operator) pada guard terpisah, dashboard analitik statistik konten real-time, manajemen SEO institusional (OpenGraph, Twitter Cards, skema JSON-LD, sitemap XML otomatis), audit trail log komprehensif dengan sanitasi data sensitif (scrubbing), serta 100% lulus pengujian otomatis Pest Testing (103 feature/unit test & 923 assertion).',
+    languages: ['laravel', 'php', 'bootstrap', 'mysql', 'javascript'],
+    image: '/projects/27.webp',
+    link: 'https://github.com/ardhikaxx/ppak-feb-unesa',
+    year: 2026
   }
 ];
