@@ -54,6 +54,12 @@ export default function Project() {
                         <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-2 font-mono">
                             Koleksi Proyek
                         </h1>
+                        <div className="sr-only">
+                            <h2>Portofolio Proyek Web, Mobile, dan IoT Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom.</h2>
+                            <p>
+                                Daftar lengkap 27 karya perangkat lunak oleh Yanuar Ardhika: Website Profil Resmi PPAk FEB UNESA + CMS, Aplikasi Label Gizi MBG Makanan Bergizi Gratis, Holong Siregar & Co Law Office Tangerang, Aurora Vet & Petcare Klinik Hewan, SPK Beasiswa KIP-K PROMETHEE, SI-BESTI Siklus Tidur Ibu, APOCARE Farmasi POS ERP, SIPKES Poli Gigi Politeknik Negeri Jember, RSPD Klaten, Analisis Sentimen Naive Bayes OSS NARA, Profil SMK Muhammadiyah 1 Berbek, Perpustakaan MAN 2 Payakumbuh, JasaMarga Pemeliharaan Jalan Tol, UMKM Batik Sesa Bojonegoro, Rahmad HandyCraft, Rezti's Batik Jember, AITeC VII 2025 Polije, GlucoWise Diabetes Mobile & Web, Casim Coffee Jember, PutraKJ Trans, dan Sistem Informasi Posyandu PKM-PM Kemendikbudristek.
+                            </p>
+                        </div>
                         <p className="text-sm sm:text-base text-gray-400 max-w-xl font-light">
                             Eksplorasi karya sistem informasi, aplikasi mobile, dan website dengan sentuhan arsitektur modern.
                         </p>

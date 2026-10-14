@@ -308,6 +308,12 @@ export default function About() {
                     >
                         Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom.
                     </h1>
+                    <div className="sr-only">
+                        <h2>Biografi & Profil Profesional Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom.</h2>
+                        <p>
+                            Yanuar Ardhika adalah Full Stack Web & Mobile Developer asal Jember, Jawa Timur, Indonesia. Lulusan Sarjana Terapan Komputer (S.Tr.Kom.) dari Program Studi D4 Teknik Informatika, Jurusan Teknologi Informasi, Politeknik Negeri Jember (Polije). Berpengalaman luas dalam pengembangan sistem informasi berbasis Laravel, Next.js, React, TypeScript, Flutter Android, basis data MySQL, integrasi mikrokontroler IoT (ESP32), dan arsitektur RESTful API.
+                        </p>
+                    </div>
                     <p
                         className="text-gray-300 text-xs sm:text-sm leading-5 sm:leading-6 mb-4 sm:mb-6 max-w-2xl font-light tracking-wide px-2 sm:px-7"
                     >

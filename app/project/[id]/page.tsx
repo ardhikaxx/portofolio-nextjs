@@ -107,11 +107,40 @@ export default async function ProjectDetailPage({ params }: Props) {
         },
     };
 
+    const breadcrumbSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Beranda',
+                item: BASE_URL,
+            },
+            {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Koleksi Proyek',
+                item: `${BASE_URL}/project`,
+            },
+            {
+                '@type': 'ListItem',
+                position: 3,
+                name: project.name,
+                item: `${BASE_URL}/project/${project.id}`,
+            },
+        ],
+    };
+
     return (
         <>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(projectSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
             <ProjectDetailClient projectId={numId} />
         </>
