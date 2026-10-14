@@ -112,21 +112,29 @@ export default function LetterGlitch({
     const parent = canvas.parentElement;
     if (!parent) return;
 
-    // Cap DPR to 1.25 to prevent massive 4K canvas allocation on retina/mobile
+    // Cap DPR untuk cegah alokasi canvas raksasa di layar retina
     const dpr = typeof window !== 'undefined' ? Math.min(window.devicePixelRatio || 1, 1.25) : 1;
     const rect = parent.getBoundingClientRect();
 
-    canvas.width = rect.width * dpr;
-    canvas.height = rect.height * dpr;
+    // Guard: parent bisa 0x0 saat awal mount di mobile (font/layout belum siap).
+    // Fallback ke ukuran viewport agar grid tetap terbentuk.
+    const width =
+      rect.width > 0 ? rect.width : typeof window !== 'undefined' ? window.innerWidth : 0;
+    const height =
+      rect.height > 0 ? rect.height : typeof window !== 'undefined' ? window.innerHeight : 0;
+    if (width === 0 || height === 0) return;
 
-    canvas.style.width = `${rect.width}px`;
-    canvas.style.height = `${rect.height}px`;
+    canvas.width = Math.floor(width * dpr);
+    canvas.height = Math.floor(height * dpr);
+
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
 
     if (context.current) {
       context.current.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
 
-    const { columns, rows } = calculateGrid(rect.width, rect.height);
+    const { columns, rows } = calculateGrid(width, height);
     initializeLetters(columns, rows);
     drawLetters();
   };
@@ -136,7 +144,7 @@ export default function LetterGlitch({
     const len = list.length;
     if (len === 0) return;
 
-    // Glitch a small, subtle 3% subset of letters
+    // Sama di semua device (desktop / tablet / mobile): 3% subset random
     const updateCount = Math.max(1, Math.floor(len * 0.03));
     for (let i = 0; i < updateCount; i++) {
       const index = Math.floor(Math.random() * len);
@@ -150,18 +158,24 @@ export default function LetterGlitch({
     if (!canvas) return;
 
     context.current = canvas.getContext('2d');
+
+    // Render awal agar tidak blank sebelum loop jalan (penting di mobile)
     resizeCanvas();
 
-    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-    // On mobile devices, draw static grid once and DO NOT run continuous animation loop (saves 100% CPU & battery)
-    if (isMobile) {
-      return;
-    }
-
     let animationRunning = false;
+
+    const stopLoop = () => {
+      animationRunning = false;
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+        animationRef.current = null;
+      }
+    };
+
     const animate = (timestamp: number) => {
       if (!animationRunning) return;
 
+      // Sama di semua device: pakai glitchSpeed apa adanya (default 75ms)
       if (timestamp - lastGlitchTime.current >= glitchSpeed) {
         updateLetters();
         drawLetters();
@@ -171,32 +185,34 @@ export default function LetterGlitch({
       animationRef.current = requestAnimationFrame(animate);
     };
 
-    // Defer animation loop start until 1500ms after mount to ensure 0ms TBT during initial page load
-    let startTimeout: NodeJS.Timeout | null = setTimeout(() => {
+    const startLoop = () => {
+      if (animationRunning) return;
+      if (typeof document !== 'undefined' && document.hidden) return;
       animationRunning = true;
+      lastGlitchTime.current = performance.now();
       animationRef.current = requestAnimationFrame(animate);
-    }, 1500);
+    };
+
+    // Defer start loop sebentar pasca-hidrasi agar TBT tetap rendah.
+    let startTimeout: NodeJS.Timeout | null = setTimeout(() => {
+      startLoop();
+    }, 250);
 
     let resizeTimeout: NodeJS.Timeout;
     const handleResize = () => {
       clearTimeout(resizeTimeout);
       resizeTimeout = setTimeout(() => {
-        if (animationRef.current) cancelAnimationFrame(animationRef.current);
+        stopLoop();
         resizeCanvas();
-        if (typeof window !== 'undefined' && window.innerWidth >= 768) {
-          animationRunning = true;
-          animationRef.current = requestAnimationFrame(animate);
-        }
+        startLoop();
       }, 150);
     };
 
     const handleVisibility = () => {
       if (document.hidden) {
-        animationRunning = false;
-        if (animationRef.current) cancelAnimationFrame(animationRef.current);
-      } else if (typeof window !== 'undefined' && window.innerWidth >= 768) {
-        animationRunning = true;
-        animationRef.current = requestAnimationFrame(animate);
+        stopLoop();
+      } else {
+        startLoop();
       }
     };
 
@@ -204,9 +220,8 @@ export default function LetterGlitch({
     document.addEventListener('visibilitychange', handleVisibility);
 
     return () => {
-      animationRunning = false;
+      stopLoop();
       if (startTimeout) clearTimeout(startTimeout);
-      if (animationRef.current) cancelAnimationFrame(animationRef.current);
       clearTimeout(resizeTimeout);
       window.removeEventListener('resize', handleResize);
       document.removeEventListener('visibilitychange', handleVisibility);
