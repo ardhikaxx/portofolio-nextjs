@@ -295,8 +295,9 @@ export default function About() {
                         <div className="relative w-full h-full">
                             <Image
                                 src="/img/foto-profile.webp"
-                                alt="Holographic Avatar"
+                                alt="Foto Profil Yanuar Ardhika Rahmadhani Ubaidillah"
                                 fill
+                                sizes="(max-width: 640px) 96px, (max-width: 768px) 128px, (max-width: 1024px) 160px, 192px"
                                 className="object-cover rounded-full p-1 sm:p-2 mix-blend-lighten"
                                 priority
                             />
