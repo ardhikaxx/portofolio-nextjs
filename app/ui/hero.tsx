@@ -34,6 +34,14 @@ export default function Hero() {
           {'</Yanuar Ardhika>'}
         </h1>
 
+        {/* Semantic Crawler Context for Search Engines */}
+        <div className="sr-only">
+          <h2>Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom. - Full Stack Web & Mobile Developer</h2>
+          <p>
+            Portofolio resmi Yanuar Ardhika, Software Engineer dan Full Stack Developer lulusan Teknik Informatika Politeknik Negeri Jember (Polije). Berpengalaman dalam merancang dan mengembangkan lebih dari 27 sistem informasi web enterprise (Laravel, Next.js, React, Tailwind CSS, PHP, MySQL), aplikasi mobile Android (Flutter, Dart), serta integrasi Internet of Things (IoT). Melayani pembuatan website, aplikasi mobile, dan sistem informasi di Jember, Jawa Timur, Indonesia.
+          </p>
+        </div>
+
         <p
           style={{ fontFamily: "'Poppins', sans-serif" }}
           className="font-poppins text-white/95 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] text-xs sm:text-sm md:text-base lg:text-lg font-normal leading-relaxed text-center mt-3 sm:mt-4 mb-6 sm:mb-8 max-w-xl"

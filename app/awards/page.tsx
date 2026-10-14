@@ -1,18 +1,45 @@
 import type { Metadata } from "next";
 import Awards from "../ui/awards";
 
+const BASE_URL = "https://yanuar-ardhika.vercel.app";
+
 export const metadata: Metadata = {
-    title: "Penghargaan",
+    title: "Penghargaan & Prestasi | Yanuar Ardhika",
     description:
-        "Daftar penghargaan dan prestasi Yanuar Ardhika — juara kompetisi, pendanaan PKM, dan penghargaan akademik dari 2021 hingga sekarang.",
+        "Daftar penghargaan, rekognisi, dan prestasi akademik serta kompetisi teknologi yang diraih oleh Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom. — termasuk pendanaan Program Kreativitas Mahasiswa (PKM-PM Kemendikbudristek).",
+    keywords: [
+        "Penghargaan Yanuar Ardhika",
+        "Prestasi Yanuar Ardhika",
+        "PKM-PM Kemendikbudristek Yanuar Ardhika",
+        "Juara Kompetisi IT Polije",
+        "Prestasi Mahasiswa Politeknik Negeri Jember",
+        "Awards Software Engineer",
+        "Rekognisi Inovasi Teknologi",
+    ],
     alternates: {
-        canonical: "https://yanuar-ardhika.vercel.app/awards",
+        canonical: `${BASE_URL}/awards`,
     },
     openGraph: {
-        title: "Penghargaan Yanuar Ardhika",
+        title: "Penghargaan & Prestasi | Yanuar Ardhika",
         description:
-            "Daftar penghargaan dan prestasi Yanuar Ardhika — juara kompetisi, pendanaan PKM, dan penghargaan akademik.",
-        url: "https://yanuar-ardhika.vercel.app/awards",
+            "Daftar penghargaan, rekognisi, dan prestasi akademik serta kompetisi teknologi yang diraih oleh Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom.",
+        url: `${BASE_URL}/awards`,
+        type: "website",
+        images: [
+            {
+                url: `${BASE_URL}/og-image.jpg`,
+                width: 1200,
+                height: 630,
+                alt: "Penghargaan Yanuar Ardhika",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Penghargaan & Prestasi | Yanuar Ardhika",
+        description:
+            "Daftar penghargaan dan prestasi kompetisi teknologi Yanuar Ardhika.",
+        images: [`${BASE_URL}/og-image.jpg`],
     },
 };
 
