@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "Jika Anda merujuk atau mengutip sistem portofolio ini, silakan gunakan metadata di bawah."
+authors:
+  - family-names: "Ubaidillah"
+    given-names: "Yanuar Ardhika Rahmadhani"
+    orcid: "https://orcid.org/0009-0004-9122-1369"
+title: "Portofolio Digital Resmi Yanuar Ardhika — Full Stack Web & Mobile Developer"
+version: "2.1.0"
+date-released: 2026-10-14
+url: "https://yanuar-ardhika.vercel.app"
+repository-code: "https://github.com/ardhikaxx/portofolio-nextjs"
+license: "Proprietary"
+keywords:
+  - "nextjs"
+  - "react"
+  - "typescript"
+  - "portfolio"
+  - "software-engineer"
+  - "full-stack-developer"
+  - "tailwindcss"
+  - "ssg"
+abstract: "Website portofolio digital profesional resmi milik Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom. — Software Engineer & Full Stack Developer lulusan Teknik Informatika Politeknik Negeri Jember. Dibangun menggunakan Next.js 16, React 19, TypeScript, dan Tailwind CSS v4."

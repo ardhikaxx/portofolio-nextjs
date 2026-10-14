@@ -28,7 +28,6 @@ export default function Hero() {
         </div>
 
         <h1
-          style={{ fontFamily: "'Jaro', sans-serif" }}
           className="font-jaro text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem] tracking-tight text-white leading-none select-none drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]"
         >
           {'</Yanuar Ardhika>'}
@@ -43,7 +42,6 @@ export default function Hero() {
         </div>
 
         <p
-          style={{ fontFamily: "'Poppins', sans-serif" }}
           className="font-poppins text-white/95 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] text-xs sm:text-sm md:text-base lg:text-lg font-normal leading-relaxed text-center mt-3 sm:mt-4 mb-6 sm:mb-8 max-w-xl"
         >
           Software Engineer yang membangun sistem
