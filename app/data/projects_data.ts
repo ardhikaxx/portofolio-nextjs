@@ -223,5 +223,14 @@ export const projects = [
     image: '/projects/25.webp',
     link: 'https://github.com/ardhikaxx/web-office-law',
     year: 2026
+  },
+  {
+    id: 26,
+    name: 'Website Aplikasi Label Gizi - Sistem Transparansi Pangan & Label Nutrisi MBG',
+    description: 'Platform sistem informasi transparansi pangan dan pengelolaan label makanan bergizi harian untuk program Makanan Bergizi Gratis (MBG). Dikembangkan sebagai solusi inovatif dan efisiensi anggaran operasional guna mengeliminasi pemborosan biaya cetak berulang stiker kandungan gizi konvensional pada ompreng makan harian. Melalui sistem ini, wadah ompreng MBG cukup ditempeli satu stiker label permanen ber-QR Code yang hanya perlu diganti apabila stiker mengalami kerusakan fisik. Masyarakat, wali murid, dan penerima manfaat cukup memindai (scan) kode QR tersebut melalui smartphone untuk mengakses informasi transparansi pangan secara real-time. Fitur lengkap meliputi: Halaman publik tanpa login yang menyajikan menu hari ini secara otomatis (lengkap dengan mekanisme fallback ke publikasi menu terbaru), rincian komposisi lauk pauk (nasi, lauk, sayur, buah, susu) yang bersih dan informatif, visualisasi angka kecukupan gizi akurat (energi, protein, lemak, karbohidrat, dan serat pangan) berstandar notasi desimal koma Indonesia, panduan batas waktu konsumsi aman makanan (rentang waktu jam WIB maksimal konsumsi), galeri foto hidangan menu harian dengan kompresi WebP responsif, panel admin dengan sistem autentikasi custom dan proteksi brute-force rate limiter, manajemen siklus hidup label makanan (state machine: Draft → Terjadwal → Dipublikasikan → Diarsipkan) disertai fitur duplikasi menu dan ekspor CSV, penyajian aset gambar mandiri terproteksi tanpa ketergantungan storage:link dengan long-term HTTP caching (ETag & immutable), dashboard analitik statistik publikasi gizi, manajemen multi-administrator, pengaturan aplikasi dinamis, serta jejak audit aktivitas (Activity Log) menyeluruh untuk akuntabilitas sistem.',
+    languages: ['laravel', 'php', 'tailwind', 'mysql', 'javascript', 'vite'],
+    image: '/projects/26.webp',
+    link: 'https://github.com/ardhikaxx/label-gizi',
+    year: 2026
   }
 ];
