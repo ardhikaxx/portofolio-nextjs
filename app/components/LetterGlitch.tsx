@@ -205,9 +205,12 @@ export default function LetterGlitch({
 
     context.current = canvas.getContext('2d');
     resizeCanvas();
-    animate();
+    drawLetters();
 
     let resizeTimeout: NodeJS.Timeout;
+    const startTimeout = setTimeout(() => {
+      animate();
+    }, 200);
 
     const handleResize = () => {
       clearTimeout(resizeTimeout);
@@ -232,6 +235,7 @@ export default function LetterGlitch({
     document.addEventListener('visibilitychange', handleVisibility);
 
     return () => {
+      clearTimeout(startTimeout);
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }

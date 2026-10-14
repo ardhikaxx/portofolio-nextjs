@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Poppins, Jaro } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "./components/SmoothScroll";
 import NavBottom from "./components/NavBottom";
@@ -16,6 +16,23 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono", 
   subsets: ["latin"],
   display: 'swap',
+  preload: true,
+  adjustFontFallback: true,
+});
+
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+  preload: true,
+  adjustFontFallback: true,
+});
+
+const jaro = Jaro({
+  variable: "--font-jaro",
+  subsets: ["latin"],
+  display: "swap",
   preload: true,
   adjustFontFallback: true,
 });
@@ -312,18 +329,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className={`dark ${geistSans.variable} ${geistMono.variable} bg-black text-white`}>
+    <html lang="id" className={`dark ${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${jaro.variable} bg-black text-white`}>
       <head>
         <meta name="theme-color" content="#000000" />
         <meta name="color-scheme" content="dark" />
         <meta name="google-site-verification" content="google21da1fa6eeb78504.html" />
         <meta name="google-site-verification" content="21da1fa6eeb78504" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
-          rel="stylesheet"
-        />
         <meta property="og:image" content={`${BASE_URL}/og-image.jpg`} />
         <meta property="og:image:secure_url" content={`${BASE_URL}/og-image.jpg`} />
         <meta property="og:image:type" content="image/jpeg" />

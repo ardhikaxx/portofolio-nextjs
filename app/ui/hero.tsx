@@ -82,10 +82,11 @@ export default function Hero() {
       <div className="relative z-10 mt-auto lg:mt-0 w-[240px] sm:w-[290px] md:w-[340px] lg:w-[340px] xl:w-[430px] 2xl:w-[500px] max-h-[26vh] sm:max-h-[30vh] lg:max-h-[44vh] xl:max-h-[50vh] 2xl:max-h-[56vh] pb-20 sm:pb-24 lg:pb-0 flex justify-center items-end lg:absolute lg:bottom-3 lg:right-3 xl:bottom-4 xl:right-6 2xl:right-8 pointer-events-none select-none">
         <Image
           src="/img/sticker.webp"
-          alt="Laptop Mascot"
+          alt="Laptop Mascot Yanuar Ardhika"
           width={600}
           height={522}
           priority
+          sizes="(max-width: 640px) 240px, (max-width: 1024px) 340px, 500px"
           className="w-full h-auto max-h-[inherit] object-contain drop-shadow-[0_10px_25px_rgba(0,0,0,0.8)]"
         />
       </div>

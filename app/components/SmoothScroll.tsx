@@ -9,11 +9,17 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
   const pathname = usePathname()
 
   useEffect(() => {
+    // Enable custom smooth scroll wheel only on desktop with fine pointer
+    if (typeof window !== 'undefined' && !window.matchMedia('(pointer: fine)').matches) {
+      return;
+    }
+
     const lenis = new Lenis({
       duration: 1.0,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
       wheelMultiplier: 1,
+      syncTouch: false,
     })
 
     lenisRef.current = lenis

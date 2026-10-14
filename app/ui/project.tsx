@@ -164,7 +164,7 @@ export default function Project() {
                             <BentoCard
                                 key={project.id}
                                 project={project}
-                                priority={index < 5}
+                                priority={index === 0}
                                 isMdSpan2={isMdSpan2}
                                 isLgSpan2={isLgSpan2}
                             />
