@@ -113,9 +113,12 @@ export default function PageMascot({
 
   const [direction, setDirection] = useState<Direction>('center');
   const [reaction, setReaction] = useState<Reaction | null>(null);
+  const [isFinePointer, setIsFinePointer] = useState(false);
 
   useEffect(() => {
-    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    const fine = typeof window !== 'undefined' && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    setIsFinePointer(fine);
+    if (!fine) {
       return;
     }
 
@@ -247,25 +250,30 @@ export default function PageMascot({
             transformOrigin: '50% 78%',
           }}
         >
-          {/* Directions Layer (pointer tracking) */}
+          {/* Directions Layer (pointer tracking on desktop, single 13KB static center on mobile) */}
           <span
             style={{
-              ...layerStyle,
-              backgroundImage: `url(${directions})`,
-              ...cell(directionIndex),
+              position: 'absolute',
+              inset: 0,
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: isFinePointer ? `${(directionIndex % 3) * 50}% ${Math.floor(directionIndex / 3) * 50}%` : 'center',
+              backgroundSize: isFinePointer ? '300% 300%' : 'contain',
+              backgroundImage: isFinePointer ? `url(${directions})` : 'url(/mascots/ardhika-center.webp)',
               opacity: reaction ? 0 : 1,
             }}
           />
 
-          {/* Reactions Layer (click payoffs) */}
-          <span
-            style={{
-              ...layerStyle,
-              backgroundImage: `url(${reactions})`,
-              ...cell(reactionIndex),
-              opacity: reaction ? 1 : 0,
-            }}
-          />
+          {/* Reactions Layer (click payoffs - only loaded when reaction is active) */}
+          {reaction && (
+            <span
+              style={{
+                ...layerStyle,
+                backgroundImage: `url(${reactions})`,
+                ...cell(reactionIndex),
+                opacity: 1,
+              }}
+            />
+          )}
         </span>
       </button>
     </div>

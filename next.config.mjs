@@ -15,6 +15,9 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === "production" ? { exclude: ["error", "warn"] } : false,
   },
+  experimental: {
+    optimizePackageImports: ['react-icons', 'react-icons/hi2', 'react-icons/fa'],
+  },
   turbopack: {},
   async headers() {
     return [

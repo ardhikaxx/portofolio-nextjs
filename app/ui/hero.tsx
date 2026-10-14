@@ -48,17 +48,17 @@ export default function Hero() {
           digital efisien dan berdampak
         </p>
 
-        <div className="w-full max-w-xs sm:max-w-sm lg:max-w-none flex flex-col lg:flex-row gap-3 sm:gap-4 justify-center items-center">
+        <div className="w-full max-w-xs sm:max-w-md lg:max-w-none grid grid-cols-2 lg:flex lg:flex-row gap-2.5 sm:gap-4 justify-center items-center">
           <Link
             href="/about"
-            className="group w-full lg:w-auto bg-white text-black px-7 py-3 rounded-full font-mono font-bold text-sm tracking-wide flex items-center justify-center gap-2.5 border-2 border-white hover:bg-neutral-200 transition-all duration-300 shadow-lg shadow-black/50"
+            className="group col-span-1 lg:w-auto bg-white text-black px-4 sm:px-7 py-2.5 sm:py-3 rounded-full font-mono font-bold text-xs sm:text-sm tracking-wide flex items-center justify-center gap-2 border-2 border-white hover:bg-neutral-200 transition-all duration-300 shadow-lg shadow-black/50"
           >
             <HiUser className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover:scale-110" />
             <span>Tentang Saya</span>
           </Link>
           <Link
             href="/cv"
-            className="group w-full lg:w-auto bg-black/40 backdrop-blur-md text-white border-2 border-white/80 px-7 py-3 rounded-full font-mono font-bold text-sm tracking-wide flex items-center justify-center gap-2.5 hover:bg-white hover:text-black transition-all duration-300 shadow-lg shadow-black/50"
+            className="group col-span-1 lg:w-auto bg-black/40 backdrop-blur-md text-white border-2 border-white/80 px-4 sm:px-7 py-2.5 sm:py-3 rounded-full font-mono font-bold text-xs sm:text-sm tracking-wide flex items-center justify-center gap-2 hover:bg-white hover:text-black transition-all duration-300 shadow-lg shadow-black/50"
           >
             <HiDocument className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover:scale-110" />
             <span>Lihat CV</span>
@@ -67,7 +67,7 @@ export default function Hero() {
             href="https://page-reviews.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group w-full lg:w-auto bg-black/40 backdrop-blur-md text-white border-2 border-white/80 px-7 py-3 rounded-full font-mono font-bold text-sm tracking-wide flex items-center justify-center gap-2.5 hover:bg-white hover:text-black transition-all duration-300 shadow-lg shadow-black/50"
+            className="group col-span-2 lg:w-auto bg-black/40 backdrop-blur-md text-white border-2 border-white/80 px-4 sm:px-7 py-2.5 sm:py-3 rounded-full font-mono font-bold text-xs sm:text-sm tracking-wide flex items-center justify-center gap-2 hover:bg-white hover:text-black transition-all duration-300 shadow-lg shadow-black/50"
           >
             <HiStar className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover:scale-110" />
             <span>Testimoni & Ulasan</span>
