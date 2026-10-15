@@ -223,6 +223,15 @@ export const metadata: Metadata = {
   verification: {
     google: "21da1fa6eeb78504",
   },
+  icons: {
+    icon: [
+      { url: "/img/sticker.webp", type: "image/webp" },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    shortcut: "/img/sticker.webp",
+    apple: "/img/sticker.webp",
+  },
 };
 
 const jsonLd = {
@@ -341,6 +350,9 @@ export default function RootLayout({
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <link rel="image_src" href={`${BASE_URL}/og-image.jpg`} />
+        <link rel="icon" href="/img/sticker.webp" type="image/webp" />
+        <link rel="shortcut icon" href="/img/sticker.webp" type="image/webp" />
+        <link rel="apple-touch-icon" href="/img/sticker.webp" />
         {/* Preload LCP Hero Sticker Image directly from initial HTML document */}
         <link
           rel="preload"
