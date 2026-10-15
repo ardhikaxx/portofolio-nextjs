@@ -42,11 +42,11 @@ const BASE_URL = "https://yanuar-ardhika.vercel.app";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Yanuar Ardhika — Full Stack Web & Mobile Developer",
-    template: "%s | Yanuar Ardhika",
+    default: "Jasa Pembuatan Website Murah & Aplikasi Mobile | Yanuar Ardhika",
+    template: "%s | Jasa Pembuatan Website & Aplikasi Mobile",
   },
   description:
-    "Portofolio resmi Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom. — Software Engineer & Full Stack Developer spesialis Laravel, Flutter, Next.js, React, PHP, MySQL, dan IoT. Lulusan D4 Teknik Informatika Politeknik Negeri Jember (Polije) yang berpengalaman merancang sistem enterprise, aplikasi mobile, dan riset terdanai.",
+    "Jasa pembuatan website murah mulai 400 ribu include hosting 1 tahun + domain web.id, dan jasa aplikasi mobile Android/Flutter mulai 300 ribu. Melayani sistem penjualan UMKM, kasir POS, company profile, dan tugas/skripsi IT mahasiswa. WhatsApp: 085933648537.",
   keywords: [
     // Nama lengkap & variasi ejaan pencarian
     "Yanuar Ardhika",
@@ -126,19 +126,39 @@ export const metadata: Metadata = {
     "PKM-PM 2024",
     "AITeC Politeknik Negeri Jember",
 
-    // Layanan & Search Intent
+    // Layanan & Search Intent Jasa Website, Mobile & Mahasiswa
+    "Jasa Pembuatan Website Murah",
+    "Jasa Pembuatan Website 400 Ribu",
+    "Jasa Pembuatan Website UMKM",
+    "Jasa Pembuatan Sistem Penjualan",
+    "Jasa Pembuatan Website Toko Online",
+    "Jasa Pembuatan Aplikasi Mobile Murah",
+    "Jasa Pembuatan Aplikasi Mobile 300 Ribu",
+    "Jasa Pembuatan Aplikasi Android",
+    "Jasa Pembuatan Aplikasi Flutter",
+    "Jasa Pembuatan Website Laravel",
+    "Jasa Buat Website Include Domain Hosting",
+    "Jasa Sistem Kasir POS UMKM",
+    "Jasa Pembuatan Sistem Informasi Penjualan",
+    "Jasa Tugas IT Mahasiswa",
+    "Jasa Pembuatan Tugas Pemrograman",
+    "Jasa Projek IT Mahasiswa",
+    "Jasa Skripsi Teknik Informatika",
+    "Jasa Pembuatan Web Skripsi",
+    "Jasa Pembuatan Aplikasi Skripsi",
+    "Jasa Tugas Akhir Informatika",
+    "Jasa Joki Tugas Coding",
+    "Jasa Pembuatan Aplikasi Murah Mahasiswa",
+    "Jasa Pembuatan Website Jember",
+    "Jasa Pembuatan Aplikasi Jember",
+    "Jasa Programmer Freelance Murah",
     "Portofolio Developer Indonesia",
     "Portofolio Web Developer",
     "Portofolio Software Engineer",
-    "Portofolio Programmer Modern",
     "Jasa Pembuatan Website",
     "Jasa Pembuatan Aplikasi Mobile",
     "Jasa Pembuatan Sistem Informasi",
     "Jasa Pembuatan Website Perusahaan",
-    "Jasa Pembuatan Aplikasi Android",
-    "Jasa Pembuatan Website Laravel",
-    "Jasa Pembuatan Aplikasi Flutter",
-    "Jasa Skripsi Teknik Informatika",
     "Hire Full Stack Developer Indonesia",
     "Freelance Web Developer Indonesia",
 
@@ -191,24 +211,24 @@ export const metadata: Metadata = {
     alternateLocale: ["en_US"],
     url: BASE_URL,
     siteName: "Portofolio Yanuar Ardhika",
-    title: "Yanuar Ardhika — Full Stack Web & Mobile Developer",
+    title: "Jasa Pembuatan Website Murah & Aplikasi Mobile | Yanuar Ardhika",
     description:
-      "Portofolio resmi Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom. — Software Engineer & Full Stack Developer spesialis Laravel, Flutter, Next.js, dan IoT di Jember, Indonesia.",
+      "Jasa pembuatan website murah mulai 400 ribu include hosting 1 tahun + domain web.id & aplikasi mobile mulai 300 ribu. Melayani sistem penjualan UMKM, toko online, dan tugas IT mahasiswa. WhatsApp: 085933648537.",
     images: [
       {
         url: `${BASE_URL}/og-image.jpg`,
         width: 1200,
         height: 630,
         type: "image/jpeg",
-        alt: "Yanuar Ardhika - Full Stack Web & Mobile Developer",
+        alt: "Jasa Pembuatan Website & Aplikasi Mobile — Yanuar Ardhika",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Yanuar Ardhika — Full Stack Web & Mobile Developer",
+    title: "Jasa Pembuatan Website Murah & Aplikasi Mobile | Yanuar Ardhika",
     description:
-      "Portofolio resmi Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom. — Software Engineer & Full Stack Developer spesialis Laravel, Flutter, Next.js, dan IoT.",
+      "Jasa pembuatan website murah mulai 400 ribu include hosting 1 tahun + domain web.id & aplikasi mobile mulai 300 ribu. Hubungi WhatsApp: 085933648537.",
     images: [`${BASE_URL}/og-image.jpg`],
     creator: "@ardhikaxx",
     site: "@ardhikaxx",
@@ -297,6 +317,82 @@ const jsonLd = {
       ],
     },
     {
+      "@type": "ProfessionalService",
+      "@id": `${BASE_URL}/#service`,
+      "name": "Jasa Pembuatan Website & Aplikasi Mobile — Yanuar Ardhika",
+      "image": `${BASE_URL}/og-image.jpg`,
+      "url": BASE_URL,
+      "telephone": "+6285933648537",
+      "priceRange": "Rp300.000 - Rp2.500.000",
+      "currenciesAccepted": "IDR",
+      "paymentAccepted": "Cash, Bank Transfer, QRIS",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Jember",
+        "addressRegion": "Jawa Timur",
+        "addressCountry": "ID"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -8.1724,
+        "longitude": 113.7007
+      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Indonesia"
+        },
+        {
+          "@type": "City",
+          "name": "Jember"
+        },
+        {
+          "@type": "City",
+          "name": "Surabaya"
+        },
+        {
+          "@type": "City",
+          "name": "Malang"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Katalog Jasa Pembuatan Website & Aplikasi",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Jasa Pembuatan Website (Include Hosting 1 Tahun & Domain .web.id)",
+              "description": "Pembuatan website toko online, sistem penjualan UMKM, company profile, dan landing page cepat."
+            },
+            "price": "400000",
+            "priceCurrency": "IDR"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Jasa Pembuatan Aplikasi Mobile (Android / Flutter)",
+              "description": "Pembuatan aplikasi mobile Android untuk kasir POS, operasional bisnis, dan UMKM."
+            },
+            "price": "300000",
+            "priceCurrency": "IDR"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Jasa Tugas & Projek IT / Skripsi Mahasiswa",
+              "description": "Bantuan pengerjaan projek IT, tugas pemrograman, dan program skripsi Teknik Informatika & Sistem Informasi."
+            },
+            "price": "300000",
+            "priceCurrency": "IDR"
+          }
+        ]
+      }
+    },
+    {
       "@type": "WebSite",
       "@id": `${BASE_URL}/#website`,
       url: BASE_URL,
@@ -328,6 +424,44 @@ const jsonLd = {
       mainEntity: {
         "@id": `${BASE_URL}/#person`,
       },
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${BASE_URL}/#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Berapa biaya jasa pembuatan website di Yanuar Ardhika?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Biaya jasa pembuatan website mulai dari Rp400.000, sudah include hosting aktif selama 1 tahun dan domain .web.id gratis. Cocok untuk UMKM, toko online, sistem kasir/penjualan, dan company profile."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa biaya jasa pembuatan aplikasi mobile Android?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jasa pembuatan aplikasi mobile Android (berbasis Flutter) mulai dari Rp300.000 untuk kebutuhan kasir POS, operasional bisnis, maupun tugas kuliah/skripsi."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah melayani jasa pembuatan tugas, projek IT, dan skripsi mahasiswa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ya, kami melayani pengerjaan tugas pemrograman, projek IT kuliah, dan program skripsi/tugas akhir untuk mahasiswa Teknik Informatika dan Sistem Informasi dengan garansi bimbingan dan source code lengkap."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bagaimana cara memesan atau berkonsultasi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Anda bisa langsung menghubungi WhatsApp di 085933648537 atau mengunjungi portofolio resmi di https://yanuar-ardhika.vercel.app/."
+          }
+        }
+      ]
     },
   ],
 };

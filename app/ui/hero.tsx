@@ -32,11 +32,22 @@ export default function Hero() {
           {'</Yanuar Ardhika>'}
         </h1>
 
-        {/* Semantic Crawler Context for Search Engines */}
+        {/* Semantic Crawler Context for Search Engines & Accessibility */}
         <div className="sr-only">
-          <h2>Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom. - Full Stack Web & Mobile Developer</h2>
+          <h2>Jasa Pembuatan Website Murah & Jasa Pembuatan Aplikasi Mobile — Yanuar Ardhika</h2>
           <p>
-            Portofolio resmi Yanuar Ardhika, Software Engineer dan Full Stack Developer lulusan Teknik Informatika Politeknik Negeri Jember (Polije). Berpengalaman dalam merancang dan mengembangkan lebih dari 27 sistem informasi web enterprise (Laravel, Next.js, React, Tailwind CSS, PHP, MySQL), aplikasi mobile Android (Flutter, Dart), serta integrasi Internet of Things (IoT). Melayani pembuatan website, aplikasi mobile, dan sistem informasi di Jember, Jawa Timur, Indonesia.
+            Melayani jasa pembuatan website profesional murah mulai Rp400.000 (sudah include hosting 1 tahun dan domain .web.id) serta jasa pembuatan aplikasi mobile Android dan Flutter mulai Rp300.000.
+          </p>
+          <h3>Layanan Unggulan Kami:</h3>
+          <ul>
+            <li>Jasa Pembuatan Sistem Penjualan (POS / Kasir) untuk UMKM, toko ritel, dan bisnis apapun.</li>
+            <li>Jasa Pembuatan Website Toko Online, Katalog Produk, dan Landing Page Promosi.</li>
+            <li>Jasa Pembuatan Website Company Profile instansi dan perusahaan.</li>
+            <li>Jasa Tugas dan Projek IT Mahasiswa untuk semua jurusan Teknik Informatika dan Sistem Informasi.</li>
+            <li>Jasa Pembuatan Web & Aplikasi Skripsi / Tugas Akhir (Laravel, Flutter, Next.js, MySQL).</li>
+          </ul>
+          <p>
+            Hubungi langsung via WhatsApp atau telepon: 085933648537. Portofolio lengkap dapat diakses di https://yanuar-ardhika.vercel.app/. Berlokasi di Jember, Jawa Timur dan melayani klien secara online dari seluruh Indonesia.
           </p>
         </div>
 
