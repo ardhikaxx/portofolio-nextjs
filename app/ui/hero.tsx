@@ -26,19 +26,6 @@ export default function Hero() {
           <PageMascot />
         </div>
 
-        <Link
-          href="/jasa-pembuatan-website"
-          className="group inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-neutral-900/90 hover:bg-neutral-800 border border-emerald-500/40 hover:border-emerald-400 text-white font-mono text-[11px] sm:text-xs backdrop-blur-md transition-all mb-3 sm:mb-4 shadow-lg shadow-emerald-950/20"
-        >
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-          </span>
-          <span className="font-semibold text-emerald-400">Jasa Web & Mobile:</span>
-          <span className="text-neutral-200">Mulai 400rb (Free Hosting + Domain)</span>
-          <span className="text-neutral-400 group-hover:translate-x-0.5 group-hover:text-white transition-transform">→</span>
-        </Link>
-
         <h1
           className="font-jaro text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem] tracking-tight text-white leading-none select-none drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]"
         >
