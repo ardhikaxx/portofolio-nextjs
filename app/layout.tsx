@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Poppins, Jaro } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "./components/SmoothScroll";
 import NavBottom from "./components/NavBottom";
+import { Analytics } from '@vercel/analytics/next';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -505,6 +506,7 @@ export default function RootLayout({
           {children}
         </SmoothScroll>
         <NavBottom />
+        <Analytics />
       </body>
     </html>
   );
