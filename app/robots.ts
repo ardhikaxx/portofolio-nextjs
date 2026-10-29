@@ -1,8 +1,7 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "./config/site";
 
 export default function robots(): MetadataRoute.Robots {
-    const BASE_URL = "https://yanuar-ardhika.vercel.app";
-
     return {
         rules: [
             {
@@ -21,8 +20,16 @@ export default function robots(): MetadataRoute.Robots {
                 userAgent: "bingbot",
                 allow: "/",
             },
+            {
+                userAgent: "Applebot",
+                allow: "/",
+            },
+            {
+                userAgent: "DuckDuckBot",
+                allow: "/",
+            },
         ],
-        sitemap: `${BASE_URL}/sitemap.xml`,
-        host: BASE_URL,
+        sitemap: `${SITE_URL}/sitemap.xml`,
+        host: SITE_URL,
     };
 }

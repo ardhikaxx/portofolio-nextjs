@@ -2,12 +2,11 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { projects } from '../../data/projects_data';
 import ProjectDetailClient from './project-detail-client';
+import { SITE_URL, SITE_CONFIG } from '../../config/site';
 
 interface Props {
     params: Promise<{ id: string }>;
 }
-
-const BASE_URL = 'https://yanuar-ardhika.vercel.app';
 
 export function generateStaticParams() {
     return projects.map((p) => ({
@@ -29,8 +28,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const title = `${project.name} | Portofolio Yanuar Ardhika`;
     const cleanDesc = project.description.replace(/\s+/g, ' ').trim();
     const description = cleanDesc.length > 160 ? `${cleanDesc.slice(0, 157)}...` : cleanDesc;
-    const projectUrl = `${BASE_URL}/project/${project.id}`;
-    const imageUrl = `${BASE_URL}${project.image}`;
+    const projectUrl = `${SITE_URL}/project/${project.id}`;
+    const imageUrl = `${SITE_URL}${project.image}`;
 
     return {
         title,
@@ -45,23 +44,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             "Web Developer Jember",
             "Full Stack Developer Indonesia",
             "Teknik Informatika Polije",
+            "Jasa Pembuatan Website Jember",
+            "Jasa Pembuatan Aplikasi Mobile",
         ],
         alternates: {
             canonical: projectUrl,
+            languages: {
+                "id-ID": projectUrl,
+                "x-default": projectUrl,
+            },
         },
         openGraph: {
             title,
             description,
             url: projectUrl,
             type: 'article',
-            siteName: 'Portofolio Yanuar Ardhika',
+            siteName: 'Yanuar Ardhika — Jasa Pembuatan Website & Portofolio',
             locale: 'id_ID',
             images: [
                 {
                     url: imageUrl,
                     width: 1200,
                     height: 675,
-                    alt: project.name,
+                    alt: `${project.name} — Portofolio Yanuar Ardhika`,
                 },
             ],
         },
@@ -93,11 +98,11 @@ export default async function ProjectDetailPage({ params }: Props) {
         operatingSystem: 'Web, Android, Cross-Platform',
         author: {
             '@type': 'Person',
-            name: 'Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom.',
-            url: BASE_URL,
+            name: SITE_CONFIG.fullName,
+            url: SITE_URL,
         },
-        image: `${BASE_URL}${project.image}`,
-        url: `${BASE_URL}/project/${project.id}`,
+        image: `${SITE_URL}${project.image}`,
+        url: `${SITE_URL}/project/${project.id}`,
         keywords: project.languages.join(', '),
         dateCreated: `${project.year}-01-01`,
         offers: {
@@ -115,19 +120,19 @@ export default async function ProjectDetailPage({ params }: Props) {
                 '@type': 'ListItem',
                 position: 1,
                 name: 'Beranda',
-                item: BASE_URL,
+                item: SITE_URL,
             },
             {
                 '@type': 'ListItem',
                 position: 2,
                 name: 'Koleksi Proyek',
-                item: `${BASE_URL}/project`,
+                item: `${SITE_URL}/project`,
             },
             {
                 '@type': 'ListItem',
                 position: 3,
                 name: project.name,
-                item: `${BASE_URL}/project/${project.id}`,
+                item: `${SITE_URL}/project/${project.id}`,
             },
         ],
     };

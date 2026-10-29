@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import Project from "../ui/project";
-
-const BASE_URL = "https://yanuar-ardhika.vercel.app";
+import { SITE_URL } from "../config/site";
 
 export const metadata: Metadata = {
-    title: "Koleksi Proyek Web & Mobile | Yanuar Ardhika",
+    title: "Portofolio Proyek Web, Mobile & IoT | Yanuar Ardhika",
     description:
         "Eksplorasi 27+ portofolio proyek perangkat lunak karya Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom. — mencakup sistem informasi enterprise, aplikasi mobile Android (Flutter), website Laravel, Next.js, machine learning, dan integrasi IoT.",
     keywords: [
@@ -25,19 +24,25 @@ export const metadata: Metadata = {
         "Jasa Pembuatan Website Jember",
         "Jasa Pembuatan Aplikasi Mobile",
         "Full Stack Developer Portfolio Indonesia",
+        "Yanuar Ardhika S.Tr.Kom.",
     ],
     alternates: {
-        canonical: `${BASE_URL}/project`,
+        canonical: `${SITE_URL}/project`,
+        languages: {
+            "id-ID": `${SITE_URL}/project`,
+            "x-default": `${SITE_URL}/project`,
+        },
     },
     openGraph: {
-        title: "Koleksi Proyek Web & Mobile | Yanuar Ardhika",
+        title: "Portofolio Proyek Web, Mobile & IoT | Yanuar Ardhika",
         description:
             "Eksplorasi 27+ portofolio proyek perangkat lunak karya Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom. — sistem informasi enterprise, aplikasi Flutter, Laravel, Next.js, dan IoT.",
-        url: `${BASE_URL}/project`,
+        url: `${SITE_URL}/project`,
         type: "website",
+        siteName: "Yanuar Ardhika — Jasa Pembuatan Website & Portofolio",
         images: [
             {
-                url: `${BASE_URL}/og-image.jpg`,
+                url: `${SITE_URL}/og-image.jpg`,
                 width: 1200,
                 height: 630,
                 alt: "Koleksi Proyek Yanuar Ardhika",
@@ -46,16 +51,44 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Koleksi Proyek Web & Mobile | Yanuar Ardhika",
+        title: "Portofolio Proyek Web, Mobile & IoT | Yanuar Ardhika",
         description:
             "Eksplorasi 27+ portofolio proyek perangkat lunak karya Yanuar Ardhika — sistem informasi enterprise, Flutter, Laravel, dan IoT.",
-        images: [`${BASE_URL}/og-image.jpg`],
+        images: [`${SITE_URL}/og-image.jpg`],
+        creator: "@ardhikaxx",
     },
+};
+
+const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+                {
+                    "@type": "ListItem",
+                    position: 1,
+                    name: "Beranda",
+                    item: SITE_URL,
+                },
+                {
+                    "@type": "ListItem",
+                    position: 2,
+                    name: "Koleksi Proyek",
+                    item: `${SITE_URL}/project`,
+                },
+            ],
+        },
+    ],
 };
 
 export default function ProjectPage() {
     return (
         <main className="min-h-screen bg-black">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             <Project />
         </main>
     );

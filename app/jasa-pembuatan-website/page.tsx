@@ -2,55 +2,43 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { FaWhatsapp, FaCheck, FaGlobe, FaMobileAlt, FaGraduationCap, FaRocket, FaShieldAlt, FaHeadset, FaServer } from 'react-icons/fa';
 import { HiArrowLeft, HiSparkles } from 'react-icons/hi2';
-
-const BASE_URL = "https://yanuar-ardhika.vercel.app";
+import { SITE_URL, SITE_CONFIG } from '../config/site';
 
 export const metadata: Metadata = {
-  title: "Jasa Pembuatan Website Murah Mulai 400 Ribu Include Hosting & Domain | Yanuar Ardhika",
+  title: "Jasa Pembuatan Website Murah Mulai 400 Ribu Free Hosting & Domain | Yanuar Ardhika",
   description:
     "Jasa pembuatan website profesional murah mulai Rp400.000 include hosting 1 tahun & domain .web.id gratis. Jasa aplikasi mobile Android mulai Rp300.000. Melayani sistem penjualan UMKM, toko online, company profile, dan tugas/skripsi IT mahasiswa. Hubungi WhatsApp: 085933648537.",
   keywords: [
-    "Jasa Pembuatan Website",
-    "Jasa Pembuatan Website Murah",
-    "Jasa Pembuatan Website 400 Ribu",
+    ...SITE_CONFIG.keywords,
     "Jasa Pembuatan Website Termurah",
-    "Jasa Pembuatan Website UMKM",
-    "Jasa Pembuatan Sistem Penjualan",
-    "Jasa Pembuatan Toko Online Murah",
-    "Jasa Pembuatan Website Include Domain Hosting",
     "Jasa Bikin Website Toko",
-    "Jasa Sistem Kasir POS",
-    "Jasa Pembuatan Aplikasi Mobile",
-    "Jasa Pembuatan Aplikasi Mobile 300 Ribu",
-    "Jasa Pembuatan Aplikasi Android",
-    "Jasa Pembuatan Aplikasi Flutter",
-    "Jasa Tugas IT Mahasiswa",
-    "Jasa Projek IT Mahasiswa",
-    "Jasa Skripsi Teknik Informatika",
-    "Jasa Pembuatan Web Skripsi",
-    "Jasa Joki Coding Mahasiswa",
-    "Jasa Pembuatan Website Jember",
-    "Jasa Pembuatan Website Surabaya",
-    "Jasa Pembuatan Website Malang",
-    "Jasa Pembuatan Website Jawa Timur",
-    "Yanuar Ardhika",
-    "085933648537",
+    "Jasa Web 400rb",
+    "Jasa Aplikasi 300rb",
+    "Jasa Pembuatan Landing Page",
+    "Jasa Web Jember Murah",
+    "Jasa Web Surabaya Murah",
+    "Jasa Web Malang Murah",
   ],
   alternates: {
-    canonical: `${BASE_URL}/jasa-pembuatan-website`,
+    canonical: `${SITE_URL}/jasa-pembuatan-website`,
+    languages: {
+      "id-ID": `${SITE_URL}/jasa-pembuatan-website`,
+      "x-default": `${SITE_URL}/jasa-pembuatan-website`,
+    },
   },
   openGraph: {
     title: "Jasa Pembuatan Website Murah Mulai 400 Ribu & Aplikasi Mobile — Yanuar Ardhika",
     description:
-      "Jasa pembuatan website murah mulai 400 ribu (free hosting 1 tahun + domain .web.id) & aplikasi mobile mulai 300 ribu. Melayani sistem penjualan UMKM dan tugas/skripsi IT mahasiswa. WhatsApp: 085933648537.",
-    url: `${BASE_URL}/jasa-pembuatan-website`,
+      "Jasa pembuatan website murah mulai 400 ribu (free hosting 1 tahun + domain .web.id gratis) & aplikasi mobile mulai 300 ribu. Melayani sistem penjualan UMKM, toko online, dan tugas/skripsi IT mahasiswa. WhatsApp: 085933648537.",
+    url: `${SITE_URL}/jasa-pembuatan-website`,
     type: "website",
+    siteName: "Yanuar Ardhika — Jasa Pembuatan Website & Portofolio",
     images: [
       {
-        url: `${BASE_URL}/og-image.jpg`,
+        url: `${SITE_URL}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: "Jasa Pembuatan Website Murah — Yanuar Ardhika",
+        alt: "Jasa Pembuatan Website Murah Mulai 400rb — Yanuar Ardhika",
       },
     ],
   },
@@ -59,7 +47,8 @@ export const metadata: Metadata = {
     title: "Jasa Pembuatan Website Murah Mulai 400 Ribu & Aplikasi Mobile — Yanuar Ardhika",
     description:
       "Jasa pembuatan website murah mulai 400 ribu include hosting 1 tahun + domain .web.id & aplikasi mobile mulai 300 ribu. Hubungi WhatsApp: 085933648537.",
-    images: [`${BASE_URL}/og-image.jpg`],
+    images: [`${SITE_URL}/og-image.jpg`],
+    creator: "@ardhikaxx",
   },
 };
 
@@ -68,121 +57,133 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "BreadcrumbList",
-      "itemListElement": [
+      itemListElement: [
         {
           "@type": "ListItem",
-          "position": 1,
-          "name": "Beranda",
-          "item": BASE_URL,
+          position: 1,
+          name: "Beranda",
+          item: SITE_URL,
         },
         {
           "@type": "ListItem",
-          "position": 2,
-          "name": "Jasa Pembuatan Website & Aplikasi Mobile",
-          "item": `${BASE_URL}/jasa-pembuatan-website`,
+          position: 2,
+          name: "Jasa Pembuatan Website & Aplikasi Mobile",
+          item: `${SITE_URL}/jasa-pembuatan-website`,
         },
       ],
     },
     {
       "@type": "ProfessionalService",
-      "@id": `${BASE_URL}/jasa-pembuatan-website#service`,
-      "name": "Jasa Pembuatan Website Murah & Aplikasi Mobile — Yanuar Ardhika",
-      "image": `${BASE_URL}/og-image.jpg`,
-      "url": `${BASE_URL}/jasa-pembuatan-website`,
-      "telephone": "+6285933648537",
-      "priceRange": "Rp300.000 - Rp2.500.000",
-      "currenciesAccepted": "IDR",
-      "paymentAccepted": "Cash, Bank Transfer, QRIS",
-      "address": {
+      "@id": `${SITE_URL}/jasa-pembuatan-website#service`,
+      name: "Jasa Pembuatan Website Murah & Aplikasi Mobile — Yanuar Ardhika",
+      image: `${SITE_URL}/og-image.jpg`,
+      url: `${SITE_URL}/jasa-pembuatan-website`,
+      telephone: "+6285933648537",
+      priceRange: "Rp300.000 - Rp2.500.000",
+      currenciesAccepted: "IDR",
+      paymentAccepted: "Cash, Bank Transfer, QRIS",
+      address: {
         "@type": "PostalAddress",
-        "addressLocality": "Jember",
-        "addressRegion": "Jawa Timur",
-        "addressCountry": "ID",
+        addressLocality: "Jember",
+        addressRegion: "Jawa Timur",
+        addressCountry: "ID",
       },
-      "geo": {
+      geo: {
         "@type": "GeoCoordinates",
-        "latitude": -8.1724,
-        "longitude": 113.7007,
+        latitude: -8.1724,
+        longitude: 113.7007,
       },
-      "hasOfferCatalog": {
+      areaServed: [
+        { "@type": "Country", name: "Indonesia" },
+        { "@type": "City", name: "Jember" },
+        { "@type": "City", name: "Surabaya" },
+        { "@type": "City", name: "Malang" },
+        { "@type": "City", name: "Sidoarjo" },
+        { "@type": "City", name: "Banyuwangi" },
+        { "@type": "City", name: "Jakarta" },
+      ],
+      hasOfferCatalog: {
         "@type": "OfferCatalog",
-        "name": "Paket Jasa Pembuatan Website & Aplikasi",
-        "itemListElement": [
+        name: "Paket Jasa Pembuatan Website & Aplikasi",
+        itemListElement: [
           {
             "@type": "Offer",
-            "itemOffered": {
+            itemOffered: {
               "@type": "Service",
-              "name": "Jasa Pembuatan Website (Include Hosting 1 Tahun & Domain .web.id)",
-              "description": "Pembuatan website toko online, sistem penjualan UMKM, kasir POS, company profile, dan landing page modern.",
+              name: "Jasa Pembuatan Website (Include Hosting 1 Tahun & Domain .web.id)",
+              description:
+                "Pembuatan website toko online, sistem penjualan UMKM, kasir POS, company profile, dan landing page modern.",
             },
-            "price": "400000",
-            "priceCurrency": "IDR",
+            price: "400000",
+            priceCurrency: "IDR",
           },
           {
             "@type": "Offer",
-            "itemOffered": {
+            itemOffered: {
               "@type": "Service",
-              "name": "Jasa Pembuatan Aplikasi Mobile (Android / Flutter)",
-              "description": "Pembuatan aplikasi mobile Android berbasis Flutter untuk kasir toko, operasional UMKM, dan monitoring.",
+              name: "Jasa Pembuatan Aplikasi Mobile (Android / Flutter)",
+              description:
+                "Pembuatan aplikasi mobile Android berbasis Flutter untuk kasir toko, operasional UMKM, dan monitoring.",
             },
-            "price": "300000",
-            "priceCurrency": "IDR",
+            price: "300000",
+            priceCurrency: "IDR",
           },
           {
             "@type": "Offer",
-            "itemOffered": {
+            itemOffered: {
               "@type": "Service",
-              "name": "Jasa Tugas & Projek IT / Skripsi Mahasiswa",
-              "description": "Bantuan pengerjaan projek IT kuliah, tugas pemrograman, dan program skripsi Teknik Informatika & Sistem Informasi.",
+              name: "Jasa Tugas & Projek IT / Skripsi Mahasiswa",
+              description:
+                "Bantuan pengerjaan projek IT kuliah, tugas pemrograman, dan program skripsi Teknik Informatika & Sistem Informasi.",
             },
-            "price": "300000",
-            "priceCurrency": "IDR",
+            price: "300000",
+            priceCurrency: "IDR",
           },
         ],
       },
     },
     {
       "@type": "FAQPage",
-      "@id": `${BASE_URL}/jasa-pembuatan-website#faq`,
-      "mainEntity": [
+      "@id": `${SITE_URL}/jasa-pembuatan-website#faq`,
+      mainEntity: [
         {
           "@type": "Question",
-          "name": "Berapa harga jasa pembuatan website di Yanuar Ardhika?",
-          "acceptedAnswer": {
+          name: "Berapa harga jasa pembuatan website di Yanuar Ardhika?",
+          acceptedAnswer: {
             "@type": "Answer",
-            "text": "Harga jasa pembuatan website mulai dari Rp400.000, sudah include hosting aktif 1 tahun dan domain .web.id gratis tanpa biaya tambahan tersembunyi.",
+            text: "Harga jasa pembuatan website mulai dari Rp400.000, sudah include hosting aktif 1 tahun dan domain .web.id gratis tanpa biaya tambahan tersembunyi.",
           },
         },
         {
           "@type": "Question",
-          "name": "Apakah website sudah bisa untuk sistem penjualan UMKM dan kasir toko?",
-          "acceptedAnswer": {
+          name: "Apakah website sudah bisa untuk sistem penjualan UMKM dan kasir toko?",
+          acceptedAnswer: {
             "@type": "Answer",
-            "text": "Ya, sangat bisa. Kami melayani pembuatan sistem penjualan lengkap dengan pencatatan produk, keranjang belanja, kasir POS, cetak invoice, dan integrasi order WhatsApp.",
+            text: "Ya, sangat bisa. Kami melayani pembuatan sistem penjualan lengkap dengan pencatatan produk, keranjang belanja, kasir POS, cetak invoice, dan integrasi order WhatsApp.",
           },
         },
         {
           "@type": "Question",
-          "name": "Berapa biaya pembuatan aplikasi mobile Android?",
-          "acceptedAnswer": {
+          name: "Berapa biaya pembuatan aplikasi mobile Android?",
+          acceptedAnswer: {
             "@type": "Answer",
-            "text": "Biaya jasa pembuatan aplikasi mobile Android mulai dari Rp300.000 menggunakan framework modern Flutter yang ringan dan responsif.",
+            text: "Biaya jasa pembuatan aplikasi mobile Android mulai dari Rp300.000 menggunakan framework modern Flutter yang ringan dan responsif.",
           },
         },
         {
           "@type": "Question",
-          "name": "Apakah menerima pengerjaan tugas koding dan skripsi mahasiswa IT?",
-          "acceptedAnswer": {
+          name: "Apakah menerima pengerjaan tugas koding dan skripsi mahasiswa IT?",
+          acceptedAnswer: {
             "@type": "Answer",
-            "text": "Ya, kami melayani pengerjaan tugas pemrograman kuliah, projek semester, dan program skripsi/tugas akhir untuk mahasiswa Teknik Informatika dan Sistem Informasi dengan garansi bimbingan dan full source code.",
+            text: "Ya, kami melayani pengerjaan tugas pemrograman kuliah, projek semester, dan program skripsi/tugas akhir untuk mahasiswa Teknik Informatika dan Sistem Informasi dengan garansi bimbingan dan full source code.",
           },
         },
         {
           "@type": "Question",
-          "name": "Bagaimana cara melakukan pemesanan?",
-          "acceptedAnswer": {
+          name: "Bagaimana cara melakukan pemesanan?",
+          acceptedAnswer: {
             "@type": "Answer",
-            "text": "Anda bisa langsung menghubungi WhatsApp di 085933648537 untuk konsultasi gratis mengenai kebutuhan sistem atau aplikasi Anda.",
+            text: "Anda bisa langsung menghubungi WhatsApp di 085933648537 untuk konsultasi gratis mengenai kebutuhan sistem atau aplikasi Anda.",
           },
         },
       ],
@@ -191,7 +192,7 @@ const jsonLd = {
 };
 
 export default function JasaPembuatanWebsitePage() {
-  const whatsappNumber = "6285933648537";
+  const whatsappNumber = SITE_CONFIG.whatsappNumber;
 
   return (
     <main className="min-h-screen bg-black text-white relative px-4 py-8 pb-32 sm:py-12 sm:pb-32">
@@ -231,15 +232,15 @@ export default function JasaPembuatanWebsitePage() {
         <div className="text-center space-y-4 max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-neutral-200 text-xs sm:text-sm font-mono shadow-sm">
             <HiSparkles className="text-yellow-400" />
-            <span>Solusi Digital UMKM & Akademik Mahasiswa</span>
+            <span>Solusi Digital UMKM, Bisnis & Akademik Mahasiswa</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight font-mono text-white leading-tight">
-            Jasa Pembuatan Website & Aplikasi Mobile
+            Jasa Pembuatan Website & Aplikasi Mobile Murah
           </h1>
 
           <p className="text-neutral-400 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-            Layanan pembuatan website profesional mulai <span className="text-white font-semibold">Rp400.000</span> (sudah include hosting 1 tahun + domain .web.id gratis) dan aplikasi mobile Android mulai <span className="text-white font-semibold">Rp300.000</span>. Cepat, bergaransi, dan siap pakai.
+            Layanan jasa pembuatan website profesional mulai <span className="text-white font-semibold">Rp400.000</span> (sudah include hosting cloud 1 tahun + domain .web.id gratis) dan aplikasi mobile Android mulai <span className="text-white font-semibold">Rp300.000</span>. Cepat, bergaransi, dan siap pakai.
           </p>
         </div>
 

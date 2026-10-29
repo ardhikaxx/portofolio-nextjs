@@ -56,6 +56,16 @@ export default function Awards() {
 
     return (
         <section className="min-h-screen bg-black text-white py-16 px-4">
+            {/* Header */}
+            <div className="max-w-7xl mx-auto mb-10">
+                <p className="text-xs font-mono text-gray-500 tracking-widest uppercase mb-2">Prestasi & Rekognisi</p>
+                <h1 className="text-4xl md:text-5xl font-black text-white font-mono tracking-tight mb-3">
+                    Penghargaan & Prestasi
+                </h1>
+                <p className="text-gray-400 text-sm leading-relaxed max-w-xl font-light">
+                    Rekam jejak penghargaan, rekognisi inovasi, dan prestasi kompetisi teknologi Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom.
+                </p>
+            </div>
             {/* Search & Filter */}
             <div className="max-w-7xl mx-auto mb-12">
                 <div className="flex flex-col gap-4 md:flex-row md:items-center">

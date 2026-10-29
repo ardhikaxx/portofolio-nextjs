@@ -19,6 +19,32 @@ const nextConfig = {
     optimizePackageImports: ['react-icons', 'react-icons/hi2', 'react-icons/fa'],
   },
   turbopack: {},
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'yanuar-ardhika.vercel.app',
+          },
+        ],
+        destination: 'https://yanuarardhika.web.id/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.yanuarardhika.web.id',
+          },
+        ],
+        destination: 'https://yanuarardhika.web.id/:path*',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
