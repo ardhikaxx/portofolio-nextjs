@@ -3,7 +3,7 @@ import Hero from './ui/hero';
 import { SITE_URL, SITE_CONFIG } from './config/site';
 
 export const metadata: Metadata = {
-  title: "Jasa Pembuatan Website Murah Mulai 400 Ribu & Aplikasi Mobile — Yanuar Ardhika",
+  title: "Yanuar Ardhika — Full Stack Web & Mobile Developer | Portofolio",
   description: SITE_CONFIG.description,
   keywords: SITE_CONFIG.keywords,
   alternates: {
@@ -14,23 +14,23 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Jasa Pembuatan Website Murah Mulai 400 Ribu & Aplikasi Mobile — Yanuar Ardhika",
+    title: "Yanuar Ardhika — Full Stack Web & Mobile Developer | Portofolio",
     description: SITE_CONFIG.description,
     url: SITE_URL,
     type: "website",
-    siteName: "Yanuar Ardhika — Jasa Pembuatan Website & Portofolio",
+    siteName: "Yanuar Ardhika — Portofolio",
     images: [
       {
         url: `${SITE_URL}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: "Jasa Pembuatan Website & Aplikasi Mobile — Yanuar Ardhika",
+        alt: "Yanuar Ardhika — Full Stack Web & Mobile Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jasa Pembuatan Website Murah Mulai 400 Ribu & Aplikasi Mobile — Yanuar Ardhika",
+    title: "Yanuar Ardhika — Full Stack Web & Mobile Developer | Portofolio",
     description: SITE_CONFIG.description,
     images: [`${SITE_URL}/og-image.jpg`],
     creator: "@ardhikaxx",

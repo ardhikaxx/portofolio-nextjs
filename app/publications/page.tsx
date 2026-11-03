@@ -29,7 +29,7 @@ export const metadata: Metadata = {
             "Karya ilmiah, jurnal nasional, dan artikel penelitian yang dipublikasikan oleh Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom.",
         url: `${SITE_URL}/publications`,
         type: "website",
-        siteName: "Yanuar Ardhika — Jasa Pembuatan Website & Portofolio",
+        siteName: "Yanuar Ardhika — Portofolio",
         images: [
             {
                 url: `${SITE_URL}/og-image.jpg`,

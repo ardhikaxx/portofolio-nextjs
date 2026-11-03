@@ -5,7 +5,7 @@ import { SITE_URL, SITE_CONFIG } from "../config/site";
 export const metadata: Metadata = {
     title: "Tentang Yanuar Ardhika | Full Stack Web & Mobile Developer",
     description:
-        "Profil lengkap Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom. — lulusan Sarjana Terapan D4 Teknik Informatika Politeknik Negeri Jember (Polije). Software Engineer & Full Stack Developer berpengalaman di Laravel, Flutter, Next.js, React, PHP, MySQL, dan IoT.",
+        "Saya lulusan Sarjana Terapan (S.Tr.Kom.) Program Studi D4 Teknik Informatika Politeknik Negeri Jember dengan spesialisasi pengembangan web dan mobile aplikasi. Memiliki rekam jejak dalam merancang serta membangun aplikasi end-to-end yang skalabel, efisien, dan ramah pengguna.",
     keywords: [
         "Tentang Yanuar Ardhika",
         "Biodata Yanuar Ardhika",
@@ -30,10 +30,10 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Tentang Yanuar Ardhika, S.Tr.Kom. | Full Stack Developer",
         description:
-            "Profil lengkap Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom. — lulusan Teknik Informatika Polije, Software Engineer & Full Stack Developer di Laravel, Flutter, Next.js, dan IoT.",
+            "Saya lulusan Sarjana Terapan (S.Tr.Kom.) Program Studi D4 Teknik Informatika Politeknik Negeri Jember dengan spesialisasi pengembangan web dan mobile aplikasi. Memiliki rekam jejak dalam merancang serta membangun aplikasi end-to-end yang skalabel, efisien, dan ramah pengguna.",
         url: `${SITE_URL}/about`,
         type: "profile",
-        siteName: "Yanuar Ardhika — Jasa Pembuatan Website & Portofolio",
+        siteName: "Yanuar Ardhika — Portofolio",
         images: [
             {
                 url: `${SITE_URL}/og-image.jpg`,
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Tentang Yanuar Ardhika, S.Tr.Kom. | Full Stack Developer",
         description:
-            "Profil lengkap Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom. — Software Engineer & Full Stack Developer lulusan Teknik Informatika Polije.",
+            "Saya lulusan Sarjana Terapan (S.Tr.Kom.) Program Studi D4 Teknik Informatika Politeknik Negeri Jember dengan spesialisasi pengembangan web dan mobile aplikasi. Memiliki rekam jejak dalam merancang serta membangun aplikasi end-to-end yang skalabel, efisien, dan ramah pengguna.",
         images: [`${SITE_URL}/og-image.jpg`],
         creator: "@ardhikaxx",
     },

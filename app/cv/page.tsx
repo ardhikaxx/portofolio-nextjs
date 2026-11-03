@@ -31,7 +31,7 @@ export const metadata: Metadata = {
       "Curriculum Vitae (CV) dan resume profesional Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom. — Software Engineer & Full Stack Developer.",
     url: `${SITE_URL}/cv`,
     type: "website",
-    siteName: "Yanuar Ardhika — Jasa Pembuatan Website & Portofolio",
+    siteName: "Yanuar Ardhika — Portofolio",
     images: [
       {
         url: `${SITE_URL}/og-image.jpg`,

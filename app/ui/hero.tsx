@@ -27,16 +27,6 @@ export default function Hero() {
           <PageMascot />
         </div>
 
-        {/* High-Intent Link Badge for Googlebot & Users */}
-        <Link
-          href="/jasa-pembuatan-website"
-          className="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/40 text-emerald-400 font-mono text-xs sm:text-sm hover:bg-emerald-500/25 transition-all duration-300 shadow-lg shadow-emerald-950/20 mb-3 hover:scale-105"
-        >
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="font-semibold text-emerald-300">Jasa Website 400rb & Aplikasi 300rb</span>
-          <span className="text-emerald-400 transition-transform duration-300 group-hover:translate-x-1">→</span>
-        </Link>
-
         <h1
           className="font-jaro text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem] tracking-tight text-white leading-none select-none drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]"
         >
@@ -45,32 +35,12 @@ export default function Hero() {
 
         {/* Semantic Crawler Context for Search Engines & Accessibility */}
         <div className="sr-only">
-          <h2>Jasa Pembuatan Website Murah & Jasa Pembuatan Aplikasi Mobile — Yanuar Ardhika</h2>
+          <h2>Yanuar Ardhika — Full Stack Web & Mobile Developer</h2>
           <p>
-            Selamat datang di website resmi Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom. Melayani jasa pembuatan website profesional murah mulai Rp400.000 (sudah include hosting aktif 1 tahun dan domain resmi .web.id gratis) serta jasa pembuatan aplikasi mobile Android dan Flutter mulai Rp300.000.
+            Selamat datang di website portofolio resmi Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom. Software Engineer dan Full Stack Developer berpengalaman dalam pengembangan sistem web modern, aplikasi mobile Android (Flutter), serta integrasi IoT.
           </p>
-          <h3>Daftar Layanan & Jasa Unggulan:</h3>
+          <h3>Navigasi Utama:</h3>
           <ul>
-            <li>
-              <Link href="/jasa-pembuatan-website">
-                Jasa Pembuatan Website Murah Mulai Rp400 Ribu Include Hosting 1 Tahun & Domain .web.id
-              </Link>
-            </li>
-            <li>
-              <Link href="/jasa-pembuatan-website">
-                Jasa Sistem Penjualan & Kasir POS UMKM untuk toko retail, cafe, dan bisnis offline/online
-              </Link>
-            </li>
-            <li>
-              <Link href="/jasa-pembuatan-website">
-                Jasa Pembuatan Aplikasi Mobile Android (Flutter & Dart) Mulai Rp300 Ribu
-              </Link>
-            </li>
-            <li>
-              <Link href="/jasa-pembuatan-website">
-                Jasa Tugas IT Mahasiswa, Tugas Pemrograman Coding, Projek Semester, dan Skripsi Teknik Informatika
-              </Link>
-            </li>
             <li>
               <Link href="/project">
                 Koleksi 27+ Portofolio Proyek Sistem Informasi Laravel, Next.js, Flutter, dan IoT
@@ -88,7 +58,7 @@ export default function Hero() {
             </li>
           </ul>
           <p>
-            Hubungi kontak WhatsApp kami di 085933648537. Website resmi: {SITE_URL}. Berdomisili di Jember, Jawa Timur dan siap melayani pesanan secara online dari seluruh wilayah Indonesia (Surabaya, Malang, Sidoarjo, Banyuwangi, Jakarta, Bandung, Yogyakarta, dan kota lainnya).
+            Hubungi kontak WhatsApp di 085933648537. Website resmi: {SITE_URL}. Berdomisili di Jember, Jawa Timur.
           </p>
         </div>
 
@@ -131,7 +101,7 @@ export default function Hero() {
       <div className="relative z-10 mt-auto lg:mt-0 w-[240px] sm:w-[290px] md:w-[340px] lg:w-[340px] xl:w-[430px] 2xl:w-[500px] max-h-[26vh] sm:max-h-[30vh] lg:max-h-[44vh] xl:max-h-[50vh] 2xl:max-h-[56vh] pb-20 sm:pb-24 lg:pb-0 flex justify-center items-end lg:absolute lg:bottom-3 lg:right-3 xl:bottom-4 xl:right-6 2xl:right-8 pointer-events-none select-none">
         <Image
           src="/img/sticker.webp"
-          alt="Yanuar Ardhika - Software Engineer & Jasa Pembuatan Website Murah Jember"
+          alt="Yanuar Ardhika - Software Engineer"
           width={600}
           height={522}
           priority

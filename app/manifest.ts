@@ -2,10 +2,10 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Yanuar Ardhika — Jasa Pembuatan Website & Aplikasi Mobile",
+    name: "Yanuar Ardhika — Full Stack Web & Mobile Developer",
     short_name: "Yanuar Ardhika",
     description:
-      "Jasa pembuatan website murah mulai 400 ribu include hosting 1 tahun & domain web.id gratis, serta aplikasi mobile Android mulai 300 ribu.",
+      "Portofolio profesional Yanuar Ardhika — Software Engineer & Full Stack Developer berpengalaman di Laravel, Flutter, Next.js, React, dan IoT.",
     start_url: "/",
     display: "standalone",
     background_color: "#000000",
@@ -29,13 +29,6 @@ export default function manifest(): MetadataRoute.Manifest {
     ],
     shortcuts: [
       {
-        name: "Jasa Pembuatan Website",
-        short_name: "Jasa Website",
-        description: "Paket jasa pembuatan website murah mulai Rp400.000 include domain dan hosting",
-        url: "/jasa-pembuatan-website",
-        icons: [{ src: "/img/sticker.webp", sizes: "96x96" }],
-      },
-      {
         name: "Koleksi Proyek Portofolio",
         short_name: "Proyek",
         description: "27+ portofolio sistem web, aplikasi mobile, dan IoT",
@@ -47,6 +40,13 @@ export default function manifest(): MetadataRoute.Manifest {
         short_name: "Tentang",
         description: "Profil lengkap dan pengalaman profesional Yanuar Ardhika",
         url: "/about",
+        icons: [{ src: "/img/sticker.webp", sizes: "96x96" }],
+      },
+      {
+        name: "Curriculum Vitae",
+        short_name: "CV",
+        description: "Curriculum Vitae & Resume profesional Yanuar Ardhika",
+        url: "/cv",
         icons: [{ src: "/img/sticker.webp", sizes: "96x96" }],
       },
     ],

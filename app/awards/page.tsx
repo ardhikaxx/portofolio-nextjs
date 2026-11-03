@@ -29,7 +29,7 @@ export const metadata: Metadata = {
             "Daftar penghargaan, rekognisi, dan prestasi akademik serta kompetisi teknologi yang diraih oleh Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom.",
         url: `${SITE_URL}/awards`,
         type: "website",
-        siteName: "Yanuar Ardhika — Jasa Pembuatan Website & Portofolio",
+        siteName: "Yanuar Ardhika — Portofolio",
         images: [
             {
                 url: `${SITE_URL}/og-image.jpg`,

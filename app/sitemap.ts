@@ -12,13 +12,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
             images: [`${SITE_URL}/og-image.jpg`, `${SITE_URL}/img/sticker.webp`],
         },
         {
-            url: `${SITE_URL}/jasa-pembuatan-website`,
-            lastModified: new Date(),
-            changeFrequency: "daily",
-            priority: 1.0,
-            images: [`${SITE_URL}/og-image.jpg`],
-        },
-        {
             url: `${SITE_URL}/about`,
             lastModified: new Date(),
             changeFrequency: "weekly",

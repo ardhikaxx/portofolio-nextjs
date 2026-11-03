@@ -59,7 +59,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             description,
             url: projectUrl,
             type: 'article',
-            siteName: 'Yanuar Ardhika — Jasa Pembuatan Website & Portofolio',
+            siteName: 'Yanuar Ardhika — Portofolio',
             locale: 'id_ID',
             images: [
                 {

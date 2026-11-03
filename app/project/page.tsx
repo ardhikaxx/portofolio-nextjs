@@ -39,7 +39,7 @@ export const metadata: Metadata = {
             "Eksplorasi 27+ portofolio proyek perangkat lunak karya Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom. — sistem informasi enterprise, aplikasi Flutter, Laravel, Next.js, dan IoT.",
         url: `${SITE_URL}/project`,
         type: "website",
-        siteName: "Yanuar Ardhika — Jasa Pembuatan Website & Portofolio",
+        siteName: "Yanuar Ardhika — Portofolio",
         images: [
             {
                 url: `${SITE_URL}/og-image.jpg`,

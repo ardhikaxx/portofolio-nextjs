@@ -42,7 +42,7 @@ const jaro = Jaro({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Jasa Pembuatan Website Murah & Aplikasi Mobile | Yanuar Ardhika",
+    default: "Yanuar Ardhika — Full Stack Web & Mobile Developer | Portofolio",
     template: "%s | Yanuar Ardhika",
   },
   description: SITE_CONFIG.description,
@@ -76,8 +76,8 @@ export const metadata: Metadata = {
     locale: "id_ID",
     alternateLocale: ["en_US"],
     url: SITE_URL,
-    siteName: "Yanuar Ardhika — Jasa Pembuatan Website & Portofolio",
-    title: "Jasa Pembuatan Website Murah & Aplikasi Mobile | Yanuar Ardhika",
+    siteName: "Yanuar Ardhika — Portofolio",
+    title: "Yanuar Ardhika — Full Stack Web & Mobile Developer | Portofolio",
     description: SITE_CONFIG.description,
     images: [
       {
@@ -85,13 +85,13 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         type: "image/jpeg",
-        alt: "Jasa Pembuatan Website Murah Mulai 400rb & Aplikasi Mobile — Yanuar Ardhika",
+        alt: "Yanuar Ardhika — Full Stack Web & Mobile Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jasa Pembuatan Website Murah & Aplikasi Mobile | Yanuar Ardhika",
+    title: "Yanuar Ardhika — Full Stack Web & Mobile Developer | Portofolio",
     description: SITE_CONFIG.description,
     images: [`${SITE_URL}/og-image.jpg`],
     creator: "@ardhikaxx",
@@ -161,9 +161,6 @@ const jsonLd = {
         },
       },
       knowsAbout: [
-        "Jasa Pembuatan Website Murah",
-        "Jasa Pembuatan Aplikasi Mobile",
-        "Jasa Tugas IT Mahasiswa",
         "Web Development",
         "Mobile Application Development",
         "Full Stack Development",
@@ -196,115 +193,17 @@ const jsonLd = {
       ],
     },
     {
-      "@type": "ProfessionalService",
-      "@id": `${SITE_URL}/#service`,
-      name: "Jasa Pembuatan Website & Aplikasi Mobile — Yanuar Ardhika",
-      image: `${SITE_URL}/og-image.jpg`,
-      url: `${SITE_URL}/jasa-pembuatan-website`,
-      telephone: "+6285933648537",
-      priceRange: "Rp300.000 - Rp2.500.000",
-      currenciesAccepted: "IDR",
-      paymentAccepted: "Cash, Bank Transfer, QRIS",
-      openingHoursSpecification: {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday",
-        ],
-        opens: "08:00",
-        closes: "22:00",
-      },
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Jember",
-        addressRegion: "Jawa Timur",
-        addressCountry: "ID",
-      },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: -8.1724,
-        longitude: 113.7007,
-      },
-      areaServed: [
-        { "@type": "Country", name: "Indonesia" },
-        { "@type": "City", name: "Jember" },
-        { "@type": "City", name: "Surabaya" },
-        { "@type": "City", name: "Malang" },
-        { "@type": "City", name: "Sidoarjo" },
-        { "@type": "City", name: "Banyuwangi" },
-        { "@type": "City", name: "Jakarta" },
-        { "@type": "City", name: "Bandung" },
-        { "@type": "City", name: "Yogyakarta" },
-      ],
-      hasOfferCatalog: {
-        "@type": "OfferCatalog",
-        name: "Katalog Jasa Pembuatan Website & Aplikasi Mobile",
-        itemListElement: [
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "Jasa Pembuatan Website (Include Hosting 1 Tahun & Domain .web.id)",
-              description:
-                "Pembuatan website toko online, sistem penjualan UMKM, kasir POS, company profile, dan landing page modern siap online.",
-            },
-            price: "400000",
-            priceCurrency: "IDR",
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "Jasa Pembuatan Aplikasi Mobile (Android / Flutter)",
-              description:
-                "Pembuatan aplikasi mobile Android untuk kasir POS, operasional bisnis, inventory, dan monitoring UMKM berbasis Flutter.",
-            },
-            price: "300000",
-            priceCurrency: "IDR",
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "Jasa Tugas & Projek IT / Skripsi Mahasiswa",
-              description:
-                "Bantuan pengerjaan projek IT kuliah, tugas pemrograman, dan program skripsi Teknik Informatika & Sistem Informasi bergaransi bimbingan dan full source code.",
-            },
-            price: "300000",
-            priceCurrency: "IDR",
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "Jasa Sistem Informasi & Kasir POS UMKM",
-              description:
-                "Sistem pencatatan penjualan, kasir kas, manajemen inventaris stok produk, dan cetak invoice struk.",
-            },
-            price: "400000",
-            priceCurrency: "IDR",
-          },
-        ],
-      },
-    },
-    {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
       url: SITE_URL,
-      name: "Yanuar Ardhika — Jasa Pembuatan Website & Portofolio",
+      name: "Yanuar Ardhika — Portofolio",
       alternateName: [
         "Yanuar Ardhika Portfolio",
         "yanuarardhika.web.id",
-        "Jasa Website Yanuar Ardhika",
         "Portofolio Yanuar Ardhika",
       ],
       description:
-        "Website resmi Yanuar Ardhika Rahmadhani Ubaidillah — Full Stack Web & Mobile Developer serta Jasa Pembuatan Website Murah & Aplikasi Mobile.",
+        "Website portofolio resmi Yanuar Ardhika Rahmadhani Ubaidillah — Full Stack Web & Mobile Developer.",
       publisher: {
         "@id": `${SITE_URL}/#person`,
       },
@@ -336,26 +235,10 @@ const jsonLd = {
       mainEntity: [
         {
           "@type": "Question",
-          name: "Berapa biaya jasa pembuatan website di Yanuar Ardhika?",
+          name: "Layanan pengembangan apa saja yang disediakan oleh Yanuar Ardhika?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Biaya jasa pembuatan website mulai dari Rp400.000, sudah include hosting aktif selama 1 tahun dan domain .web.id gratis tanpa biaya tersembunyi. Sangat cocok untuk UMKM, toko online, sistem kasir POS, dan company profile.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Apakah paket website Rp400 ribu sudah termasuk hosting dan domain?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Ya, betul. Paket website mulai Rp400.000 sudah include hosting cloud aktif selama 1 tahun dan nama domain resmi .web.id. Website langsung siap online dan bisa diakses publik.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Berapa biaya jasa pembuatan aplikasi mobile Android?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Jasa pembuatan aplikasi mobile Android (berbasis Flutter) mulai dari Rp300.000 untuk kebutuhan kasir toko POS, operasional bisnis UMKM, maupun tugas kuliah mahasiswa.",
+            text: "Yanuar Ardhika melayani pembuatan website kustom (Laravel, Next.js, React), aplikasi mobile Android (Flutter), sistem informasi enterprise, integrasi kasir POS & ERP, serta integrasi hardware IoT.",
           },
         },
         {
@@ -363,7 +246,7 @@ const jsonLd = {
           name: "Apakah melayani jasa tugas koding dan program skripsi mahasiswa IT?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Ya, kami melayani pengerjaan tugas pemrograman, projek semester IT, dan program skripsi/tugas akhir untuk mahasiswa Teknik Informatika dan Sistem Informasi dengan garansi bimbingan, revisi, dan full source code.",
+            text: "Ya, kami melayani bimbingan dan bantuan pengerjaan tugas pemrograman, projek semester IT, dan program skripsi/tugas akhir untuk mahasiswa Teknik Informatika dan Sistem Informasi dengan garansi bimbingan dan full source code.",
           },
         },
         {
@@ -371,7 +254,7 @@ const jsonLd = {
           name: "Berapa lama waktu pengerjaan website atau aplikasi?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Waktu pengerjaan umumnya berkisar antara 2 sampai 7 hari kerja tergantung kompleksitas fitur yang diminta. Untuk tugas koding mahasiswa yang urgent, bisa diselesaikan dalam 1-2 hari.",
+            text: "Waktu pengerjaan umumnya berkisar antara 2 sampai 7 hari kerja tergantung kompleksitas fitur yang diminta.",
           },
         },
         {
@@ -379,7 +262,7 @@ const jsonLd = {
           name: "Bagaimana cara memesan atau berkonsultasi?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Anda bisa langsung menghubungi WhatsApp di 085933648537 (fast respon) atau mengunjungi portofolio resmi di https://yanuarardhika.web.id/.",
+            text: "Anda bisa langsung menghubungi WhatsApp di 085933648537 atau mengunjungi portofolio resmi di https://yanuarardhika.web.id/.",
           },
         },
       ],

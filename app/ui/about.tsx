@@ -171,7 +171,7 @@ function ContributionGraph() {
                     <h3 className="text-white font-semibold text-sm sm:text-base">Kontribusi GitHub</h3>
                     <span className="text-neutral-500 text-xs sm:text-sm font-mono">Memuat...</span>
                 </div>
-                <div className="h-28 sm:h-36 bg-white/5 rounded-2xl animate-pulse" />
+                <div className="h-36 sm:h-44 bg-[#1a1a1a] border border-white/10 rounded-xl sm:rounded-2xl animate-pulse" />
             </div>
         );
     }
@@ -179,8 +179,8 @@ function ContributionGraph() {
     return (
         <div className="w-full mt-8 sm:mt-9">
             {/* Header Kontribusi */}
-            <div className="flex items-center justify-between gap-2 mb-3.5">
-                <div className="flex items-center gap-2.5">
+            <div className="flex items-center justify-between gap-2 mb-3.5 sm:mb-4">
+                <div className="flex items-center gap-2 sm:gap-2.5">
                     <h3 className="text-white font-semibold text-sm sm:text-base">Kontribusi GitHub</h3>
                     {allYearData.length > 0 && (
                         <div className="relative inline-flex items-center">
@@ -205,70 +205,73 @@ function ContributionGraph() {
                 </span>
             </div>
 
-            {/* Heatmap Matrix with Touch & Scroll for Mobile */}
-            <div
-                ref={scrollContainerRef}
-                className="overflow-x-auto pb-1.5 scrollbar-none touch-pan-x -mx-1 px-1"
-            >
-                <div className="inline-flex flex-col min-w-[680px] select-none">
-                    {/* Header Bulan */}
-                    <div className="flex text-[11px] sm:text-xs text-neutral-400 font-mono mb-1.5 h-4 relative">
-                        <div className="w-7 shrink-0" />
-                        <div className="relative flex-1 h-4">
-                            {monthLabels.map((item, idx) => (
-                                <span
-                                    key={idx}
-                                    className="absolute text-[11px] sm:text-xs text-neutral-400 font-mono leading-none"
-                                    style={{ left: `${item.col * 12.5}px` }}
-                                >
-                                    {item.month}
-                                </span>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Matriks Hari & Grid */}
-                    <div className="flex items-start">
-                        {/* Label Hari (Sen, Rab, Jum) */}
-                        <div className="w-7 shrink-0 flex flex-col gap-[3px] text-[11px] sm:text-xs text-neutral-400 font-mono pr-1.5 select-none">
-                            <span className="h-2.5 leading-none"></span> {/* Min */}
-                            <span className="h-2.5 leading-none flex items-center">Sen</span> {/* Sen */}
-                            <span className="h-2.5 leading-none"></span> {/* Sel */}
-                            <span className="h-2.5 leading-none flex items-center">Rab</span> {/* Rab */}
-                            <span className="h-2.5 leading-none"></span> {/* Kam */}
-                            <span className="h-2.5 leading-none flex items-center">Jum</span> {/* Jum */}
-                            <span className="h-2.5 leading-none"></span> {/* Sab */}
+            {/* Card Kontribusi GitHub - Lebar Penuh Menyesuaikan Card Profil */}
+            <div className="rounded-xl sm:rounded-2xl bg-[#1a1a1a] border border-white/10 p-4 sm:p-5 md:p-6 transition-colors duration-300 hover:border-white/20">
+                {/* Heatmap Matrix with Touch & Scroll for Mobile, Full Width for Tablet & Desktop */}
+                <div
+                    ref={scrollContainerRef}
+                    className="overflow-x-auto pb-1.5 scrollbar-none touch-pan-x"
+                >
+                    <div className="min-w-[720px] w-full flex flex-col select-none">
+                        {/* Header Bulan */}
+                        <div className="flex text-[11px] sm:text-xs text-neutral-400 font-mono mb-2 h-4 relative">
+                            <div className="w-6 sm:w-7 md:w-8 shrink-0" />
+                            <div className="relative flex-1 h-4">
+                                {monthLabels.map((item, idx) => (
+                                    <span
+                                        key={idx}
+                                        className="absolute text-[11px] sm:text-xs text-neutral-400 font-mono leading-none"
+                                        style={{ left: `${(item.col / 53) * 100}%` }}
+                                    >
+                                        {item.month}
+                                    </span>
+                                ))}
+                            </div>
                         </div>
 
-                        {/* Kolom Minggu (53 Kolom) */}
-                        <div className="flex gap-[3px]">
-                            {contributionWeeks.map((week, wIdx) => (
-                                <div key={wIdx} className="flex flex-col gap-[3px]">
-                                    {week.map((day, dIdx) => (
-                                        <div
-                                            key={dIdx}
-                                            className={`w-2.5 h-2.5 rounded-full ${getColor(day.count)} transition-transform duration-150 hover:scale-150`}
-                                            title={day.date ? `${day.date}: ${day.count} kontribusi` : ""}
-                                        />
-                                    ))}
-                                </div>
-                            ))}
+                        {/* Matriks Hari & Grid 53 Kolom */}
+                        <div className="flex items-start w-full">
+                            {/* Label Hari (Sen, Rab, Jum) */}
+                            <div className="w-6 sm:w-7 md:w-8 shrink-0 flex flex-col gap-[3px] sm:gap-[3.5px] md:gap-1 text-[10px] sm:text-[11px] md:text-xs text-neutral-400 font-mono pr-1.5 select-none">
+                                <span className="h-2.5 sm:h-3 md:h-3.5 leading-none" />
+                                <span className="h-2.5 sm:h-3 md:h-3.5 leading-none flex items-center">Sen</span>
+                                <span className="h-2.5 sm:h-3 md:h-3.5 leading-none" />
+                                <span className="h-2.5 sm:h-3 md:h-3.5 leading-none flex items-center">Rab</span>
+                                <span className="h-2.5 sm:h-3 md:h-3.5 leading-none" />
+                                <span className="h-2.5 sm:h-3 md:h-3.5 leading-none flex items-center">Jum</span>
+                                <span className="h-2.5 sm:h-3 md:h-3.5 leading-none" />
+                            </div>
+
+                            {/* Kolom Minggu (53 Kolom Grid Full-Width) */}
+                            <div className="flex-1 grid grid-cols-[repeat(53,minmax(0,1fr))] gap-[2.5px] sm:gap-[3px] md:gap-1 w-full items-center">
+                                {contributionWeeks.map((week, wIdx) => (
+                                    <div key={wIdx} className="flex flex-col gap-[2.5px] sm:gap-[3px] md:gap-1">
+                                        {week.map((day, dIdx) => (
+                                            <div
+                                                key={dIdx}
+                                                className={`w-full aspect-square rounded-full ${getColor(day.count)} transition-transform duration-150 hover:scale-150`}
+                                                title={day.date ? `${day.date}: ${day.count} kontribusi` : ""}
+                                            />
+                                        ))}
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            {/* Legend Jarang - Sering */}
-            <div className="flex items-center justify-end gap-2 sm:gap-2.5 mt-3 select-none">
-                <span className="text-[11px] sm:text-xs text-neutral-500 font-mono">Jarang</span>
-                <div className="flex items-center gap-[3px]">
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#182029]" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#243342]" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#3d5670]" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#7c9dbd]" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-white" />
+                {/* Legend Jarang - Sering */}
+                <div className="flex items-center justify-end gap-2 sm:gap-2.5 mt-3 select-none">
+                    <span className="text-[11px] sm:text-xs text-neutral-500 font-mono">Jarang</span>
+                    <div className="flex items-center gap-[3px]">
+                        <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#182029]" />
+                        <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#243342]" />
+                        <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#3d5670]" />
+                        <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#7c9dbd]" />
+                        <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-white" />
+                    </div>
+                    <span className="text-[11px] sm:text-xs text-neutral-500 font-mono">Sering</span>
                 </div>
-                <span className="text-[11px] sm:text-xs text-neutral-500 font-mono">Sering</span>
             </div>
         </div>
     );
@@ -287,11 +290,11 @@ const organizations: Organization[] = [
     {
         id: "bem-amretaneera",
         organization: "Badan Eksekutif Mahasiswa Politeknik Negeri Jember Kabinet Amretaneera",
-        role: "Direktur Jenderal Multimedia Kementerian Komunikasi dan Informasi",
+        role: "Direktorat Jenderal Multimedia Kementerian Komunikasi dan Informasi",
         period: "Jan 2025 – Dec 2025",
         associated: "Politeknik Negeri Jember",
         description:
-            "Sebagai Direktur Jenderal Multimedia di bawah naungan Kementerian Komunikasi dan Informasi Badan Eksekutif Mahasiswa (BEM) Politeknik Negeri Jember Kabinet Amretaneera, saya memegang kendali penuh atas seluruh siklus kebutuhan desain dan komunikasi visual organisasi. Peran ini menuntut perpaduan antara arahan kreatif dan kemampuan manajerial yang kuat, di mana saya bertugas mengkoordinasikan serta mendelegasikan berbagai proyek desain kepada tim yang terdiri dari Staff Ahli Multimedia dan Staff Ahli Konten Kreator. Fokus utama saya adalah memastikan alur kerja produksi konten berjalan lancar, efisien, dan menghasilkan output visual berkualitas tinggi guna mendukung kelancaran program kerja Kabinet Amretaneera.",
+            "Sebagai bagian dari Direktorat Jenderal Multimedia di bawah naungan Kementerian Komunikasi dan Informasi Badan Eksekutif Mahasiswa (BEM) Politeknik Negeri Jember Kabinet Amretaneera, saya memegang kendali penuh atas seluruh siklus kebutuhan desain dan komunikasi visual organisasi. Peran ini menuntut perpaduan antara arahan kreatif dan kemampuan manajerial yang kuat, di mana saya bertugas mengkoordinasikan serta mendelegasikan berbagai proyek desain kepada tim yang terdiri dari Staff Ahli Multimedia dan Staff Ahli Konten Kreator. Fokus utama saya adalah memastikan alur kerja produksi konten berjalan lancar, efisien, dan menghasilkan output visual berkualitas tinggi guna mendukung kelancaran program kerja Kabinet Amretaneera.",
     },
     {
         id: "bem-bhakti-wirama",

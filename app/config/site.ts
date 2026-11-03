@@ -6,10 +6,10 @@ export const MAIN_DOMAIN = "yanuarardhika.web.id";
 export const SITE_CONFIG = {
   name: "Yanuar Ardhika",
   fullName: "Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom.",
-  shortTitle: "Jasa Pembuatan Website Murah & Aplikasi Mobile | Yanuar Ardhika",
+  shortTitle: "Yanuar Ardhika | Full Stack Web & Mobile Developer",
   siteTitleTemplate: "%s | Yanuar Ardhika",
   description:
-    "Jasa pembuatan website murah mulai 400 ribu include hosting 1 tahun + domain web.id gratis & jasa aplikasi mobile Android mulai 300 ribu. Melayani sistem penjualan UMKM, kasir POS toko, company profile, dan tugas/skripsi IT mahasiswa. WhatsApp: 085933648537.",
+    "Portofolio resmi Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom. — Software Engineer & Full Stack Developer berpengalaman dalam pengembangan sistem web Laravel, Next.js, Flutter, dan IoT. WhatsApp: 085933648537.",
   url: SITE_URL,
   phone: "+6285933648537",
   whatsappNumber: "6285933648537",
@@ -46,13 +46,9 @@ export const SITE_CONFIG = {
     // Jasa Pembuatan Website (Commercial Intent)
     "Jasa Pembuatan Website",
     "Jasa Pembuatan Website Murah",
-    "Jasa Pembuatan Website 400 Ribu",
-    "Jasa Pembuatan Website Termurah",
     "Jasa Pembuatan Website UMKM",
     "Jasa Pembuatan Website Toko Online",
     "Jasa Pembuatan Website Toko",
-    "Jasa Pembuatan Website Include Domain Hosting",
-    "Jasa Pembuatan Website Free Hosting",
     "Jasa Pembuatan Website Company Profile",
     "Jasa Bikin Website Cepat",
     "Jasa Bikin Website Murah",
@@ -65,7 +61,6 @@ export const SITE_CONFIG = {
     // Jasa Pembuatan Aplikasi Mobile
     "Jasa Pembuatan Aplikasi Mobile",
     "Jasa Pembuatan Aplikasi Mobile Murah",
-    "Jasa Pembuatan Aplikasi Mobile 300 Ribu",
     "Jasa Pembuatan Aplikasi Android",
     "Jasa Pembuatan Aplikasi Flutter",
     "Jasa Bikin Aplikasi Android",
