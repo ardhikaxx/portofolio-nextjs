@@ -10,7 +10,12 @@ export default function ExperienceTimeline() {
   const sorted = [...experiences].sort((a, b) => {
     const aStart = a.period.split(" - ")[0];
     const bStart = b.period.split(" - ")[0];
-    return new Date(bStart).getTime() - new Date(aStart).getTime();
+    const aTime = new Date(aStart).getTime();
+    const bTime = new Date(bStart).getTime();
+    if (!isNaN(aTime) && !isNaN(bTime)) {
+      return bTime - aTime;
+    }
+    return Number(b.id) - Number(a.id);
   });
 
   return (
@@ -95,7 +100,7 @@ export default function ExperienceTimeline() {
                   </span>
 
                   <span className="px-2.5 py-0.5 rounded-md bg-white/15 border border-white/25 text-white font-mono text-[10px] sm:text-[11px] font-medium shadow-sm leading-tight">
-                    Magang / Internship
+                    {exp.type || "Magang / Internship"}
                   </span>
                 </div>
               </div>

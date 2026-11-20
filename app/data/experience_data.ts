@@ -14,6 +14,23 @@ export interface Experience {
 
 export const experiences: Experience[] = [
     {
+        id: "2",
+        company: "Kantor Pertanahan Kabupaten Bondowoso",
+        location: "Jl. Taman Makam Pahlawan No. 43, Dabasah, Kec. Bondowoso, Kabupaten Bondowoso, Jawa Timur 68211",
+        locationShort: "Bondowoso, Indonesia",
+        role: "Tenaga Teknis Survei & Pemetaan",
+        period: "2026 - Sekarang",
+        type: "MagangHub Batch 3A 2026",
+        description: "Program MagangHub Batch 3A 2026 sebagai Tenaga Teknis Survei & Pemetaan di Kantor Pertanahan Kabupaten Bondowoso (Kementerian ATR/BPN) yang berfokus pada kegiatan inventarisasi, deliniasi batas bidang tanah, dan pengolahan data spasial serta tekstual.",
+        technologies: ["AutoCAD"],
+        responsibilities: [
+            "Melakukan inventarisasi dan identifikasi data spasial maupun tekstual (termasuk daftar KW 4, 5, 6) untuk menyusun peta kerja.",
+            "Melakukan pengumpulan data primer di lapangan melalui deliniasi batas bidang tanah, wawancara masyarakat, dan pengambilan titik koordinat (geotagging) menggunakan aplikasi.",
+            "Mengolah data spasial dan tekstual hasil lapangan (overlay, editing, dan topologi), memvalidasi kesesuaian atribut, serta menyusun daftar bidang tanah KW 4, 5, 6 berdasarkan kejelasan posisinya."
+        ],
+        logo: "/img/experience/logo2.webp"
+    },
+    {
         id: "1",
         company: "PT. Wesclic Indonesia Neotech",
         location: "Ngestiharjo, Kec. Kasihan, Kabupaten Bantul, Daerah Istimewa Yogyakarta 55182",
