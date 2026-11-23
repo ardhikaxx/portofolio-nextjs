@@ -19,10 +19,10 @@ interface LetterItem {
   rgb: { r: number; g: number; b: number };
 }
 
-const FALLBACK_RGB = { r: 212, g: 212, b: 216 };
+const FALLBACK_RGB = { r: 243, g: 238, b: 227 };
 
 export default function LetterGlitch({
-  glitchColors = ['#ffffff', '#d4d4d8', '#71717a', '#3f3f46'],
+  glitchColors = ['#f3eee3', '#d9541e', '#e87948', '#8a3818', '#3f3f46', '#222222'],
   className = '',
   glitchSpeed = 75,
   centerVignette = false,
@@ -233,7 +233,7 @@ export default function LetterGlitch({
     position: 'relative',
     width: '100%',
     height: '100%',
-    backgroundColor: backgroundColor || (lightMode ? '#ffffff' : '#000000'),
+    backgroundColor: backgroundColor || (lightMode ? '#f3eee3' : '#111111'),
     overflow: 'hidden',
   };
 
@@ -251,8 +251,8 @@ export default function LetterGlitch({
     height: '100%',
     pointerEvents: 'none',
     background: lightMode
-      ? 'radial-gradient(circle, rgba(255,255,255,0) 58%, rgba(255,255,255,0.96) 100%)'
-      : 'radial-gradient(circle, rgba(0,0,0,0) 55%, rgba(0,0,0,0.95) 100%)',
+      ? 'radial-gradient(circle, rgba(243,238,227,0) 58%, rgba(243,238,227,0.96) 100%)'
+      : 'radial-gradient(circle, rgba(17,17,17,0) 55%, rgba(17,17,17,0.95) 100%)',
   };
 
   const centerVignetteStyle: React.CSSProperties = {
@@ -263,8 +263,8 @@ export default function LetterGlitch({
     height: '100%',
     pointerEvents: 'none',
     background: lightMode
-      ? 'radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 60%)'
-      : 'radial-gradient(circle, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 60%)',
+      ? 'radial-gradient(circle, rgba(243,238,227,0.9) 0%, rgba(243,238,227,0) 60%)'
+      : 'radial-gradient(circle, rgba(17,17,17,0.7) 0%, rgba(17,17,17,0) 60%)',
   };
 
   return (

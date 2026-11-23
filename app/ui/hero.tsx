@@ -7,28 +7,28 @@ import { SITE_URL } from '../config/site';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen w-full flex flex-col justify-between lg:justify-center items-center overflow-hidden bg-black pt-16 sm:pt-24 lg:pt-0">
-      {/* Letter Glitch Background (Subtle Muted Monochrome) */}
+    <section className="relative min-h-screen w-full flex flex-col justify-between items-center overflow-hidden bg-[#111111] pt-16 pb-32 sm:pt-20 sm:pb-32 lg:pt-36 lg:pb-16">
+      {/* Letter Glitch Background (Cream & Terracotta Glow) */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <LetterGlitch
-          glitchColors={['#d4d4d8', '#a1a1aa', '#71717a', '#52525b', '#3f3f46', '#27272a']}
+          glitchColors={['#f3eee3', '#d9541e', '#e87948', '#8a3818', '#52525b', '#3f3f46', '#222222']}
           glitchSpeed={75}
           centerVignette={false}
           outerVignette={true}
         />
       </div>
 
-      {/* Black Overlay 70% */}
-      <div className="absolute inset-0 z-10 pointer-events-none bg-black/70"></div>
+      {/* Charcoal Overlay 70% */}
+      <div className="absolute inset-0 z-10 pointer-events-none bg-[#111111]/70"></div>
 
       {/* Main Content (Title, Subtitle, Buttons) */}
-      <div className="relative z-20 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 max-w-5xl my-auto lg:my-0">
+      <div className="relative z-20 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 max-w-5xl my-auto">
         <div className="mb-2 sm:mb-3 lg:mb-4">
           <PageMascot />
         </div>
 
         <h1
-          className="font-jaro text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem] tracking-tight text-white leading-none select-none drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]"
+          className="font-jaro text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem] tracking-tight text-[#f3eee3] leading-none select-none drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]"
         >
           {'</Yanuar Ardhika>'}
         </h1>
@@ -63,7 +63,7 @@ export default function Hero() {
         </div>
 
         <p
-          className="font-poppins text-white/95 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] text-xs sm:text-sm md:text-base lg:text-lg font-normal leading-relaxed text-center mt-3 sm:mt-4 mb-6 sm:mb-8 max-w-xl"
+          className="font-poppins text-[#f3eee3]/90 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] text-xs sm:text-sm md:text-base lg:text-lg font-normal leading-relaxed text-center mt-3 sm:mt-4 mb-6 sm:mb-8 max-w-xl"
         >
           Software Engineer yang membangun sistem
           <br />
@@ -73,14 +73,14 @@ export default function Hero() {
         <div className="w-full max-w-xs sm:max-w-md lg:max-w-none grid grid-cols-2 lg:flex lg:flex-row gap-2.5 sm:gap-4 justify-center items-center">
           <Link
             href="/about"
-            className="group col-span-1 lg:w-auto bg-white text-black px-4 sm:px-7 py-2.5 sm:py-3 rounded-full font-mono font-bold text-xs sm:text-sm tracking-wide flex items-center justify-center gap-2 border-2 border-white hover:bg-neutral-200 transition-all duration-300 shadow-lg shadow-black/50"
+            className="group col-span-1 lg:w-auto bg-[#d9541e] text-[#f3eee3] px-4 sm:px-7 py-2.5 sm:py-3 rounded-full font-mono font-bold text-xs sm:text-sm tracking-wide flex items-center justify-center gap-2 border-2 border-[#d9541e] hover:bg-[#bd471a] hover:border-[#bd471a] hover:shadow-[0_0_25px_rgba(217,84,30,0.45)] transition-all duration-300 shadow-lg shadow-black/50"
           >
             <HiUser className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover:scale-110" />
             <span>Tentang Saya</span>
           </Link>
           <Link
             href="/cv"
-            className="group col-span-1 lg:w-auto bg-black/40 backdrop-blur-md text-white border-2 border-white/80 px-4 sm:px-7 py-2.5 sm:py-3 rounded-full font-mono font-bold text-xs sm:text-sm tracking-wide flex items-center justify-center gap-2 hover:bg-white hover:text-black transition-all duration-300 shadow-lg shadow-black/50"
+            className="group col-span-1 lg:w-auto bg-[#161616]/70 backdrop-blur-md text-[#f3eee3] border-2 border-[#f3eee3]/30 px-4 sm:px-7 py-2.5 sm:py-3 rounded-full font-mono font-bold text-xs sm:text-sm tracking-wide flex items-center justify-center gap-2 hover:bg-[#f3eee3] hover:text-[#111111] hover:border-[#f3eee3] transition-all duration-300 shadow-lg shadow-black/50"
           >
             <HiDocument className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover:scale-110" />
             <span>Lihat CV</span>
@@ -89,7 +89,7 @@ export default function Hero() {
             href="https://page-reviews.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group col-span-2 lg:w-auto bg-black/40 backdrop-blur-md text-white border-2 border-white/80 px-4 sm:px-7 py-2.5 sm:py-3 rounded-full font-mono font-bold text-xs sm:text-sm tracking-wide flex items-center justify-center gap-2 hover:bg-white hover:text-black transition-all duration-300 shadow-lg shadow-black/50"
+            className="group col-span-2 lg:w-auto bg-[#161616]/70 backdrop-blur-md text-[#f3eee3] border-2 border-[#f3eee3]/30 px-4 sm:px-7 py-2.5 sm:py-3 rounded-full font-mono font-bold text-xs sm:text-sm tracking-wide flex items-center justify-center gap-2 hover:bg-[#f3eee3] hover:text-[#111111] hover:border-[#f3eee3] transition-all duration-300 shadow-lg shadow-black/50"
           >
             <HiStar className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover:scale-110" />
             <span>Testimoni & Ulasan</span>

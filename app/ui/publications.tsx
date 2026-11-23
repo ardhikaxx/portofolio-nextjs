@@ -37,14 +37,14 @@ export default function Publications() {
     };
 
     return (
-        <section className="min-h-screen bg-black py-16 px-4">
+        <section className="min-h-screen bg-[#111111] pt-16 pb-32 sm:pb-32 lg:pt-36 lg:pb-28 px-4 sm:px-6">
             {/* Header */}
             <div className="max-w-4xl mx-auto mb-10">
-                <p className="text-xs font-mono text-gray-500 tracking-widest uppercase mb-2">Riset & Penulisan</p>
-                <h1 className="text-4xl md:text-5xl font-black text-white font-mono tracking-tight mb-4">
+                <p className="text-xs font-mono text-[#d9541e] tracking-widest uppercase mb-2">Riset & Penulisan</p>
+                <h1 className="text-4xl md:text-5xl font-black text-[#f3eee3] font-mono tracking-tight mb-4">
                     Publikasi Ilmiah & Penelitian
                 </h1>
-                <p className="text-gray-400 text-sm leading-relaxed max-w-xl">
+                <p className="text-[#f3eee3]/75 text-sm leading-relaxed max-w-xl">
                     Karya ilmiah dan artikel penelitian yang telah dipublikasikan.
                 </p>
             </div>
@@ -57,7 +57,7 @@ export default function Publications() {
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         placeholder="Cari judul, penulis, atau abstrak..."
-                        className="w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-gray-400 outline-none transition focus:border-white/40 focus:bg-white/15"
+                        className="w-full rounded-2xl border border-[#f3eee3]/15 bg-[#161616] px-4 py-3 text-sm text-[#f3eee3] placeholder:text-[#f3eee3]/40 outline-none transition focus:border-[#d9541e] focus:bg-[#1c1c1c]"
                     />
 
                     {/* Year chips */}
@@ -66,8 +66,8 @@ export default function Publications() {
                             onClick={() => setSelectedYear('all')}
                             className={`rounded-full border px-4 py-1.5 text-sm font-mono transition active:scale-95 ${
                                 selectedYear === 'all'
-                                    ? 'border-white bg-white text-black'
-                                    : 'border-white/20 bg-white/10 text-gray-300 hover:border-white/40 hover:bg-white/15'
+                                    ? 'border-[#d9541e] bg-[#d9541e] text-[#f3eee3]'
+                                    : 'border-[#f3eee3]/20 bg-[#161616] text-[#f3eee3]/75 hover:border-[#d9541e]/50 hover:bg-[#202020]'
                             }`}
                         >
                             Semua
@@ -78,8 +78,8 @@ export default function Publications() {
                                 onClick={() => setSelectedYear(year === Number(selectedYear) ? 'all' : String(year))}
                                 className={`rounded-full border px-4 py-1.5 text-sm font-mono transition active:scale-95 ${
                                     selectedYear === String(year)
-                                        ? 'border-white bg-white text-black'
-                                        : 'border-white/20 bg-white/10 text-gray-300 hover:border-white/40 hover:bg-white/15'
+                                        ? 'border-[#d9541e] bg-[#d9541e] text-[#f3eee3]'
+                                        : 'border-[#f3eee3]/20 bg-[#161616] text-[#f3eee3]/75 hover:border-[#d9541e]/50 hover:bg-[#202020]'
                                 }`}
                             >
                                 {year}
@@ -90,7 +90,7 @@ export default function Publications() {
                     {isFilterActive && (
                         <button
                             onClick={handleClearFilter}
-                            className="flex shrink-0 items-center gap-2 rounded-2xl border border-white/20 bg-white/10 px-5 py-3 text-sm text-white transition hover:bg-white/20 hover:border-white/40 active:scale-95"
+                            className="flex shrink-0 items-center gap-2 rounded-2xl border border-[#d9541e] bg-[#d9541e] px-5 py-3 text-sm text-[#f3eee3] transition hover:bg-[#bd471a] active:scale-95"
                         >
                             <HiX className="h-4 w-4" />
                             Reset
@@ -98,23 +98,23 @@ export default function Publications() {
                     )}
                 </div>
 
-                <p className="mt-3 text-sm text-gray-500">
+                <p className="mt-3 text-sm text-[#f3eee3]/60">
                     Menampilkan {filteredPublications.length} dari {publications.length} publikasi
                 </p>
             </div>
 
             {/* List */}
             {filteredPublications.length === 0 ? (
-                <div className="max-w-4xl mx-auto rounded-3xl border border-white/10 bg-white/5 px-6 py-12 text-center text-gray-300">
+                <div className="max-w-4xl mx-auto rounded-3xl border border-[#f3eee3]/10 bg-[#161616] px-6 py-12 text-center text-[#f3eee3]/75">
                     <div className="mb-4 flex justify-center">
-                        <div className="rounded-full border border-white/10 bg-white/5 p-4">
-                            <HiFolderOpen className="h-10 w-10 text-white/60" />
+                        <div className="rounded-full border border-[#f3eee3]/15 bg-[#f3eee3]/5 p-4">
+                            <HiFolderOpen className="h-10 w-10 text-[#d9541e]" />
                         </div>
                     </div>
                     <p className="mb-4">Tidak ada publikasi yang cocok dengan pencarian.</p>
                     <button
                         onClick={handleClearFilter}
-                        className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-4 py-2 text-sm text-white transition hover:bg-white/20"
+                        className="inline-flex items-center gap-2 rounded-xl border border-[#d9541e] bg-[#d9541e] px-4 py-2 text-sm text-[#f3eee3] transition hover:bg-[#bd471a]"
                     >
                         <HiX className="h-4 w-4" />
                         Reset filter
@@ -147,19 +147,19 @@ function PublicationCard({ pub, index }: PublicationCardProps) {
     const [expanded, setExpanded] = useState(false);
 
     return (
-        <div className="group rounded-3xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:border-white/25 hover:bg-white/8">
+        <div className="group rounded-3xl border border-[#f3eee3]/10 bg-[#161616] p-6 transition-all duration-300 hover:border-[#d9541e]/40 hover:bg-[#181818]">
             {/* Top row */}
             <div className="flex items-start justify-between gap-4 mb-4">
-                <span className="shrink-0 text-xs font-mono text-gray-500 mt-1">
+                <span className="shrink-0 text-xs font-mono text-[#d9541e] font-semibold mt-1">
                     #{String(index + 1).padStart(2, '0')}
                 </span>
-                <span className="shrink-0 rounded-full border border-white/15 bg-white/10 px-3 py-0.5 text-xs font-mono text-gray-300">
+                <span className="shrink-0 rounded-full border border-[#f3eee3]/15 bg-[#f3eee3]/10 px-3 py-0.5 text-xs font-mono text-[#f3eee3]/80">
                     {pub.year}
                 </span>
             </div>
 
             {/* Title */}
-            <h2 className="text-base md:text-lg font-bold text-white leading-snug mb-3 group-hover:text-gray-100 transition-colors">
+            <h2 className="text-base md:text-lg font-bold text-[#f3eee3] leading-snug mb-3 group-hover:text-[#d9541e] transition-colors">
                 {pub.title}
             </h2>
 
@@ -168,7 +168,7 @@ function PublicationCard({ pub, index }: PublicationCardProps) {
                 {pub.authors.map((author) => (
                     <span
                         key={author}
-                        className="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-xs text-gray-400"
+                        className="rounded-full border border-[#f3eee3]/10 bg-[#f3eee3]/5 px-2.5 py-0.5 text-xs text-[#f3eee3]/75"
                     >
                         {author}
                     </span>
@@ -177,12 +177,12 @@ function PublicationCard({ pub, index }: PublicationCardProps) {
 
             {/* Abstract */}
             <div className="mb-5">
-                <p className={`text-sm text-gray-400 leading-relaxed ${expanded ? '' : 'line-clamp-3'}`}>
+                <p className={`text-sm text-[#f3eee3]/75 leading-relaxed ${expanded ? '' : 'line-clamp-3'}`}>
                     {pub.abstract}
                 </p>
                 <button
                     onClick={() => setExpanded(!expanded)}
-                    className="mt-2 flex items-center gap-1 text-xs text-gray-500 hover:text-gray-300 transition-colors"
+                    className="mt-2 flex items-center gap-1 text-xs text-[#d9541e] hover:text-[#f3eee3] transition-colors"
                 >
                     {expanded ? (
                         <>
@@ -199,8 +199,8 @@ function PublicationCard({ pub, index }: PublicationCardProps) {
             </div>
 
             {/* Footer */}
-            <div className="border-t border-white/10 pt-4 flex items-center justify-between gap-3">
-                <span className="text-xs font-mono text-gray-600 uppercase tracking-wider shrink-0">
+            <div className="border-t border-[#f3eee3]/10 pt-4 flex items-center justify-between gap-3">
+                <span className="text-xs font-mono text-[#f3eee3]/50 uppercase tracking-wider shrink-0">
                     Artikel Ilmiah
                 </span>
                 <div className="flex flex-wrap gap-2 justify-end">
@@ -210,7 +210,7 @@ function PublicationCard({ pub, index }: PublicationCardProps) {
                             href={link.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-xs text-white transition hover:bg-white/20 hover:border-white/30"
+                            className="flex items-center gap-2 rounded-xl border border-[#d9541e] bg-[#d9541e] px-4 py-2 text-xs text-[#f3eee3] font-medium transition hover:bg-[#bd471a]"
                             onClick={(e) => e.stopPropagation()}
                         >
                             {link.label}

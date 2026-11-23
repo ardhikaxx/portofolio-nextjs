@@ -76,7 +76,7 @@ const jsonLd = {
 
 export default function CVPage() {
   return (
-    <main>
+    <main className="min-h-screen bg-[#111111] text-[#f3eee3]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

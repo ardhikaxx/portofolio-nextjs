@@ -278,10 +278,10 @@ export default function RootLayout({
   return (
     <html
       lang="id"
-      className={`dark ${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${jaro.variable} bg-black text-white`}
+      className={`dark ${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${jaro.variable} bg-[#111111] text-[#f3eee3]`}
     >
       <head>
-        <meta name="theme-color" content="#000000" />
+        <meta name="theme-color" content="#111111" />
         <meta name="color-scheme" content="dark" />
         <meta name="geo.region" content="ID-JI" />
         <meta name="geo.placename" content="Jember" />
@@ -311,7 +311,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="antialiased bg-black text-white min-h-screen">
+      <body className="antialiased bg-[#111111] text-[#f3eee3] min-h-screen">
         <SmoothScroll>{children}</SmoothScroll>
         <NavBottom />
         <Analytics />

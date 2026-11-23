@@ -19,7 +19,7 @@ export const experiences: Experience[] = [
         location: "Jl. Taman Makam Pahlawan No. 43, Dabasah, Kec. Bondowoso, Kabupaten Bondowoso, Jawa Timur 68211",
         locationShort: "Bondowoso, Indonesia",
         role: "Tenaga Teknis Survei & Pemetaan",
-        period: "2026 - Sekarang",
+        period: "November 2026 - Mei 2027",
         type: "MagangHub Batch 3A 2026",
         description: "Program MagangHub Batch 3A 2026 sebagai Tenaga Teknis Survei & Pemetaan di Kantor Pertanahan Kabupaten Bondowoso (Kementerian ATR/BPN) yang berfokus pada kegiatan inventarisasi, deliniasi batas bidang tanah, dan pengolahan data spasial serta tekstual.",
         technologies: ["AutoCAD"],

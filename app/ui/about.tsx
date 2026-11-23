@@ -157,21 +157,21 @@ function ContributionGraph() {
 
     const getColor = (count: number) => {
         if (count === -1) return "bg-transparent";
-        if (count === 0) return "bg-[#182029]";
-        if (count <= 3) return "bg-[#243342]";
-        if (count <= 6) return "bg-[#3d5670]";
-        if (count <= 12) return "bg-[#7c9dbd]";
-        return "bg-white";
+        if (count === 0) return "bg-[#252525]";
+        if (count <= 3) return "bg-[#782e14]";
+        if (count <= 6) return "bg-[#b84517]";
+        if (count <= 12) return "bg-[#d9541e]";
+        return "bg-[#f3eee3]";
     };
 
     if (loading) {
         return (
             <div className="w-full mt-8 sm:mt-9">
                 <div className="flex justify-between items-center mb-3.5">
-                    <h3 className="text-white font-semibold text-sm sm:text-base">Kontribusi GitHub</h3>
-                    <span className="text-neutral-500 text-xs sm:text-sm font-mono">Memuat...</span>
+                    <h3 className="text-[#f3eee3] font-semibold text-sm sm:text-base">Kontribusi GitHub</h3>
+                    <span className="text-[#f3eee3]/50 text-xs sm:text-sm font-mono">Memuat...</span>
                 </div>
-                <div className="h-36 sm:h-44 bg-[#1a1a1a] border border-white/10 rounded-xl sm:rounded-2xl animate-pulse" />
+                <div className="h-36 sm:h-44 bg-[#161616] border border-[#f3eee3]/10 rounded-xl sm:rounded-2xl animate-pulse" />
             </div>
         );
     }
@@ -181,32 +181,32 @@ function ContributionGraph() {
             {/* Header Kontribusi */}
             <div className="flex items-center justify-between gap-2 mb-3.5 sm:mb-4">
                 <div className="flex items-center gap-2 sm:gap-2.5">
-                    <h3 className="text-white font-semibold text-sm sm:text-base">Kontribusi GitHub</h3>
+                    <h3 className="text-[#f3eee3] font-semibold text-sm sm:text-base">Kontribusi GitHub</h3>
                     {allYearData.length > 0 && (
                         <div className="relative inline-flex items-center">
                             <select
                                 value={selectedYear || ""}
                                 onChange={(e) => setSelectedYear(Number(e.target.value))}
-                                className="appearance-none bg-[#222222] hover:bg-[#282828] border border-neutral-700/80 text-neutral-200 text-xs sm:text-sm font-mono rounded-md pl-2.5 pr-6 py-1 sm:py-1.5 cursor-pointer outline-none transition-colors"
+                                className="appearance-none bg-[#1c1c1c] hover:bg-[#242424] border border-[#f3eee3]/20 text-[#f3eee3] text-xs sm:text-sm font-mono rounded-md pl-2.5 pr-6 py-1 sm:py-1.5 cursor-pointer outline-none transition-colors"
                                 aria-label="Pilih tahun kontribusi GitHub"
                             >
                                 {allYearData.map((yearData) => (
-                                    <option key={yearData.year} value={yearData.year} className="bg-neutral-900 text-white">
+                                    <option key={yearData.year} value={yearData.year} className="bg-[#161616] text-[#f3eee3]">
                                         {yearData.year}
                                     </option>
                                 ))}
                             </select>
-                            <HiChevronDown className="absolute right-1 top-1/2 -translate-y-1/2 text-neutral-400 pointer-events-none text-xs" />
+                            <HiChevronDown className="absolute right-1 top-1/2 -translate-y-1/2 text-[#f3eee3]/60 pointer-events-none text-xs" />
                         </div>
                     )}
                 </div>
-                <span className="text-neutral-400 text-xs sm:text-[15px] font-mono shrink-0">
+                <span className="text-[#f3eee3]/70 text-xs sm:text-[15px] font-mono shrink-0">
                     {totalContributions} kontribusi
                 </span>
             </div>
 
             {/* Card Kontribusi GitHub - Lebar Penuh Menyesuaikan Card Profil */}
-            <div className="rounded-xl sm:rounded-2xl bg-[#1a1a1a] border border-white/10 p-4 sm:p-5 md:p-6 transition-colors duration-300 hover:border-white/20">
+            <div className="rounded-xl sm:rounded-2xl bg-[#161616] border border-[#f3eee3]/10 p-4 sm:p-5 md:p-6 transition-colors duration-300 hover:border-[#f3eee3]/20">
                 {/* Heatmap Matrix with Touch & Scroll for Mobile, Full Width for Tablet & Desktop */}
                 <div
                     ref={scrollContainerRef}
@@ -214,13 +214,13 @@ function ContributionGraph() {
                 >
                     <div className="min-w-[720px] w-full flex flex-col select-none">
                         {/* Header Bulan */}
-                        <div className="flex text-[11px] sm:text-xs text-neutral-400 font-mono mb-2 h-4 relative">
+                        <div className="flex text-[11px] sm:text-xs text-[#f3eee3]/60 font-mono mb-2 h-4 relative">
                             <div className="w-6 sm:w-7 md:w-8 shrink-0" />
                             <div className="relative flex-1 h-4">
                                 {monthLabels.map((item, idx) => (
                                     <span
                                         key={idx}
-                                        className="absolute text-[11px] sm:text-xs text-neutral-400 font-mono leading-none"
+                                        className="absolute text-[11px] sm:text-xs text-[#f3eee3]/60 font-mono leading-none"
                                         style={{ left: `${(item.col / 53) * 100}%` }}
                                     >
                                         {item.month}
@@ -232,7 +232,7 @@ function ContributionGraph() {
                         {/* Matriks Hari & Grid 53 Kolom */}
                         <div className="flex items-start w-full">
                             {/* Label Hari (Sen, Rab, Jum) */}
-                            <div className="w-6 sm:w-7 md:w-8 shrink-0 flex flex-col gap-[3px] sm:gap-[3.5px] md:gap-1 text-[10px] sm:text-[11px] md:text-xs text-neutral-400 font-mono pr-1.5 select-none">
+                            <div className="w-6 sm:w-7 md:w-8 shrink-0 flex flex-col gap-[3px] sm:gap-[3.5px] md:gap-1 text-[10px] sm:text-[11px] md:text-xs text-[#f3eee3]/60 font-mono pr-1.5 select-none">
                                 <span className="h-2.5 sm:h-3 md:h-3.5 leading-none" />
                                 <span className="h-2.5 sm:h-3 md:h-3.5 leading-none flex items-center">Sen</span>
                                 <span className="h-2.5 sm:h-3 md:h-3.5 leading-none" />
@@ -262,15 +262,15 @@ function ContributionGraph() {
 
                 {/* Legend Jarang - Sering */}
                 <div className="flex items-center justify-end gap-2 sm:gap-2.5 mt-3 select-none">
-                    <span className="text-[11px] sm:text-xs text-neutral-500 font-mono">Jarang</span>
+                    <span className="text-[11px] sm:text-xs text-[#f3eee3]/50 font-mono">Jarang</span>
                     <div className="flex items-center gap-[3px]">
-                        <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#182029]" />
-                        <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#243342]" />
-                        <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#3d5670]" />
-                        <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#7c9dbd]" />
-                        <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-white" />
+                        <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#252525]" />
+                        <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#782e14]" />
+                        <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#b84517]" />
+                        <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#d9541e]" />
+                        <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#f3eee3]" />
                     </div>
-                    <span className="text-[11px] sm:text-xs text-neutral-500 font-mono">Sering</span>
+                    <span className="text-[11px] sm:text-xs text-[#f3eee3]/50 font-mono">Sering</span>
                 </div>
             </div>
         </div>
@@ -313,8 +313,8 @@ function OrganizationSection() {
             {/* Header Organisasi */}
             <div className="flex items-center justify-between gap-2 mb-3.5 sm:mb-4">
                 <div className="flex items-center gap-2 sm:gap-2.5">
-                    <h3 className="text-white font-semibold text-sm sm:text-base">Organisasi</h3>
-                    <span className="px-2 py-0.5 sm:py-1 rounded-md bg-[#222222] border border-neutral-700/80 text-neutral-200 text-xs sm:text-sm font-mono">
+                    <h3 className="text-[#f3eee3] font-semibold text-sm sm:text-base">Organisasi</h3>
+                    <span className="px-2 py-0.5 sm:py-1 rounded-md bg-[#1c1c1c] border border-[#f3eee3]/20 text-[#f3eee3] text-xs sm:text-sm font-mono">
                         {organizations.length}
                     </span>
                 </div>
@@ -325,20 +325,20 @@ function OrganizationSection() {
                 {organizations.map((org) => (
                     <article
                         key={org.id}
-                        className="rounded-xl sm:rounded-2xl bg-[#1a1a1a] border border-white/10 p-4 sm:p-6 transition-colors duration-300 hover:border-white/20"
+                        className="rounded-xl sm:rounded-2xl bg-[#161616] border border-[#f3eee3]/10 p-4 sm:p-6 transition-colors duration-300 hover:border-[#f3eee3]/20"
                     >
                         {/* Baris atas: ikon + nama + peran */}
                         <div className="flex items-start gap-3 sm:gap-4">
                             {/* Logo / Ikon Organisasi */}
-                            <div className="flex items-center justify-center w-10 h-10 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl bg-[#242424] border border-white/10 shrink-0">
-                                <HiUserGroup className="w-5 h-5 sm:w-7 sm:h-7 text-white" />
+                            <div className="flex items-center justify-center w-10 h-10 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl bg-[#222222] border border-[#f3eee3]/10 shrink-0">
+                                <HiUserGroup className="w-5 h-5 sm:w-7 sm:h-7 text-[#d9541e]" />
                             </div>
 
                             <div className="flex-1 min-w-0">
-                                <h4 className="text-white font-semibold text-[13px] sm:text-[15px] md:text-base leading-snug text-pretty">
+                                <h4 className="text-[#f3eee3] font-semibold text-[13px] sm:text-[15px] md:text-base leading-snug text-pretty">
                                     {org.organization}
                                 </h4>
-                                <p className="text-neutral-300 text-xs sm:text-sm mt-1 sm:mt-1.5 leading-snug text-pretty">
+                                <p className="text-[#d9541e] text-xs sm:text-sm mt-1 sm:mt-1.5 leading-snug text-pretty font-medium">
                                     {org.role}
                                 </p>
                             </div>
@@ -346,20 +346,20 @@ function OrganizationSection() {
 
                         {/* Meta: periode & afiliasi — rapi menumpuk di mobile */}
                         <div className="flex flex-col gap-1.5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-2 sm:gap-y-1 mt-3 sm:mt-2.5 sm:pl-[4.5rem]">
-                            <span className="inline-flex w-fit items-center gap-1.5 rounded-md bg-white/5 border border-white/10 px-2 py-1 text-neutral-300 text-[11px] sm:text-xs font-mono">
-                                <HiCalendar className="w-3.5 h-3.5 shrink-0 text-neutral-400" />
+                            <span className="inline-flex w-fit items-center gap-1.5 rounded-md bg-[#f3eee3]/5 border border-[#f3eee3]/10 px-2 py-1 text-[#f3eee3]/80 text-[11px] sm:text-xs font-mono">
+                                <HiCalendar className="w-3.5 h-3.5 shrink-0 text-[#d9541e]" />
                                 {org.period}
                             </span>
-                            <span className="hidden sm:inline text-neutral-600 text-xs">•</span>
-                            <span className="inline-flex w-fit items-center gap-1.5 rounded-md bg-white/5 border border-white/10 px-2 py-1 text-neutral-300 text-[11px] sm:text-xs">
-                                <HiAcademicCap className="w-3.5 h-3.5 shrink-0 text-neutral-400" />
+                            <span className="hidden sm:inline text-[#f3eee3]/30 text-xs">•</span>
+                            <span className="inline-flex w-fit items-center gap-1.5 rounded-md bg-[#f3eee3]/5 border border-[#f3eee3]/10 px-2 py-1 text-[#f3eee3]/80 text-[11px] sm:text-xs">
+                                <HiAcademicCap className="w-3.5 h-3.5 shrink-0 text-[#d9541e]" />
                                 Terkait dengan {org.associated}
                             </span>
                         </div>
 
-                        <div className="border-t border-white/10 my-3.5 sm:my-4" />
+                        <div className="border-t border-[#f3eee3]/10 my-3.5 sm:my-4" />
 
-                        <p className="text-neutral-400 text-[13px] sm:text-sm md:text-[15px] leading-relaxed text-pretty">
+                        <p className="text-[#f3eee3]/75 text-[13px] sm:text-sm md:text-[15px] leading-relaxed text-pretty">
                             {org.description}
                         </p>
                     </article>
@@ -374,13 +374,13 @@ export default function About() {
     const [isExperienceOpen, setIsExperienceOpen] = useState(false);
 
     return (
-        <section className="flex items-center justify-center min-h-screen bg-black w-full relative px-4 sm:px-6 py-8 pb-28 sm:py-14 sm:pb-28">
+        <section className="flex flex-col items-center justify-start min-h-screen bg-[#111111] w-full relative px-4 sm:px-6 pt-16 pb-32 sm:pt-20 sm:pb-32 lg:pt-36 lg:pb-28">
             {/* Main Profile Card - Besar & Lega di Desktop, Fully Responsive di Mobile */}
-            <div className="relative w-full max-w-[920px] bg-[#141414] border border-[#262626] rounded-2xl sm:rounded-[30px] p-6 sm:p-10 md:p-12 shadow-2xl text-white transition-all duration-300">
+            <div className="relative w-full max-w-[920px] bg-[#141414] border border-[#f3eee3]/15 rounded-2xl sm:rounded-[30px] p-6 sm:p-10 md:p-12 shadow-2xl text-[#f3eee3] transition-all duration-300">
                 {/* Bagian Atas: Avatar Foto & Deskripsi Profil */}
                 <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5 sm:gap-8">
                     {/* Avatar Foto Bulat */}
-                    <div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-[152px] md:h-[152px] shrink-0 rounded-full overflow-hidden bg-neutral-800 border border-white/10 shadow-lg">
+                    <div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-[152px] md:h-[152px] shrink-0 rounded-full overflow-hidden bg-[#181818] shadow-lg">
                         <Image
                             src="/img/foto-profile.webp"
                             alt="Foto Profil Yanuar Ardhika Rahmadhani Ubaidillah"
@@ -393,20 +393,67 @@ export default function About() {
 
                     {/* Teks Nama & Biodata Singkat */}
                     <div className="flex-1 text-center sm:text-left min-w-0">
-                        <h1 className="text-lg sm:text-xl md:text-[22px] lg:text-2xl font-bold text-white font-mono leading-snug mb-3 whitespace-normal sm:whitespace-nowrap">
+                        <h1 className="text-lg sm:text-xl md:text-[22px] lg:text-2xl font-bold text-[#f3eee3] font-mono leading-snug mb-3 whitespace-normal sm:whitespace-nowrap">
                             Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom.
                         </h1>
 
-                        <div className="sr-only">
-                            <h2>Biografi & Profil Profesional Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom.</h2>
-                            <p>
-                                Yanuar Ardhika adalah Full Stack Web & Mobile Developer asal Jember, Jawa Timur, Indonesia. Lulusan Sarjana Terapan Komputer (S.Tr.Kom.) dari Program Studi D4 Teknik Informatika, Jurusan Teknologi Informasi, Politeknik Negeri Jember (Polije). Berpengalaman luas dalam pengembangan sistem informasi berbasis Laravel, Next.js, React, TypeScript, Flutter Android, basis data MySQL, integrasi mikrokontroler IoT (ESP32), dan arsitektur RESTful API.
-                            </p>
-                        </div>
-
-                        <p className="text-neutral-400 text-sm sm:text-[15px] md:text-base leading-relaxed font-normal text-left sm:text-left">
+                        <p className="text-[#f3eee3]/75 text-sm sm:text-[15px] md:text-base leading-relaxed font-normal text-left sm:text-left">
                             Saya lulusan Sarjana Terapan (S.Tr.Kom.) Program Studi D4 Teknik Informatika Politeknik Negeri Jember dengan spesialisasi pengembangan web dan mobile aplikasi. Memiliki rekam jejak dalam merancang serta membangun aplikasi end-to-end yang skalabel, efisien, dan ramah pengguna — mulai dari sistem informasi instansi, proyek riset terdanai, hingga pengalaman industri. Berorientasi pada clean code, pemecahan masalah nyata, dan siap memberikan kontribusi optimal dalam pengembangan produk digital.
                         </p>
+                    </div>
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-5 mt-8 sm:mt-9 pt-1">
+                    {/* Media Sosial Kiri: Instagram, GitHub, LinkedIn */}
+                    <div className="flex items-center justify-center gap-3 sm:gap-3.5 w-full sm:w-auto">
+                        <a
+                            href="https://www.instagram.com/ardhxkaa_"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Instagram Yanuar Ardhika"
+                            className="flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#202020] hover:bg-[#d9541e] text-[#f3eee3] border border-[#f3eee3]/15 hover:border-[#d9541e] transition-all duration-300 shadow-sm"
+                        >
+                            <FaInstagram className="w-5 h-5 sm:w-[22px] sm:h-[22px]" />
+                        </a>
+                        <a
+                            href="https://github.com/ardhikaxx"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub Yanuar Ardhika"
+                            className="flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#202020] hover:bg-[#d9541e] text-[#f3eee3] border border-[#f3eee3]/15 hover:border-[#d9541e] transition-all duration-300 shadow-sm"
+                        >
+                            <FaGithub className="w-5 h-5 sm:w-[22px] sm:h-[22px]" />
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/yanuar-ardhika-rahmadhani-ubaidillah/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn Yanuar Ardhika"
+                            className="flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#202020] hover:bg-[#d9541e] text-[#f3eee3] border border-[#f3eee3]/15 hover:border-[#d9541e] transition-all duration-300 shadow-sm"
+                        >
+                            <FaLinkedin className="w-5 h-5 sm:w-[22px] sm:h-[22px]" />
+                        </a>
+                    </div>
+
+                    {/* Tombol Aksi Kanan: Hubungi Saya & Pengalaman */}
+                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
+                        {/* Tombol Hubungi Saya / Hire Me (Pill Terracotta) */}
+                        <button
+                            onClick={() => setIsContactOpen(true)}
+                            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#d9541e] text-[#f3eee3] hover:bg-[#bd471a] font-sans text-sm sm:text-[15px] font-semibold transition-all duration-300 shadow-md hover:scale-[1.02] cursor-pointer w-full sm:w-auto"
+                        >
+                            <HiEnvelope size={19} />
+                            <span>Hubungi Saya / Hire Me</span>
+                        </button>
+
+                        {/* Tombol Pengalaman (Pill Bergaris dengan Icon Briefcase & Modal) */}
+                        <button
+                            onClick={() => setIsExperienceOpen(true)}
+                            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-transparent hover:bg-[#f3eee3]/10 text-[#f3eee3] font-sans text-sm sm:text-[15px] font-semibold border border-[#f3eee3]/40 hover:border-[#d9541e] hover:text-[#d9541e] transition-all duration-300 hover:scale-[1.02] cursor-pointer w-full sm:w-auto"
+                        >
+                            <HiBriefcase size={19} />
+                            <span>Pengalaman</span>
+                        </button>
                     </div>
                 </div>
 
@@ -417,59 +464,7 @@ export default function About() {
                 <OrganizationSection />
 
                 {/* Bagian Bawah: Social Media Icons & Action Buttons */}
-                <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-5 mt-8 sm:mt-9 pt-1">
-                    {/* Media Sosial Kiri: Instagram, GitHub, LinkedIn */}
-                    <div className="flex items-center justify-center gap-3 sm:gap-3.5 w-full sm:w-auto">
-                        <a
-                            href="https://www.instagram.com/ardhxkaa_"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Instagram Yanuar Ardhika"
-                            className="flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#202020] hover:bg-white text-white hover:text-black border border-white/10 hover:border-white transition-all duration-300 shadow-sm"
-                        >
-                            <FaInstagram className="w-5 h-5 sm:w-[22px] sm:h-[22px]" />
-                        </a>
-                        <a
-                            href="https://github.com/ardhikaxx"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="GitHub Yanuar Ardhika"
-                            className="flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#202020] hover:bg-white text-white hover:text-black border border-white/10 hover:border-white transition-all duration-300 shadow-sm"
-                        >
-                            <FaGithub className="w-5 h-5 sm:w-[22px] sm:h-[22px]" />
-                        </a>
-                        <a
-                            href="https://www.linkedin.com/in/yanuar-ardhika-rahmadhani-ubaidillah/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="LinkedIn Yanuar Ardhika"
-                            className="flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#202020] hover:bg-white text-white hover:text-black border border-white/10 hover:border-white transition-all duration-300 shadow-sm"
-                        >
-                            <FaLinkedin className="w-5 h-5 sm:w-[22px] sm:h-[22px]" />
-                        </a>
-                    </div>
-
-                    {/* Tombol Aksi Kanan: Hubungi Saya & Pengalaman */}
-                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
-                        {/* Tombol Hubungi Saya / Hire Me (Pill Putih) */}
-                        <button
-                            onClick={() => setIsContactOpen(true)}
-                            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white text-black hover:bg-neutral-200 font-sans text-sm sm:text-[15px] font-semibold transition-all duration-300 shadow-md hover:scale-[1.02] cursor-pointer w-full sm:w-auto"
-                        >
-                            <HiEnvelope size={19} />
-                            <span>Hubungi Saya / Hire Me</span>
-                        </button>
-
-                        {/* Tombol Pengalaman (Pill Hitam Bergaris Putih dengan Icon Briefcase & Modal) */}
-                        <button
-                            onClick={() => setIsExperienceOpen(true)}
-                            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-transparent hover:bg-white/10 text-white font-sans text-sm sm:text-[15px] font-semibold border border-white transition-all duration-300 hover:scale-[1.02] cursor-pointer w-full sm:w-auto"
-                        >
-                            <HiBriefcase size={19} />
-                            <span>Pengalaman</span>
-                        </button>
-                    </div>
-                </div>
+                
             </div>
 
             {/* Modal Hubungi Saya */}

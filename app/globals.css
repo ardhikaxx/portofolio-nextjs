@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
-  --foreground: #ededed;
+  --background: #111111;
+  --foreground: #f3eee3;
+  --accent: #d9541e;
   color-scheme: dark;
 }
 
@@ -15,8 +16,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #000000;
-    --foreground: #ededed;
+    --background: #111111;
+    --foreground: #f3eee3;
   }
 }
 
@@ -31,9 +32,31 @@ code, pre {
 
 html,
 body {
-  background-color: #000000;
+  background-color: #111111;
   color: var(--foreground);
   font-family: var(--font-geist-sans);
+}
+
+::selection {
+  background-color: #d9541e;
+  color: #f3eee3;
+}
+
+/* Custom Scrollbar for consistent dark terracotta theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 9999px;
+  border: 2px solid #111111;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d9541e;
 }
 
 @font-face {
