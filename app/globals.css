@@ -35,6 +35,8 @@ body {
   background-color: #111111;
   color: var(--foreground);
   font-family: var(--font-geist-sans);
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 ::selection {

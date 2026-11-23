@@ -33,75 +33,77 @@ export default function CVViewer() {
   return (
     <main className="min-h-screen bg-[#111111]">
       <div className="max-w-6xl mx-auto px-4 pt-16 pb-32 lg:pt-36 lg:pb-28">
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
           <Link
             href="/"
-            className="flex items-center gap-2 text-[#f3eee3]/70 hover:text-[#d9541e] transition-colors font-mono text-sm"
+            className="flex items-center gap-2 text-[#f3eee3]/70 hover:text-[#d9541e] transition-colors font-mono text-xs sm:text-sm"
           >
-            <HiArrowLeft size={20} />
+            <HiArrowLeft size={18} />
             <span>Kembali</span>
           </Link>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <button
               onClick={zoomOut}
               disabled={scale <= 0.5}
-              className="p-2 text-[#f3eee3]/70 hover:text-[#f3eee3] disabled:opacity-30 transition-colors"
+              className="p-1.5 sm:p-2 text-[#f3eee3]/70 hover:text-[#f3eee3] disabled:opacity-30 transition-colors"
               title="Perkecil"
             >
-              <HiMinus size={20} />
+              <HiMinus size={18} />
             </button>
-            <span className="text-[#f3eee3]/70 text-sm font-mono min-w-[4rem] text-center">
+            <span className="text-[#f3eee3]/70 text-xs sm:text-sm font-mono min-w-[3.5rem] sm:min-w-[4rem] text-center">
               {Math.round(scale * 100)}%
             </span>
             <button
               onClick={zoomIn}
               disabled={scale >= 3}
-              className="p-2 text-[#f3eee3]/70 hover:text-[#f3eee3] disabled:opacity-30 transition-colors"
+              className="p-1.5 sm:p-2 text-[#f3eee3]/70 hover:text-[#f3eee3] disabled:opacity-30 transition-colors"
               title="Perbesar"
             >
-              <HiPlus size={20} />
+              <HiPlus size={18} />
             </button>
 
             <a
               href="/CV_Yanuar_Ardhika.pdf"
               download
-              className="flex items-center gap-2 bg-[#d9541e] hover:bg-[#bd471a] text-[#f3eee3] px-4 py-2 rounded-full text-sm font-mono font-medium shadow-md transition-colors"
+              className="flex items-center gap-1.5 sm:gap-2 bg-[#d9541e] hover:bg-[#bd471a] text-[#f3eee3] px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-mono font-medium shadow-md transition-colors"
             >
-              <HiArrowDownTray size={18} />
+              <HiArrowDownTray size={16} />
               <span>Download</span>
             </a>
           </div>
         </div>
 
-        <div className="flex flex-col items-center">
-          <Document
-            file="/CV_Yanuar_Ardhika.pdf"
-            onLoadSuccess={onDocumentLoadSuccess}
-            loading={
-              <div className="flex items-center justify-center py-20">
-                <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#d9541e]" />
-              </div>
-            }
-            error={
-              <div className="text-center py-20 text-[#f3eee3]/60 font-mono">
-                Gagal memuat CV. Silakan{' '}
-                <a href="/CV_Yanuar_Ardhika.pdf" download className="text-[#d9541e] underline">
-                  download langsung
-                </a>
-                .
-              </div>
-            }
-            className="bg-[#161616] border border-[#f3eee3]/10 rounded-2xl p-4 shadow-2xl"
-          >
-            <Page
-              pageNumber={pageNumber}
-              scale={scale}
-              renderTextLayer={false}
-              renderAnnotationLayer={false}
-              className="rounded-lg overflow-hidden shadow-lg"
-            />
-          </Document>
+        <div className="flex flex-col items-center w-full">
+          <div className="w-full flex justify-center overflow-x-auto pb-4">
+            <Document
+              file="/CV_Yanuar_Ardhika.pdf"
+              onLoadSuccess={onDocumentLoadSuccess}
+              loading={
+                <div className="flex items-center justify-center py-20">
+                  <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#d9541e]" />
+                </div>
+              }
+              error={
+                <div className="text-center py-20 text-[#f3eee3]/60 font-mono">
+                  Gagal memuat CV. Silakan{' '}
+                  <a href="/CV_Yanuar_Ardhika.pdf" download className="text-[#d9541e] underline">
+                    download langsung
+                  </a>
+                  .
+                </div>
+              }
+              className="bg-[#161616] border border-[#f3eee3]/10 rounded-2xl p-2 sm:p-4 shadow-2xl max-w-full"
+            >
+              <Page
+                pageNumber={pageNumber}
+                scale={scale}
+                renderTextLayer={false}
+                renderAnnotationLayer={false}
+                className="rounded-lg overflow-hidden shadow-lg max-w-full"
+              />
+            </Document>
+          </div>
 
           {numPages > 1 && (
             <div className="flex items-center gap-4 mt-6 mb-10">

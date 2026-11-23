@@ -46,7 +46,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.9, y: 20 }}
                         transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                        className="relative w-full max-w-md max-h-[75vh] sm:max-h-[80vh] bg-[#141414] backdrop-blur-2xl border border-[#f3eee3]/20 rounded-3xl shadow-2xl z-10 text-[#f3eee3] overflow-hidden my-auto flex flex-col"
+                        className="relative w-full max-w-md max-h-[85vh] bg-[#141414] backdrop-blur-2xl border border-[#f3eee3]/20 rounded-2xl sm:rounded-3xl shadow-2xl z-10 text-[#f3eee3] overflow-hidden my-auto flex flex-col"
                         onClick={(e) => e.stopPropagation()}
                     >
                         {/* Background Grid Accent */}
@@ -62,7 +62,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                         </button>
 
                         {/* Scrollable Simple Content */}
-                        <div className="relative z-10 p-5 sm:p-6 overflow-y-auto max-h-[75vh] sm:max-h-[80vh] text-left space-y-5">
+                        <div className="relative z-10 p-5 sm:p-6 overflow-y-auto max-h-[85vh] text-left space-y-4 sm:space-y-5">
                             {/* Header */}
                             <div>
                                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#d9541e]/15 border border-[#d9541e]/40 text-[#d9541e] text-xs font-mono mb-2">

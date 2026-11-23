@@ -67,7 +67,7 @@ const NavBottom = ({ currentPath }: NavBottomProps) => {
         >
             <div className="bg-[#161616]/90 backdrop-blur-xl rounded-full border border-[#f3eee3]/15 p-1.5 sm:p-2 shadow-[0_10px_35px_rgba(0,0,0,0.85),0_0_0_1px_rgba(243,238,227,0.06)_inset]">
                 <div className="relative flex items-center justify-center gap-1 sm:gap-1.5 lg:gap-2 overflow-x-auto">
-                    {/* Brand Logo */}
+                    {/* Brand Logo (Desktop only) */}
                     <Link
                         href="/"
                         aria-label="Yanuar Ardhika - Beranda"
@@ -80,7 +80,7 @@ const NavBottom = ({ currentPath }: NavBottomProps) => {
                             }
                             setOptimisticPath('/');
                         }}
-                        className="relative flex items-center justify-center pl-1 sm:pl-1.5 pr-0.5 sm:pr-1 select-none shrink-0 cursor-pointer"
+                        className="hidden lg:flex relative items-center justify-center pl-1 sm:pl-1.5 pr-0.5 sm:pr-1 select-none shrink-0 cursor-pointer"
                     >
                         <Image
                             src="/img/sticker.webp"
@@ -92,8 +92,8 @@ const NavBottom = ({ currentPath }: NavBottomProps) => {
                         />
                     </Link>
 
-                    {/* Vertical Divider */}
-                    <div className="w-px h-5 sm:h-6 bg-[#f3eee3]/15 mx-0.5 sm:mx-1 shrink-0" aria-hidden="true" />
+                    {/* Vertical Divider (Desktop only) */}
+                    <div className="hidden lg:block w-px h-5 sm:h-6 bg-[#f3eee3]/15 mx-0.5 sm:mx-1 shrink-0" aria-hidden="true" />
 
                     {navItems.map((item) => {
                         const Icon = item.icon;

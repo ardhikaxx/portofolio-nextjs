@@ -393,7 +393,7 @@ export default function About() {
 
                     {/* Teks Nama & Biodata Singkat */}
                     <div className="flex-1 text-center sm:text-left min-w-0">
-                        <h1 className="text-lg sm:text-xl md:text-[22px] lg:text-2xl font-bold text-[#f3eee3] font-mono leading-snug mb-3 whitespace-normal sm:whitespace-nowrap">
+                        <h1 className="text-lg sm:text-xl md:text-[22px] lg:text-2xl font-bold text-[#f3eee3] font-mono leading-snug mb-3 whitespace-normal xl:whitespace-nowrap">
                             Yanuar Ardhika Rahmadhani Ubaidillah, S.Tr.Kom.
                         </h1>
 

@@ -93,7 +93,7 @@ export default function ExperienceModal({ isOpen, onClose }: ExperienceModalProp
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: 16 }}
                         transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                        className="relative w-full max-w-xl bg-[#141414] border border-[#f3eee3]/15 rounded-3xl shadow-2xl z-10 text-[#f3eee3] overflow-hidden my-auto flex flex-col"
+                        className="relative w-full max-w-xl max-h-[85vh] bg-[#141414] border border-[#f3eee3]/15 rounded-2xl sm:rounded-3xl shadow-2xl z-10 text-[#f3eee3] overflow-hidden my-auto flex flex-col"
                         onClick={(e) => e.stopPropagation()}
                     >
                         {/* Background Subtle Accent */}
@@ -109,7 +109,7 @@ export default function ExperienceModal({ isOpen, onClose }: ExperienceModalProp
                         </button>
 
                         {/* Header */}
-                        <div className="relative z-10 p-5 sm:p-6 pb-4 border-b border-[#f3eee3]/10 text-left">
+                        <div className="relative z-10 p-5 sm:p-6 pb-4 border-b border-[#f3eee3]/10 text-left shrink-0">
                             <h2 className="text-xl sm:text-2xl font-bold font-mono tracking-tight text-[#f3eee3]">
                                 Pengalaman Saya
                             </h2>
@@ -119,7 +119,7 @@ export default function ExperienceModal({ isOpen, onClose }: ExperienceModalProp
                         </div>
 
                         {/* Slide Content Area */}
-                        <div className="relative z-10 p-5 sm:p-6 text-left overflow-hidden">
+                        <div className="relative z-10 p-4 sm:p-6 text-left overflow-y-auto max-h-[calc(85vh-130px)]">
                             {!currentExp ? (
                                 <p className="text-[#f3eee3]/50 text-sm text-center py-8">
                                     Belum ada data pengalaman kerja.

@@ -64,8 +64,7 @@ export default function Awards() {
         <section className="min-h-screen bg-[#111111] text-[#f3eee3] pt-16 pb-32 sm:pb-32 lg:pt-36 lg:pb-28 px-4 sm:px-6">
             {/* Header */}
             <div className="max-w-7xl mx-auto mb-10">
-                <p className="text-xs font-mono text-[#d9541e] tracking-widest uppercase mb-2">Prestasi & Rekognisi</p>
-                <h1 className="text-4xl md:text-5xl font-black text-[#f3eee3] font-mono tracking-tight mb-3">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#f3eee3] font-mono tracking-tight mb-3">
                     Penghargaan & Prestasi
                 </h1>
                 <p className="text-[#f3eee3]/75 text-sm leading-relaxed max-w-xl font-light">

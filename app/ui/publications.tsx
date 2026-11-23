@@ -40,8 +40,7 @@ export default function Publications() {
         <section className="min-h-screen bg-[#111111] pt-16 pb-32 sm:pb-32 lg:pt-36 lg:pb-28 px-4 sm:px-6">
             {/* Header */}
             <div className="max-w-4xl mx-auto mb-10">
-                <p className="text-xs font-mono text-[#d9541e] tracking-widest uppercase mb-2">Riset & Penulisan</p>
-                <h1 className="text-4xl md:text-5xl font-black text-[#f3eee3] font-mono tracking-tight mb-4">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#f3eee3] font-mono tracking-tight mb-4">
                     Publikasi Ilmiah & Penelitian
                 </h1>
                 <p className="text-[#f3eee3]/75 text-sm leading-relaxed max-w-xl">
@@ -199,7 +198,7 @@ function PublicationCard({ pub, index }: PublicationCardProps) {
             </div>
 
             {/* Footer */}
-            <div className="border-t border-[#f3eee3]/10 pt-4 flex items-center justify-between gap-3">
+            <div className="border-t border-[#f3eee3]/10 pt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <span className="text-xs font-mono text-[#f3eee3]/50 uppercase tracking-wider shrink-0">
                     Artikel Ilmiah
                 </span>

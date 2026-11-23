@@ -17,15 +17,15 @@ export default function NotFound() {
 
             <div className="relative z-10 text-center max-w-lg w-full">
                 {/* Corner decorations */}
-                <div className="absolute -top-6 -left-6 w-6 h-6 border-t-2 border-l-2 border-[#d9541e]/40" />
-                <div className="absolute -top-6 -right-6 w-6 h-6 border-t-2 border-r-2 border-[#d9541e]/40" />
-                <div className="absolute -bottom-6 -left-6 w-6 h-6 border-b-2 border-l-2 border-[#d9541e]/40" />
-                <div className="absolute -bottom-6 -right-6 w-6 h-6 border-b-2 border-r-2 border-[#d9541e]/40" />
+                <div className="hidden sm:block absolute -top-6 -left-6 w-6 h-6 border-t-2 border-l-2 border-[#d9541e]/40" />
+                <div className="hidden sm:block absolute -top-6 -right-6 w-6 h-6 border-t-2 border-r-2 border-[#d9541e]/40" />
+                <div className="hidden sm:block absolute -bottom-6 -left-6 w-6 h-6 border-b-2 border-l-2 border-[#d9541e]/40" />
+                <div className="hidden sm:block absolute -bottom-6 -right-6 w-6 h-6 border-b-2 border-r-2 border-[#d9541e]/40" />
 
                 {/* 404 number */}
                 <div>
                     <p className="text-xs font-mono text-[#d9541e] tracking-widest uppercase mb-4">Error 404</p>
-                    <h1 className="text-[8rem] md:text-[12rem] font-black text-[#f3eee3] font-mono leading-none tracking-tighter">
+                    <h1 className="text-7xl sm:text-9xl md:text-[12rem] font-black text-[#f3eee3] font-mono leading-none tracking-tighter">
                         404
                     </h1>
                 </div>

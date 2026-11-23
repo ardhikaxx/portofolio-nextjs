@@ -290,7 +290,7 @@ export default function ProjectDetailClient({ projectId }: ProjectDetailClientPr
 
                 {/* Section Bawah: Eksplorasi Proyek Lainnya */}
                 <section className="mt-16 sm:mt-20 pt-10 border-t border-[#f3eee3]/10">
-                    <div className="flex items-center justify-between mb-8">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
                         <div>
                             <h2 className="text-2xl sm:text-3xl font-bold text-[#f3eee3] tracking-tight font-mono">
                                 Eksplorasi Proyek Lainnya
