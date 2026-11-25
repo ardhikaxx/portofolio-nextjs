@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
-import { HiEnvelope, HiBriefcase, HiChevronDown, HiUserGroup, HiCalendar, HiAcademicCap } from "react-icons/hi2";
+import { HiEnvelope, HiBriefcase, HiChevronDown, HiCalendar, HiAcademicCap } from "react-icons/hi2";
 import { useState, useEffect, useRef } from "react";
 import ContactModal from "../components/ContactModal";
 import ExperienceModal from "../components/ExperienceModal";
@@ -283,6 +283,7 @@ interface Organization {
     role: string;
     period: string;
     associated: string;
+    logo: string;
     description: string;
 }
 
@@ -293,6 +294,7 @@ const organizations: Organization[] = [
         role: "Direktorat Jenderal Multimedia Kementerian Komunikasi dan Informasi",
         period: "Jan 2025 – Dec 2025",
         associated: "Politeknik Negeri Jember",
+        logo: "/img/logo-bem.webp",
         description:
             "Sebagai bagian dari Direktorat Jenderal Multimedia di bawah naungan Kementerian Komunikasi dan Informasi Badan Eksekutif Mahasiswa (BEM) Politeknik Negeri Jember Kabinet Amretaneera, saya memegang kendali penuh atas seluruh siklus kebutuhan desain dan komunikasi visual organisasi. Peran ini menuntut perpaduan antara arahan kreatif dan kemampuan manajerial yang kuat, di mana saya bertugas mengkoordinasikan serta mendelegasikan berbagai proyek desain kepada tim yang terdiri dari Staff Ahli Multimedia dan Staff Ahli Konten Kreator. Fokus utama saya adalah memastikan alur kerja produksi konten berjalan lancar, efisien, dan menghasilkan output visual berkualitas tinggi guna mendukung kelancaran program kerja Kabinet Amretaneera.",
     },
@@ -302,6 +304,7 @@ const organizations: Organization[] = [
         role: "Staff Design Graphics Kementerian Media Digital dan Informasi",
         period: "Jan 2024 – Dec 2024",
         associated: "Politeknik Negeri Jember",
+        logo: "/img/logo-bem.webp",
         description:
             "Dipercaya sebagai Staff Design Graphic BEM Politeknik Negeri Jember (Kabinet Bhakti Wirama) tahun 2024. Tanggung jawab utama saya meliputi perancangan dan pengelolaan konten visual untuk Instagram resmi BEM sesuai dengan timeline yang telah ditentukan, serta menyediakan kebutuhan desain grafis seperti poster untuk berbagai kegiatan organisasi. Selain menjadi staf reguler, saya juga aktif mengambil peran strategis dalam berbagai kepanitiaan, di antaranya sebagai Co-Sie PDD (Publikasi, Dekorasi, dan Dokumentasi) pada Festival IKAMADA & KM Awards 2024. Saya juga berkontribusi sebagai Anggota PDD pada Inagurasi Politeknik Negeri Jember 2024, serta pada kegiatan Pengabdian Masyarakat oleh Kementerian Sosial Masyarakat yang dilaksanakan di Desa Pakis, Kabupaten Jember.",
     },
@@ -327,14 +330,20 @@ function OrganizationSection() {
                         key={org.id}
                         className="rounded-xl sm:rounded-2xl bg-[#161616] border border-[#f3eee3]/10 p-4 sm:p-6 transition-colors duration-300 hover:border-[#f3eee3]/20"
                     >
-                        {/* Baris atas: ikon + nama + peran */}
-                        <div className="flex items-start gap-3 sm:gap-4">
-                            {/* Logo / Ikon Organisasi */}
-                            <div className="flex items-center justify-center w-10 h-10 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl bg-[#222222] border border-[#f3eee3]/10 shrink-0">
-                                <HiUserGroup className="w-5 h-5 sm:w-7 sm:h-7 text-[#d9541e]" />
+                        {/* Baris atas: logo + nama + peran + meta */}
+                        <div className="grid grid-cols-[auto_1fr] gap-x-3.5 sm:gap-x-5 items-start">
+                            {/* Logo Organisasi */}
+                            <div className="relative w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 sm:row-span-2 flex items-center justify-center">
+                                <Image
+                                    src={org.logo}
+                                    alt={`Logo ${org.organization}`}
+                                    fill
+                                    sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, 96px"
+                                    className="object-contain"
+                                />
                             </div>
 
-                            <div className="flex-1 min-w-0">
+                            <div className="min-w-0">
                                 <h4 className="text-[#f3eee3] font-semibold text-[13px] sm:text-[15px] md:text-base leading-snug text-pretty">
                                     {org.organization}
                                 </h4>
@@ -342,19 +351,19 @@ function OrganizationSection() {
                                     {org.role}
                                 </p>
                             </div>
-                        </div>
 
-                        {/* Meta: periode & afiliasi — rapi menumpuk di mobile */}
-                        <div className="flex flex-col gap-1.5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-2 sm:gap-y-1 mt-3 sm:mt-2.5 sm:pl-[4.5rem]">
-                            <span className="inline-flex w-fit items-center gap-1.5 rounded-md bg-[#f3eee3]/5 border border-[#f3eee3]/10 px-2 py-1 text-[#f3eee3]/80 text-[11px] sm:text-xs font-mono">
-                                <HiCalendar className="w-3.5 h-3.5 shrink-0 text-[#d9541e]" />
-                                {org.period}
-                            </span>
-                            <span className="hidden sm:inline text-[#f3eee3]/30 text-xs">•</span>
-                            <span className="inline-flex w-fit items-center gap-1.5 rounded-md bg-[#f3eee3]/5 border border-[#f3eee3]/10 px-2 py-1 text-[#f3eee3]/80 text-[11px] sm:text-xs">
-                                <HiAcademicCap className="w-3.5 h-3.5 shrink-0 text-[#d9541e]" />
-                                Terkait dengan {org.associated}
-                            </span>
+                            {/* Meta: periode & afiliasi — rapi menumpuk di mobile */}
+                            <div className="col-span-2 sm:col-span-1 sm:col-start-2 flex flex-col gap-1.5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-2 sm:gap-y-1 mt-3 sm:mt-2.5">
+                                <span className="inline-flex w-fit items-center gap-1.5 rounded-md bg-[#f3eee3]/5 border border-[#f3eee3]/10 px-2 py-1 text-[#f3eee3]/80 text-[11px] sm:text-xs font-mono">
+                                    <HiCalendar className="w-3.5 h-3.5 shrink-0 text-[#d9541e]" />
+                                    {org.period}
+                                </span>
+                                <span className="hidden sm:inline text-[#f3eee3]/30 text-xs">•</span>
+                                <span className="inline-flex w-fit items-center gap-1.5 rounded-md bg-[#f3eee3]/5 border border-[#f3eee3]/10 px-2 py-1 text-[#f3eee3]/80 text-[11px] sm:text-xs">
+                                    <HiAcademicCap className="w-3.5 h-3.5 shrink-0 text-[#d9541e]" />
+                                    Terkait dengan {org.associated}
+                                </span>
+                            </div>
                         </div>
 
                         <div className="border-t border-[#f3eee3]/10 my-3.5 sm:my-4" />
